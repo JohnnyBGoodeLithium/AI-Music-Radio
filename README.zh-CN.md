@@ -4,74 +4,61 @@
 
 **Own Your Music. Discover Its Stories.**
 
-> 以私人音乐服务器为基础，让 AI 为你选中的一首录音讲述故事，策划真正值得聆听的个人音乐电台。
+AI Music Radio 是一个以用户已有音乐收藏为中心、**本地优先的 AI 音乐电台体验**。已有的音乐服务器或存储平台保证音乐可访问；独立的音乐理解与节目制作层负责解读曲库、寻找有依据的关联，并生成有主持人、有叙事、有音乐衔接的节目。
 
-**项目成熟度：** 截至 2026-11-18，处于概念与文档阶段。仓库尚未实现可运行的音乐服务器、播放器或音频生成管线。详见[当前状态](docs/STATUS.zh-CN.md)。
+**当前状态：仅完成概念及文档**。尚未构建或验证音乐服务器集成、音乐分析引擎、音频生成和播放器。详见[项目状态](docs/STATUS.zh-CN.md)。
 
-## 为什么做这个项目
+## 要解决什么问题？
 
-流媒体解决了音乐获取的便利性，却让长期听众面对持续订阅、曲库版权变化、平台依赖和收藏分散的问题。拥有合法获取的本地音乐文件，意味着用户可以长期保存和使用自己的音乐，而不是必须持续支付流媒体订阅费用。
+- **拥有音乐：** 合法取得的本地文件长期保存，不受持续流媒体订阅与曲库版权变动的直接限制。
+- **探索音乐：** 将既有收藏组织成通向相关作品和陌生音乐的路径，说明推荐原因。
+- **聆听节目：** 获得自然、连续、有编辑质量的电台节目，不必逐首选歌或边听边搜索背景资料。
 
-传统的私人音乐服务器擅长存储、管理与播放文件。**AI Music Radio 则在此之上提供有依据的音乐解读和个性化策展**：从一首可识别的完整录音出发，研究背景、连接相关作品，制作带有自然 TTS 主持、原创/授权 BGM 及可交互播放的节目。
+这是三种不同的用户任务，不是按流派划分。详见[产品定义与 Persona](docs/01-product-overview.zh-CN.md)。
 
-本地优先不等于所有 AI 功能都完全离线或免费；硬件、维护和可选云端模型服务仍可能有成本。
+## 一键生成电台
 
-## 三类目标用户
+**选择一首身份明确的完整录音 → 理解上下文 → 从个人曲库寻找可播放的关联 → 策划节目 → 生成 TTS/BGM → 按时间轴播放。**
 
-- **Music Owner｜音乐拥有者：** 希望持久保存、跨设备访问本地音乐，不再依赖持续的流媒体订阅。
-- **Music Explorer｜音乐探索者：** 希望理解推荐背后的联系，而不是接受一个不透明的相似度分数。
-- **Deep Listener｜深度聆听者：** 希望在聆听中理解创作历史、音乐人、编曲与演奏版本。
+音乐理解结合两类信息：
 
-详见[产品定位与三个 Persona](docs/01-product-overview.zh-CN.md)。
+- **元数据与音乐知识：** 音乐人、作品、录音、发行、版本、参与者、年代和有来源的关系。
+- **音频特征（具备权限时）：** 整曲节奏、速度、音色、能量、声音织体、和声描述与 Embedding。它们是算法估计，不等于已证实的创作者意图。
 
-## 一键电台体验
+引擎**优先从用户自己的曲库中找歌**，解释前后两首为何衔接，再编排节目；具备授权时可扩展到外部发现。
 
-**选择录音 → 校验元数据 → 研究音乐故事 → 策划关联推荐 → 生成主持语音 → 聆听与继续探索。**
+## 谁提供什么？
 
-输入单位是一首完整歌曲/录音文件，即使它在更大作品中只是一章。v0 允许在无法确定必要身份时明确报错，不要求音频指纹补全或文件内部乐段识别。
+| 职责 | 初步责任边界 |
+| --- | --- |
+| 音频文件存储、备份、共享、权限 | 用户已有本地目录、NAS 或存储平台；**Lenovo Smart Storage 是优先评估的集成候选，不是既定依赖** |
+| 音乐专项索引、身份关联、元数据丰富、搜索 | **AI Music Radio** 的曲库/理解层 |
+| 节目策划、主持脚本及音频制作 | **AI Music Radio**，调用可配置 LLM 和 TTS |
+| AI 推理环境 | **本地或云端**，由用户明确配置；不得静默上传私人曲库文件 |
+| 音乐播放和节目时间轴 | **AI Music Radio** 的播放器/编排层，利用具有真实播放权限的来源 |
 
-## 主演示：一首歌，六种声音
+联想公开的 Smart Storage 文档可以确认其基于 PC 的本地存储和音乐分类能力，**但不能证明已经有可供第三方使用的音乐播放/元数据接口**。因此应先做接口验证；MVP 使用本地目录接入作为备用路径。
 
-**种子录音：** 1992 年 10 月 16 日，Bob Dylan 在纽约麦迪逊广场花园**录音生涯 30 周年纪念演唱会**上，与 Roger McGuinn、Tom Petty、Neil Young、Eric Clapton、George Harrison 合唱的《My Back Pages》。是 **30 周年，并非 20 周年**。
+详情见[架构与 Provider 边界](docs/04-conceptual-architecture.zh-CN.md)。
 
-拟定约 15 分钟节目将从 **1992 年现场合唱**追溯到 *Another Side of Bob Dylan* 中 **1964 年原版**，再聆听 The Byrds 在 *Younger Than Yesterday* 中的 **1967 年版本**。后续可以沿 Roger McGuinn/The Byrds、Tom Petty、Neil Young、Eric Clapton、George Harrison 和 Dylan 自身的作品继续延伸。
+## 文档入口
 
-它体现的是：**一首作品、多份录音、多个年代、许多音乐人故事**，不需要切割歌曲内部的片段。
+以[文档导航](docs/INDEX.md)为准，每个主题有唯一的权威位置，中文与英文同期更新。
 
-[阅读《一首歌，六种声音》节目方案](docs/03-my-back-pages-demo.zh-CN.md)。
+- [产品定位与 Persona](docs/01-product-overview.zh-CN.md)：为谁服务、解决什么问题。
+- [MVP 需求](docs/02-mvp-and-requirements.zh-CN.md)：首版范围、验收条件。
+- [系统架构](docs/04-conceptual-architecture.zh-CN.md)：音乐服务器、元数据+声学信息、推荐、LLM/TTS。
+- [产品功能库](docs/PRODUCT_FUNCTIONS.zh-CN.md)：稳定编号、优先级、成熟度与验证证据。
+- [当前状态](docs/STATUS.zh-CN.md)：哪些真正实现了。
+- [待决策问题](docs/05-open-questions.zh-CN.md)：尚未确认的技术与产品依赖。
+- [电台示例](docs/03-my-back-pages-demo.zh-CN.md)：**仅是示范方案**，不属于项目定义。
 
-## 项目文档
+[AGENTS.md](AGENTS.md) 规定仓库贡献和证据纪律。
 
-见[双语文档导航](docs/INDEX.md)及 [AGENTS.md](AGENTS.md) 中的贡献规则。
+## 明确边界
 
-| 文档 | 中文 | English |
-| --- | --- | --- |
-| 产品与用户 | [产品说明](docs/01-product-overview.zh-CN.md) | [Product](docs/01-product-overview.md) |
-| 需求与优先级 | [MVP 需求](docs/02-mvp-and-requirements.zh-CN.md) | [MVP](docs/02-mvp-and-requirements.md) |
-| 旗舰演示 | [My Back Pages 节目](docs/03-my-back-pages-demo.zh-CN.md) | [Demo](docs/03-my-back-pages-demo.md) |
-| 系统架构 | [架构说明](docs/04-conceptual-architecture.zh-CN.md) | [Architecture](docs/04-conceptual-architecture.md) |
-| 决策与风险 | [待决策事项](docs/05-open-questions.zh-CN.md) | [Questions](docs/05-open-questions.md) |
-| 当前状态 | [状态](docs/STATUS.zh-CN.md) | [Status](docs/STATUS.md) |
+首版输入为**一首身份明确的完整录音文件**；缺少必要身份信息允许报错。不强制指纹识别、整曲内部段落切分或覆盖所有音乐类别。歌曲与原创 TTS/BGM 分别管理，不假定获得 DRM 音乐的抓取与再混音许可。拥有本地音乐不等于零硬件、维护或模型费用。
 
-中文和英文对应文档必须同步更新。每类事实有唯一的专项文档负责，真正实现状态以代码和测试为准。
+## 许可证
 
-## 产品边界
-
-- 用户自己的合法本地音频文件，无需开启 AI 功能或持续流媒体订阅也能播放。
-- 云音乐服务只作为可选来源，实际能力由官方接口与许可决定。
-- 必须区分 **Work（作品）/ Recording（具体录音）/ Release（发行）/ PlayableSource（可播放来源）**，不能混淆原版、翻唱和现场合唱。
-- 音乐历史事实必须保留证据，主观听感不能伪装成已证实的音乐人创作意图。
-- 节目将口播和音乐组织为独立时间轴，不默认拥有商业 DRM 音乐的抓取、裁切或再混音权限。
-- 公开仓库不提交个人曲库、收听历史、凭据或未经授权的商业音频。
-
-## 新种子的事实参考
-
-- [Bob Dylan 官方演唱会介绍](https://www.bobdylan.com/albums/30th-anniversary-concert-celebration-deluxe-edition/)
-- [Legacy Recordings 演唱会曲目和演出阵容](https://www.legacyrecordings.com/releases/30th-anniversary-concert-celebration-deluxe-edition-2-cd/)
-- [Bob Dylan 官方 1964 年专辑页](https://www.bobdylan.com/albums/another-side-of-bob-dylan/)
-- [MusicBrainz：1992 年现场录音](https://musicbrainz.org/release/94fb18c0-610e-41e2-853f-32a442427a90)
-- [MusicBrainz：The Byrds《Younger Than Yesterday》](https://musicbrainz.org/release/85311619-b29f-4157-ae45-718cee659681)
-
-## 许可
-
-目前尚未选择开源许可证。不要自行假定代码、商业歌曲或 BGM 可以被重新分发。
+尚未选定开源许可。公开仓库不保存私人音乐文件、个人收听历史或未授权的商业音频素材。
