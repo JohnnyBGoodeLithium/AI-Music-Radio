@@ -2,47 +2,37 @@
 
 English | [简体中文](05-open-questions.zh-CN.md)
 
-**Baseline · 2026-11-18**
+**Scope:** cross-cutting product/architecture decisions and unresolved dependencies. Individual sample tracks, performer lists and episode running orders belong only in the [Demo](03-my-back-pages-demo.md). Stable feature states belong in [Product Functions](PRODUCT_FUNCTIONS.md).
 
-## Decisions established in product discussion
+## Agreed direction
 
-- Local personal music server is foundational; users' lawful files remain accessible without an ongoing streaming subscription.
-- The three personas are **Music Owner, Music Explorer and Deep Listener**.
-- A seed is **one complete identified recording/file**, even if part of a larger musical work.
-- Essential metadata can be a prerequisite. Unknown identity may return an error; no compulsory fingerprint or within-track passage recovery in v0.
-- Prioritize recordings with meaningful, credible stories; no requirement for viral short-form music coverage.
-- **New Demo 001 seed:** 1992 live *My Back Pages* from **Bob Dylan's 30th Anniversary Concert Celebration**, not a 20th-anniversary show.
-- First exploration thread: concert collaboration → Dylan's 1964 original → The Byrds' 1967 recording, with performer-based expansion in later iterations.
-- Narration and original/licensed BGM remain logically separate from song playback; actual music rights constrain production.
-- Core product documents and README are paired English/Simplified Chinese, with simultaneous updates; `AGENTS.md` defines rules.
-- No implementation or model stack has been committed.
+- Product combines a **personal music storage/server foundation** with separate AI Music Radio intelligence and playback.
+- Do **not** build a full backup, NAS or generic music-server replacement as a prerequisite for the radio MVP.
+- Start with one full identifiable recording/file. Unknown essential identity can fail clearly; no sub-track alignment or automatic fingerprint rescue.
+- Pair **metadata/verified music knowledge** with **optional whole-track acoustic analysis** when lawful and feasible.
+- Retrieve candidate recordings from the **user's playable library first**. Explain the next-track selection with evidence and tagged subjective observations.
+- Keep radio planning, scriptwriting, generated host assets, and authorized music playback separately represented.
+- Local or cloud TextLLM/TTS is a **provider choice**, with explicit configuration and no silent data transfer or fallback.
+- Maintain product, architecture, MVP, status, examples and inventory as separate documentation responsibilities, with paired English/Chinese versions.
 
-## Open product questions
+## Open dependencies
 
-1. Should MVP start with an indexed desktop directory or a running self-hosted music server?
-2. Should the first client be a browser, desktop app or a home-network multi-device player?
-3. What is the minimal evidence threshold to generate an episode without hallucinating?
-4. How should a recommendation choose between **same-work versions** and other artists' related works?
-5. How should the system handle tracks missing from the local library?
-6. Which behaviors must work without internet connectivity, versus cloud model services?
+| Area | Question | Practical next test |
+| --- | --- | --- |
+| Storage | Does **Lenovo Smart Storage** provide an authorized file/catalog/playback integration surface? | Inspect product/SDK documentation and test supported access; do not infer an API from music categorization |
+| Library service | Should an external mature music server be reused, and what capabilities does it expose? | Compare adapters with local-folder baseline |
+| Identity | What combination of tags, confidence and knowledge matching is sufficient to identify a Recording? | Curated file corpus with ambiguous titles/versions |
+| Acoustic extraction | Which whole-track features are actually useful and legal to compute? | Small local DSP prototype and quality audit |
+| Retrieval | How to balance verified cover/credit relations, sonic similarity, personal preference and program diversity? | Explainable candidate-ranking evaluation |
+| Program | What makes a narrated sequence enjoyable rather than encyclopedic? | Listening review on varied recordings |
+| Providers | What local/cloud text and TTS configurations can meet quality/cost/privacy targets? | Controlled provider comparison and explicit outbound-data audit |
+| Playback | What complete-file interfaces, licensing and secure access does each backend support? | Verify actual playback with permitted files |
+| User experience | Which of Owner, Explorer and Listener drives retention? | Test three different journeys, not genre stereotypes |
 
-## Open engineering questions
+## Privacy & rights
 
-1. Which existing self-hosted server and playback APIs can be reused?
-2. How should Music Context Pack store Work/Recording/Release identity and citations?
-3. How can multi-artist credits and version relationships be verified?
-4. Which Mandarin TTS handles six English-speaking artist names naturally?
-5. Which lawful audio files/rights-cleared beds can be used for the actual demo?
-6. What are real demo asset durations, audio levels, license limits and target hardware budgets?
+Local storage avoids ongoing streaming subscriptions **for files owned and lawfully playable by the user**. It does not guarantee zero operating costs, unlimited cloud catalog access or rights to capture, cut or re-encode protected streaming. Do not publish real private libraries, listening histories, keys or uncleared media.
 
-## Immediate steps
+## Next decision checkpoint
 
-1. Confirm legal copies of the 1992 live, 1964 original and 1967 Byrds recordings.
-2. Validate minimum metadata and a deterministic library catalog.
-3. Build the first evidence-based editorial plan.
-4. Produce original Mandarin narration, licensed/original BGM and timeline player.
-5. Test listening quality and source accuracy before expanding artist branches.
-
-## Important limitations
-
-No actual audio availability, duration on target assets, TTS model, streaming SDK or working server has been tested. Avoid presenting proposed capabilities as implemented facts.
+After a small locally playable catalog and working episode path exist, choose between (a) deeper Lenovo Smart Storage integration, (b) a supported external music server, or (c) continued direct-file access. Preserve adapters so this choice does not rewrite the radio engine.
