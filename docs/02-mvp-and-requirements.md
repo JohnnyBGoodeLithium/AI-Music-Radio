@@ -1,51 +1,50 @@
-# MVP Requirements
+# MVP Requirements and Acceptance
 
 English | [简体中文](02-mvp-and-requirements.zh-CN.md)
 
-**Draft scope · 2026-11-18 · No implementation commitment**
+This document defines **what the first product must do**, not the implementation details or an individual demo track. Feature IDs and maturity belong only to [Product Functions](PRODUCT_FUNCTIONS.md); current actual progress belongs to [Status](STATUS.md).
 
-## P0 — One end-to-end radio episode
+## P0 — Vertical slice
 
-| Capability | Minimal acceptance |
-| --- | --- |
-| One-track seed | Select a complete identified recording; v0 does not inspect in-file passages |
-| Metadata gate | Required title, artist and sufficiently reliable recording identity; unknown identity yields an explicit error |
-| Library playback | Use locally owned, lawfully playable audio; demonstrate a simple indexed library/queue |
-| Source-backed research | Recover verifiable facts about composition, participants, event, recording and release |
-| Recording-aware relations | Distinguish Dylan 1964, The Byrds 1967 and 1992 concert recordings of the **same work** |
-| Editorial planner | Decide theme, sequence, why-next links and time budget before creating narration |
-| Voice generation | Natural Mandarin TTS, correct English proper names, consistent pace/timbre |
-| BGM and assembly | Original/licensed music beds, ducking and fades; no mixing of unauthorized recordings |
-| Episode player | Timed narration and lawful full-track playback with pause/skip and transparent recommendations |
-| Bilingual documentation | English and Simplified Chinese content parity in the same edit |
+1. **Connect an existing library:** Index a user-authorized local directory and safely read lawful complete audio files. No requirement to build new NAS storage/backup infrastructure.
+2. **Metadata gate:** Parse known artist, title and available release/recording/version identifiers. Block truly unidentified recordings with a clear error. Missing cover, year or optional acoustic data alone must not block.
+3. **Distinct recording identity:** Model Work / Recording / Release / PlayableSource and credits separately; do not merge versions just because titles match.
+4. **Context Pack:** Assemble provenance-aware metadata, music knowledge, user-library availability and *optional* whole-track acoustic features. Annotate certainty and missingness.
+5. **Relationship retrieval:** Generate candidates from **the user's own library first**, using explicit music relations and optionally audio similarity. Preserve a specific reason and source for each relationship.
+6. **Editorial planning:** Choose a theme, sequence, transitions, length budget and playable source for each proposed track before writing the script.
+7. **Model-provider abstraction:** Support explicit **local or cloud** text-LLM configuration through a consistent interface. No silent remote fallback or private-file upload. Test configuration and error behavior even if only one real provider is used in an early demo.
+8. **Narration and BGM:** Generate original speech with a replaceable TTS provider, add lawful BGM with ducking, and preserve the music as separate authorized playback items.
+9. **Radio player:** Execute the planned host/music timeline with real durations, play/pause/skip, track identity and explainable next-track information.
+10. **Clear errors:** Report unidentifiable metadata, absent playable tracks, restricted sources and provider failures without inventing results.
 
-## P1 — Expansion
+## P1 — Personal media experience
 
-- Persistent desktop/NAS music indexing and cross-device access.
-- Personal listening profile drawn from user-authorized libraries and history.
-- Broader artist/recording relationship network: collaborators, interpretations, stylistic paths.
-- Editable episode plans, source-aware listening queue and playback recovery.
-- Acoustic analysis and embeddings when audio can be lawfully analyzed.
-- Explicitly authorized streaming adapters; optional local model deployment.
+- Evaluate Lenovo Smart Storage's **actual** file, identity, permission and playback APIs; build an adapter only if supported.
+- Optionally integrate an existing music server; do not reimplement a mature server just to generate radio.
+- Persistent background indexing, metadata repair, cross-device access and secure remote access.
+- Personal music profile from permitted collection history, saved playlists and listening data.
+- Robust acoustic analysis (tempo, timbre, harmony, embeddings) on lawfully analyzable local files.
+- Discovery beyond local library, with explicit availability and user authorization.
+- Episode saving, alternative editorial themes, recuration and partial regeneration.
+- Validate at least one local LLM and one cloud LLM end-to-end; compare quality, latency, resource and privacy boundaries.
 
-## First-demo non-goals
+## Not in the first version
 
-- Automatic fingerprint rescue of completely unknown/unlabeled recordings.
-- Detecting or aligning passages **inside** a musical recording.
-- Universal viral-music, arbitrary recording or genre coverage.
-- A full replacement for every streaming service or a promise of no ongoing cost.
-- Using copyrighted song snippets unless specifically licensed; do not capture or decode DRM output for mixing.
-- Full local-only inference, production NAS product, multi-user authentication or stable public API.
+- Detecting arbitrary sub-track moments or score/audio alignment.
+- Fingerprint-based rescue of files with no usable identity.
+- Building a full independent NAS, backup, file-sharing or multi-user platform.
+- Guaranteed Spotify/Apple Music/NetEase DRM capture, extraction or unlicensed blending.
+- Treating a mood label or a similarity score as a factual artistic relationship.
+- Claiming all AI inference is offline or free, or that local models match cloud quality without testing.
 
-## Acceptance review
+## Acceptance: core user story
 
-1. A valid 1992 concert recording produces an inspectable episode proposal.
-2. Composition, release, event and performers are not mixed up; facts can be traced to sources.
-3. The path from live collaboration to original to later interpretation is musically and historically defensible.
-4. The approximately 15-minute plan adjusts to the **actual** legal audio assets and narration.
-5. TTS is natural, factual narration clear and BGM does not overpower speech.
-6. Missing metadata and unavailable audio produce honest, comprehensible failure states.
+Given a playable, clearly identified recording in an authorized personal music library:
 
-## Build order
+1. Show its canonical metadata and available source.
+2. Offer a theme and two or more *actually playable* related recordings from the user's collection, with evidence or clearly labeled subjective acoustic reasoning.
+3. Allow the user to inspect the sequence, then generate natural narration.
+4. Play a coherent radio show with independent host/BGM and full tracks, adapting to real track lengths.
+5. Show meaningful error states for missing metadata and unavailable tracks.
 
-A small lawful test catalog → identity validation → Music Context Pack & relationships → episode planner → Mandarin TTS/BGM → timeline player → deeper music-server and user-profile integrations.
+Evaluation must cover **editorial coherence**, **metadata correctness**, **musical relation evidence**, **audio listening quality**, **privacy/configuration behavior**, and **successful real playback**. Exact model choice and hardware are not yet committed.
