@@ -1,19 +1,17 @@
-# 已明确方向与待决策问题
+# 技术与产品待验证问题
 
 [English](05-open-questions.md) | 简体中文
 
-**项目范围：** 日常音乐数据 → 有证据的 Personal Music Report → 个性化故事电台。**不做** Home Assistant、通用 NAS/Agentic Storage、家庭服务或 24×7 DT；这些是独立长期设想。
+完整的产品概述已经集中在[README](../README.zh-CN.md)；本页**只记录尚不能下结论的关键问题**，不再次复述产品定位。
 
-已明确：播放次数与原始添加日期及覆盖要保留；本地音频/模型可选；音乐分析有依据，不做玄学；多个约 15–20 分钟的选题；采访可选；模块化音轨、评论反馈及节目延续。Music Assistant 是优先复用候选，尚未集成。UI 先黑白 Notion 式低保真，Qira 往后再说。
+| 问题 | 为什么重要 | 下一步证据 |
+| --- | --- | --- |
+| Apple Music Windows 能否可靠导出 **Play Count / Date Added**？ | 首个个人行为数据基线 | 多首样本逐项核对软件 UI、导出字段和曲库覆盖率 |
+| 跨平台同一录音如何匹配并保留各来源行为？ | 画像可信度 | 比较来源 ID、录音身份、累计次数与统计口径 |
+| 原版 Music Assistant 已暴露哪些字段和能力？ | 避免重复造轮子 | 真实运行并记录目录 API、Host/Show/Segment、队列/播放 |
+| Music Assistant AI Radio 接受外部编辑方案有多容易？ | 决定扩展点 | 测试节目输入、分段生成、反馈修改和资产复用 |
+| 报告与节目相比普通推荐到底增值多少？ | 决定核心价值是否成立 | 同一主题在通用/个人 Context 下对照试听、核对音乐事实 |
+| 哪些平台可读目录、可播放、可编辑音轨？ | 决定节目制作和合规边界 | 分开验证元数据、播放、抓取/混音权限 |
+| 界面是否需要完全独立开发？ | 控制工程范围 | 先测 API + 黑白低保真用户流程 |
 
-## 待验证
-
-| 领域 | 实验 |
-| --- | --- |
-| 导出 | 核对 Apple Music Windows 歌单、原始播放次数与添加日期 |
-| Music Assistant | 实查曲库 API 行为字段；运行 Host/Show/Segment/队列及局部修改 |
-| 体验 | 普通 AI DJ 与真实个人音乐报告/故事做对照试听 |
-| 权益 | 元数据导入、订阅登录、合法播放和重混权限分开 |
-| UI | 先验证[草稿线框](06-lowfi-wireframes.zh-CN.md)，再考虑正式前端 |
-
-歌曲内容只放[Demo](03-my-back-pages-demo.zh-CN.md)；成熟度见[功能库](PRODUCT_FUNCTIONS.zh-CN.md)。
+不把计划当作已实现；当前状态见[STATUS](STATUS.zh-CN.md)。具体音乐故事仍集中于[Demo](03-my-back-pages-demo.zh-CN.md)。

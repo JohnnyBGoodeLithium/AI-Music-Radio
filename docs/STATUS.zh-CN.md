@@ -1,15 +1,11 @@
-# 当前状态
+# 当前项目状态
 
 [English](STATUS.md) | 简体中文
 
-**2026-11-18 · 仅概念/文档。** 本仓库**没有实现或验证**真实音乐导入、Personal Music Report、Music Assistant 集成、TTS/播放或 UI。Music Assistant 的现成功能是上游成果。
+**截至 2026-11-18：概念与文档阶段。** 本仓库尚未建立个人音乐曲库的真实导入、Music Report、节目策划实现、TTS 成片、Music Assistant 联调或交互前端。不要将开源上游现成功能视为本仓库的已实现功能。
 
-**产品：** 授权曲库/歌单/播放次数/原始添加日期 → 可解释个人音乐洞察 → 几个模块化的约 15–20 分钟故事节目。本地音频、本地模型、指定硬件和 Smart Storage 均可选。
+**已经明确：** 产品的连续体验是“连接个人音乐数据 → 可信音乐解读与报告 → 有主持人、有故事的个性化电台”。Apple Music Windows 的原始播放次数和添加日期是优先验证字段。Music Assistant 及 AI Radio 是重点复用候选，已完成公开文档与源码目录研究，但还未部署验证。
 
-**已做：** Music Assistant 服务端/前端与 Alpha AI Radio 源码层调研；**尚未实际部署集成**。API 的个人统计字段和播放权益仍未知。
+**下一轮实际工作顺序：**（1）对真实授权曲库完成导出及字段核对；（2）生成初版 Music Report 和节目候选；（3）原版 Music Assistant + AI Radio 运行验证；（4）以黑白线框测试报告—选题—播放—反馈的前端旅程。
 
-**下一步：** 实测合法曲库导出；生成报告；对比普通/个性化策展；测试原版 Music Assistant；探索[黑白 UI 草稿](06-lowfi-wireframes.zh-CN.md)。Qira 后续再说。
-
-**排除：** Home Assistant、通用 NAS/Agentic Storage、家庭服务、24×7 DT。
-
-[功能库](PRODUCT_FUNCTIONS.zh-CN.md)全部“规划中”；具体歌曲只在[Demo](03-my-back-pages-demo.zh-CN.md)。
+所有[功能库条目](PRODUCT_FUNCTIONS.zh-CN.md)仍为“规划中”。详细体验见[README](../README.zh-CN.md)，实测要求见[MVP](02-mvp-and-requirements.zh-CN.md)。

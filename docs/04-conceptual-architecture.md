@@ -1,132 +1,127 @@
-# Conceptual Architecture and Responsibility Boundaries
+# System Architecture: Modules, Data Contracts and Music Assistant Reuse
 
 English | [简体中文](04-conceptual-architecture.zh-CN.md)
 
-**Status:** proposed contracts, not implemented. This document alone owns system-layer definitions, model-provider selection, music-information processing and recommendation logic. No named demo track belongs here.
+This is the technical expansion of the [complete product README](../README.md): **what each module takes in, what it produces, what can be reused, and what should be built only after testing**. It is a proposed design and source-code review, not a claim that integration works.
 
-## A. Product/service separation
-
-Start from **authorized platform/library metadata and behavioral data**, not a mandatory NAS or local music file. Playlist/catalog entry, recording identity, user listening statistics and licensed playable source are distinct. Music knowledge and local/cloud LLM/TTS are separately configurable.
-
-| Responsibility | Proposal |
-| --- | --- |
-| Music metadata/behavior | Import authorized platform data, original play counts/added dates, preserve source |
-| Catalog/player/AI DJ | **Music Assistant + AI Radio as first reuse candidate** |
-| Personal music intelligence | Proposed Personal Music Report, verifiable music relation graph/Context Pack |
-| Editorial producer | Proposed multiple show concepts, storytelling and feedback-driven segment edits |
-| Lenovo Smart Storage | Optional integration later; no confirmed music API, no dependency |
-
-## B. Music information model: identity, knowledge, sound
+## 1. End-to-end information flow
 
 ```mermaid
 flowchart TD
-  S[Authorized catalog plus optional song audio] --> ID[1. Identity & metadata]
-  ID --> CTX[Music Context Pack]
-  K[Verified Music Sources] --> CTX
-  S -->|Only when permitted| AF[2. Whole-track acoustic analysis]
-  AF --> CTX
-  P[User-authorized collection / listening profile] --> CTX
-  CTX --> RET[3. Relationship retrieval]
-  S --> RET
-  RET --> PLAN[4. Editorial Planner]
-  PLAN --> SCRIPT[5. Grounded script]
-  SCRIPT --> PROVIDER[Local OR Cloud LLM / TTS Providers]
-  PROVIDER --> ASSET[Generated host audio + lawful BGM]
-  PLAN --> PLAY[6. Playback orchestrator]
-  ASSET --> PLAY
-  S --> PLAY
+    A["Authorized sources<br/>Exports / streaming catalogs / optional owned files"] --> B["01 Source Adapters"]
+    B --> C["02 Canonical Music Library<br/>Work · Recording · Release · Track"]
+    C --> P["03 Personal Data & Music Graph<br/>Behavior + verified music relationships"]
+    K["Music Knowledge Providers<br/>Evidence / confidence / retrieved date"] --> P
+    O["Optional lawful whole-track analysis"] --> P
+    P --> R["04 Personal Music Report"]
+    P --> X["Episode Context Pack"]
+    X --> E["05 Editorial Planner<br/>Several show ideas / editorial memory"]
+    E --> T["06 Script / TTS / Segment Assets"]
+    T --> Q["07 Episode Timeline / Playback"]
+    C -->|"Licensed playable source"| Q
+    Q --> U["08 UI: report / episodes / playback / comments"]
+    U -. "Feedback" .-> E
 ```
 
-### B1. Metadata and reliable music knowledge
+These are **logical components**, not necessarily separately running services. Music Assistant may supply the catalog, playback queue and existing AI DJ; other modules can connect over supported APIs. Runtime boundaries are decided after inspecting a working upstream installation.
 
-**From the file/catalog:** artist, track title, album/release, composer and contributor credits when present; date, duration, codec, version qualifiers and catalog IDs. Tag quality varies: a filename alone may not prove a specific recording.
+## 2. Music Data Connectors
 
-**Resolved identity:** `Work` (composition), `Recording` (particular performance), `Release`, `Track`, `ArtistCredit`, `PlayableSource`. A file representing a movement of a larger work still counts as **one complete track** in v0.
+**Inputs:** authorized catalog, playlist and listening metadata from Apple Music, Spotify, YouTube Music, NetEase Cloud Music, QQ Music, optional owned audio files or an existing music library. An **Apple Music Windows export** is a prioritized initial test because play counts and date added are visible in the app; completeness of extraction still needs per-track validation.
 
-**External enrichment:** known release/recording identifiers, verified collaborations, cover relationships, stylistic and historical facts with sources, confidence and retrieval dates. Possible sources include music metadata databases subject to licenses, attribution and query policies; never assume every inferred link is fact.
+Adapters must import and preserve provider identifiers, original statistics, source coverage, source capabilities, and candidate cross-platform matches. A file-based export can validate the experience before building continuous account sync.
 
-**Minimum gate:** confidently establish sufficient identity. Unknown/ambiguous identity returns a visible error or requests correction. Missing optional tags, cover art or acoustic analysis is not an automatic failure.
-
-### B2. Acoustic characteristics (distinct from metadata)
-
-For **lawfully analyzable local audio**, an optional analyzer may calculate whole-track descriptors: estimated tempo / pulse, rhythmic texture, chroma/key confidence, dynamics/energy curve, timbre/spectral summaries, instrument or genre hypotheses and audio embeddings. Outputs include model/version, uncertainty, analysis rights and time.
-
-These are **computed features**, not historical facts. Descriptive labels such as “warm,” “melancholic,” or “similar guitar texture” are hypotheses; don't convert them into undocumented influence claims. First version does **not** require identifying or cutting within-song segments.
-
-### B3. Personal Music Report and behavior fields
-
-Store `source_platform, provider_track_id, imported_at, original_date_added, play_count, count_semantics, coverage_start/end, playlist_ids, favorites, matching_confidence, playable_sources` with unknown values marked. **Import date ≠ original added date; cumulative play count ≠ per-play history; counts from different sources are not automatically comparable.** Distinguish temporary listening spikes from durable collection centers.
-
-A **Personal Music Report** is an inspectable, evidence-based output; a **Music Context Pack** is the relevant slice supplied to one episode, not an entire library. Neither requires original audio.
-
-## C. From data to episode
-
-Find familiar user music and credible artist/work/history connections. Offer several show directions (ongoing theme, recent interest, surprising links), or user-defined seed. Plan an adjustable ~15–20-minute narrative before TTS; prioritize musician relationships if requested, not mechanically alternate versions of a song. Metadata availability and playable rights must be checked separately. Render modular host/music items; a comment should selectively update affected segments and bridges. Remember unfinished routes without forcing sequential listening.
-
-## D. Local and cloud model provider boundary
-
-Use replaceable interfaces, not hardcoded model names:
-
-- `TextLLMProvider`: `generatePlan(context, constraints)`, `writeScript(plan, sources)`; configuration may point to local inference or an explicitly selected cloud endpoint.
-- `TTSProvider`: `synthesize(script, voice, pronunciationHints)` with local/cloud implementations and consistent audio output metadata.
-- `AudioFeatureProvider`: local DSP or permitted local model analysis by default; cloud uploading of raw songs is **not** assumed or implicitly enabled.
-- `KnowledgeProvider`: metadata/verified facts via permitted databases or cached content; network lookup is visibly a different privacy boundary from local-only analysis.
-
-**Policy:** local/cloud choice is explicit and task-specific; document what data leaves the device, user authorization, costs and capabilities. If a requested local provider cannot run, report the error or ask permission to switch. **Never silently fail over to cloud.** Provider neutrality is an architectural promise, not proof of equivalent quality.
-
-## E. Data and episode contracts
+**Field discipline:** `original_date_added` must not be replaced by `imported_at`; cumulative `play_count` is not an individual play-event history; provider counts may have incompatible time and measurement definitions. Derived event counts retain a documented threshold and coverage.
 
 ```json
 {
-  "recording": {
-    "id": "recording:example",
-    "work_id": "work:example",
-    "release_id": "release:example",
-    "credits": ["artist:example"],
-    "source_ids": ["local:example"],
-    "identity_confidence": "verified"
-  },
-  "candidate_relation": {
-    "from_recording_id": "recording:seed",
-    "to_recording_id": "recording:related",
-    "relation_type": "shared_performer",
-    "evidence_refs": ["source:catalog-entry"],
-    "acoustic_observations": [],
-    "playability": "local",
-    "why_next": "A verified performer connects both recordings."
-  },
-  "episode": {
-    "target_duration_sec": 900,
-    "segments": [
-      {"type": "host", "tts_asset_id": "host:intro", "bgm_asset_id": "bed:intro"},
-      {"type": "music", "recording_id": "recording:seed", "source_policy": "resolve_at_playback"}
-    ]
-  }
+  "source_platform": "provider-example",
+  "provider_track_id": "track-001",
+  "title": "Example Track",
+  "artist_ids": ["artist-001"],
+  "album_id": "album-001",
+  "play_count": 42,
+  "count_semantics": "provider_cumulative",
+  "original_date_added": "2024-03-18",
+  "imported_at": "2026-11-18",
+  "coverage": {"start": null, "end": null, "known": false},
+  "playlist_ids": ["playlist-007"],
+  "favorite": true,
+  "metadata_capability": "read",
+  "playback_capability": "unknown"
 }
 ```
 
-Separate raw source metadata, computed features, evidence graph, selected editorial plan, host assets and playback projection. The library remains canonical for what the user has; AI-produced descriptions are revisioned, replaceable derivatives.
+This illustrates a **proposed normalized record**, not a promise that every platform exposes these values.
 
-## F. Validation sequence
+## 3. Canonical Music Library
 
-Authorized Apple Music Windows or equivalent export → audit original play count/date-added → Personal Music Report → compare generic vs personal episode planning → run **stock Music Assistant + AI Radio** → implement only measured gaps. No household-server scope.
+Preserve distinctions between **Work** (composition), **Recording** (particular performance/recorded rendition), **Release**, **Track** (source catalog entry), **ArtistCredit**, and **PlayableSource**. One work can have multiple recordings and release tracks; a same-title match is not proof of identical audio.
 
-## G. Music Assistant reuse assessment (source review 2026-11-18)
+Several platform entries may map to one Recording, but original IDs, favorites, playlist membership, play counts and individual playback rights remain source-specific. Canonical identity should not erase personal history.
 
-Sources: [server/dev](https://github.com/music-assistant/server/tree/dev/music_assistant), [frontend](https://github.com/music-assistant/frontend), [AI Radio](https://www.music-assistant.io/plugins/ai-radio/). Server/frontend Apache-2.0; third-party service terms, credentials and distribution need separate review. **Upstream ≠ integrated in our repo.**
+**Reuse candidate:** Music Assistant `controllers/music`, provider connectors and query APIs. Inspect real catalog identity behavior and whether original user-statistics fields are exposed; store unexposed personal signals in our data adapter instead of assuming invasive changes to the playback database.
 
-| Code module | Existing responsibility | Test |
-| --- | --- | --- |
-| `controllers/music` | Library/database/favorites | API exposure of original added dates, play counts |
-| `controllers/player_queues`, `controllers/streams` | Audio and queue | Licensed playback and reuse |
-| `providers/apple_music`, `spotify`, `ytmusic`, `neteasecloudmusic`, `qqmusic` | Sources | Real account metadata, login stability and playback rights |
-| `providers/ai_radio/provider.py`, `hosts.py`, `storage.py` | Show/Host state | Reuse hosting/show foundation |
-| `providers/ai_radio/queue_dj.py`, `rendering.py`, `models.py` | DJ clips/segments | Partial editing/regeneration |
-| `providers/smart_playlist`, `sonic_analysis`, `sonic_similarity` | Playlists/acoustic insight | Reuse rather than claiming novelty |
-| `providers/openai_compatible`, `openai_tts` | LLM/TTS | Local/cloud with consent |
-| `frontend/src` | Vue/TypeScript UI | API-based independent low-fi interface |
+## 4. Personal Music Intelligence
 
-AI Radio is **Alpha** and already offers Hosts, Shows, segmented DJ narration and TTS. Unknown until real testing: personal statistics import, long-term reports, grounded multi-artist storytelling, candidate-program curation and listener feedback history.
+Two related evidence classes are kept distinct:
 
-[Apple Music integration](https://www.music-assistant.io/music-providers/apple-music/) audio playback is not officially supported by Apple; [NetEase](https://www.music-assistant.io/music-providers/netease-cloud-music/) needs an unofficial API service; [QQ Music](https://www.music-assistant.io/music-providers/qqmusic/) likewise needs rights review. Data access is not DRM capture/remix authorization.
+- **User facts and behaviors:** favorites, playlists, original dates added, total plays, explicitly supplied feedback. Patterns may reveal persistent centers, periods of interest or recent replay spikes. Play frequency alone does not establish personal emotional significance.
+- **Musical facts and relationships:** documented performer credits, collaborations, covers, writing credits, releases, eras and stylistic history. Each edge keeps relation type, evidence references, confidence and retrieval time; LLM hypotheses are clearly labeled as hypotheses.
 
+Optional lawful whole-track acoustic analysis can add estimates for tempo, rhythm, timbre, dynamics, chroma/harmony and embeddings with model version and confidence. Acoustic similarity does **not** demonstrate historical artistic influence. A valuable graph and report can still be made from metadata-only imports.
+
+The personal graph should help answer “why is this story relevant to **this** listener?” Graph centrality is a lead to investigate, not an automatic measure of cultural or emotional importance.
+
+## 5. Personal Music Report vs Music Context Pack
+
+A **Personal Music Report** is a user-facing inspectable artifact: collection evolution, artist/recording relations, long-term versus short-term interests, and promising routes into music history, with supporting observations and sources.
+
+A **Music Context Pack** is an **episode-specific** set of pertinent tracks, personal signals, verified history and playback state. It is not a dump of the entire library into an LLM prompt. Both derive from the personal graph; they serve different jobs.
+
+## 6. Editorial Planner
+
+Planning precedes text-to-speech. Given user familiarity, verified relationships, episode theme, available recordings and real durations, the planner offers a small set of distinct show ideas: continuation, recent interest, unexpected relationship or a user-specified topic.
+
+A proposed plan includes `theme`, `editorial_intent`, `target_duration`, `chapters[]`, `track_slots[]`, `narration_slots[]`, `evidence_refs[]` and `playback_constraints`. Starting from one song need not mean comparing multiple recordings of that song; if the listener wants the performers' stories, that intent governs the editorial arc.
+
+**Editorial Memory** tracks previously told stories, open questions, listener comments and repetition. The aim is a compelling next episode, not an obligatory never-ending serial.
+
+## 7. Modular Radio Production and Playback
+
+An episode contains distinct **Host Intro, Narration, Bridge, Music Item, Outro** units. Produce scripts and TTS clips per unit, then schedule actual song durations and licensed/original BGM separately. Subscription playback permissions must not be confused with rights to extract protected audio for rendering or remixing.
+
+Feedback routes first to editorial planning. Identify affected sections and track slots, revise the necessary scripts, keep unaffected audio assets when practical and rerender adjacent bridges when continuity requires. Some large thematic changes necessarily affect more of the show; modularity is not a zero-cost guarantee.
+
+Suggested replaceable interfaces are `TextLLMProvider`, `TTSProvider`, `KnowledgeProvider`, optional `AudioFeatureProvider`. Text research, narration, catalog metadata and actual audio playback may come from different approved services. Remote processing must reflect the listener's consented data scope.
+
+## Music Assistant reuse assessment
+
+[Official website](https://www.music-assistant.io/) · [AI Radio](https://www.music-assistant.io/plugins/ai-radio/) · [Server](https://github.com/music-assistant/server) · [Frontend](https://github.com/music-assistant/frontend).
+
+The server and frontend expose open-source code. Third-party provider credentials, terms and redistribution rights need separate assessment. The following table is a **source/documentation-backed reuse proposal**, not a verified integration.
+
+| Upstream module | Existing responsibility | Proposed reuse | Specific gap to test |
+| --- | --- | --- | --- |
+| `controllers/music` | Catalog, library, favorites, search | Reuse its library APIs | Original play counts and date-added access |
+| `providers/apple_music`, `spotify`, `ytmusic`, `neteasecloudmusic`, `qqmusic` | Music source connectors | Combine with our own metadata imports | Real user data, login stability, legal playback |
+| `controllers/player_queues`, `controllers/streams` | Queues and streams | Reuse playback | Hosted speech interleave, rights, recovery, latency |
+| `providers/ai_radio/provider.py`, `hosts.py`, `storage.py` | Host/show configuration and persistence | Reuse show foundation | External editorial-plan integration |
+| `providers/ai_radio/queue_dj.py`, `rendering.py`, `models.py` | DJ queue and segmented generation | Reuse audio clips | Selective revision and asset reuse |
+| `providers/smart_playlist` | Smart playlists | Candidate selection support | Personal-graph evidence input |
+| `providers/sonic_analysis`, `sonic_similarity` | Acoustic and similarity features | Optional enrichment | Audio rights and actual value |
+| `providers/openai_compatible`, `openai_tts` | Text and TTS models | Provider reuse/adapters | Local/cloud quality and privacy |
+| `frontend/src` and API | Existing Web/PWA | Low-fi API-based experience first | Report, episode choices, commenting |
+
+**Clear overlap:** unified catalog, player, basic AI DJ, hosts, TTS, segments, playlist and sonic features. **Unverified incremental value:** original user-statistics-based long-term report, researched multi-artist storytelling, several editorial options, episode feedback and selective rerendering. We must test the stock plugin rather than presupposing these are missing.
+
+Provider rights remain a separate risk: Music Assistant's Apple Music playback route is not officially supported by Apple; some other sources rely on unofficial APIs. Catalog readability, commercial track playback and audio mixing rights must be independently checked.
+
+## 9. Validation and engineering decisions
+
+1. **Data PoC:** audit a consented music export, especially original plays and dates.
+2. **Intelligence PoC:** generate the report and evaluate generic versus personal-context episode plans.
+3. **Music Assistant PoC:** run the unmodified server and AI Radio, inspect actual API fields and recordings; mark reuse/adapt/build.
+4. **Experience PoC:** connect the report, show choices, comments and playback using monochrome low-fi UI. Choose a plugin, external service or other integration style only after API tests.
+
+Actual implementation status belongs to [STATUS](STATUS.md); acceptance belongs to [MVP](02-mvp-and-requirements.md). All above interfaces are proposed.

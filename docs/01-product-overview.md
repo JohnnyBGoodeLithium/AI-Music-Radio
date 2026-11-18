@@ -1,19 +1,49 @@
-# Product Overview & Personas
+# Positioning, Personas and User Journeys
 
 English | [简体中文](01-product-overview.zh-CN.md)
 
-**Value:** use daily music collections and behavioral data to discover source-backed stories connecting familiar songs to unfamiliar musical worlds. Not just “more songs like this,” not a local AI hardware demo.
+This document expands **who the listener is, why this matters and what the complete experience feels like**. Read [README](../README.md) for a standalone product definition and [Architecture](04-conceptual-architecture.md) for modules and reuse. Named recordings belong only in the [Demo](03-my-back-pages-demo.md).
 
-| Persona | Main job | Successful outcome |
-| --- | --- | --- |
-| **Music Owner / Curator** | Import and understand existing favorites, playlists, history, optional owned files | Useful Personal Music Report |
-| **Music Explorer** | Explore grounded musical connections | Meaningful explanation for discovery |
-| **Radio Listener** | Enjoy stories without choosing every track | Wants the next personalized episode |
+## Product promise
 
-**Three checkpoints:** (1) authorized metadata import including source-specific **play counts and original added dates**, without requiring audio; (2) a report about long-term versus short-term interests, artist/era relationships and uncertainty; (3) several preplanned ~15–20-minute program choices or a song/theme starting point, with modular narration, authorized playback and light comment-based changes. Optional interviews about significant songs are never mandatory onboarding. Episodes can be saved and stories continued, but complex archive/version management is not an immediate focus.
+The listener already has abundant ways to play music and discover similar tracks. What is rarer is an editor that **understands the listener's accumulated music experience** and makes new history and artist connections compelling. The product combines the emotional resonance of a personal listening report with the research and storytelling quality of a good music program—without unsupported personality labels or AI invention.
 
-**Differentiation hypothesis:** Music Assistant already has an AI DJ, Hosts, Shows, TTS and segments; test whether deeper personal reports, sourced multi-artist stories, multiple editorial ideas and user-feedback continuity add genuine value. Do not assert upstream lacks these without testing.
+It should connect existing data, make the collection and listening patterns understandable, and turn credible links into radio episodes the user can simply enjoy.
 
-**Design:** monochrome, Notion-like, mostly straight lines, content blocks, selective dashed sketch outlines. Avoid Axure controls; Qira styling deferred. [Wireframes](06-lowfi-wireframes.md).
+## Three user jobs
 
-**Boundary:** no mandatory local audio/LLM/Lenovo hardware; no general NAS, Home Assistant or household Agentic Storage. See [Architecture](04-conceptual-architecture.md). Named songs only in [Demo](03-my-back-pages-demo.md).
+| Persona | Job to be done | Typical journey | Success |
+| --- | --- | --- | --- |
+| **Music Owner / Collection Curator** | Make an existing catalog interpretable and reusable | Import authorized favorites/playlists, inspect play counts, dates and coverage | Sees real changes without rebuilding a library |
+| **Music Explorer** | Follow music relationships actively | Start from a song/artist, navigate sourced performers, works and history | Understands why each relation matters |
+| **Radio Listener** | Get a complete lean-back experience | Pick from curated topics or delegate; listen, save and comment | Wants the next editorially strong show |
+
+One person can move between all three roles. Classical guided listening, artist biographies and music-history journeys are **show formats**, not additional personas.
+
+## Connect: familiar data first
+
+Import authorized catalogs and playlist metadata, preserving original track IDs, plays, collection dates and source coverage. Show what was successfully imported and what is missing. Full per-play timelines are valuable but not prerequisites.
+
+The optional question “which song changed your musical taste?” can supplement observed behavior, but should never gate setup. Listening frequency is evidence of preference; it does not establish a subjective life-changing meaning.
+
+## Explore: cross from familiar to unfamiliar
+
+Start from recently repeated songs, long-term collection hubs, favorite musicians or a requested topic. A relationship graph is grounded in documented performances, covers, collaborations and musical history, not raw node degree alone. Source-specific listening and collection behavior helps distinguish temporary spikes from stable tastes.
+
+Explain not just *what follows*, but *why*: a shared performer, an era or stylistic transition, a credible historical link, or a new recording connected to familiar favorites. Allow inspection of provenance and correction.
+
+## Listen: a personal editorial team
+
+Offer several distinct program concepts—an unfinished thread, recent interests, an unexpected connection—or an explicitly supplied song/topic. About 15–20 minutes is a starting target, adjustable for real song durations.
+
+Plan **host sections, song slots, transitions and endings** separately. Feedback feels like a short comment to an editor; replan affected blocks and keep valid clips where possible. Episodes can be saved, and unfinished stories can inform future shows, without requiring sequential listening.
+
+## Experience principles
+
+- **Explain rather than mystify:** allow evidence to be inspected; distinguish facts from interpretations.
+- **Use behavior intelligently:** play count and date added matter, but do not prove private emotional significance.
+- **Offer editorial agency with choice:** two or three real options; no mandatory prompt every morning.
+- **Content before chat:** home shows music insights and episodes, not a full-screen chatbot.
+- **Continuity without obligation:** current interests may supersede unfinished stories; make the next episode attractive.
+
+Use [monochrome low-fi wireframes](06-lowfi-wireframes.md) to validate the information hierarchy. [MVP](02-mvp-and-requirements.md) owns first-release acceptance.

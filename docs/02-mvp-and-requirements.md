@@ -1,20 +1,39 @@
-# MVP Requirements and Acceptance
+# MVP: Verifying the Personal Music Data → Radio Loop
 
 English | [简体中文](02-mvp-and-requirements.zh-CN.md)
 
-**Goal: show that personal music data creates better insights and narrated programs.** Stable IDs: [Functions](PRODUCT_FUNCTIONS.md). Actual state: [Status](STATUS.md).
+[README](../README.md) owns the full product narrative. [Feature Inventory](PRODUCT_FUNCTIONS.md) owns stable IDs and maturity. This document defines **the experiment that proves real personal music data improves the listening experience**.
 
-1. Import authorized Apple Music Windows or other music library/playlist metadata, especially original **play count and date added**, source and missingness. Audio file optional.
-2. Preserve platform IDs, counting semantics/period, original versus imported date, matching uncertainty. Never add incompatible provider counts.
-3. Create an evidence-backed Personal Music Report: long-term interests, recent spikes, artist relationships and grounded musical history.
-4. Use a small, relevant Music Context Pack, not a raw full-library LLM prompt. Distinguish inferred patterns from verified facts.
-5. Propose at least two distinct ~15–20-minute editorial journeys, or accept a song/theme, with a plan and lawful source availability.
-6. Produce modular script/TTS/music items and demonstrate a targeted feedback/segment revision; only play tracks through permitted sources.
-7. **Test Music Assistant + AI Radio first:** catalog/queue/API, Hosts, Shows, segment rendering, personal stats and playback restrictions.
-8. Permit explicit local **or** cloud LLM/TTS; show errors, missing data and rights restrictions honestly.
+## P0 acceptance
 
-**P1:** broader platforms, optional owned songs/acoustic analysis, editorial memory, reports/graph detail, optional interviews, saved episodes, [low-fi UI](06-lowfi-wireframes.md), potential later Smart Storage. Qira requires internal design approval.
+| Order | Capability | Observable acceptance |
+| --- | --- | --- |
+| 1 | **Import real music data** | At least one consented library export with tracks, artists, albums, playlists and available original play counts/dates added |
+| 2 | **Identity and quality** | Source, missingness and count semantics shown; Work/Recording/Release/Track distinguished; imported date is not silently substituted for original added date |
+| 3 | **Personal Music Report** | At least three inspectable, source-backed findings: longer-term patterns, recent spikes and music relationships |
+| 4 | **Verified context** | Retrieve relevant catalog and sourced music-history evidence for a topic; do not invent performers, credits or historical links |
+| 5 | **Editorial options** | At least two genuinely different story outlines, song/theme entry, target ~15–20 minutes, segment plan and availability |
+| 6 | **Modular production** | Independent intro/bridges/songs/outro; rendered TTS; user-directed revision preserves unaffected assets when feasible |
+| 7 | **Real playback or transparent preview** | Play only with verified source permission; otherwise clearly label metadata-only episode plans and host previews |
+| 8 | **Music Assistant audit** | Run existing library/API, AI Radio Host/Show/Segment/queue, check actual data fields and classify reuse/adaptation/build |
+| 9 | **Configurable providers** | User-chosen local or cloud LLM/TTS and explicit outbound data/error behavior, without silent private-data transmission |
 
-**Out of scope:** general NAS/Agentic Storage, Home Assistant, 24×7 DT, mandatory local AI, DRM capture/remix or rewriting Music Assistant without a measured gap.
+## Evaluation design
 
-**Acceptance:** validate real import/count/date coverage; produce a sourced report and two episode plans; compare generic and personally grounded quality; render a modular spoken draft; verify playback entitlement; document upstream reuse vs gaps. **None passed yet.**
+**Editorial A/B test:** create the same topic using generic music knowledge and then using authentic personal catalog signals. Judge verifiable facts, real personal relevance, narrative flow and new discoveries, plus willingness to finish.
+
+**Data audit:** compare source UI and import for a sample of tracks, including Play Count, original Date Added, artist, title and album. Keep provider total counts separate from counts computed from play events. Never fill missing counts with invented zeros.
+
+**Segment audit:** ask the editor to shift from version comparison to an artist-relationship story, then observe which scripts/TTS segments changed and which were reused. Some neighboring transitions may require rerendering.
+
+**Rights audit:** separately check catalog readability, full-track playback, audio access/mixing for each provider. Provider presence or account login is not proof of each ability.
+
+## P1 after validated utility
+
+More platform imports; a richer personal music network/report; optional interviews and acoustic analysis; longer editorial memory, saved shows and fuller UI. Prioritize according to evidence.
+
+## Execution order
+
+Audit Apple Music Windows catalog data and original statistics → generate report/editorial options → test unmodified Music Assistant AI Radio → extend only demonstrated gaps. Use monochrome low-fi UI first.
+
+As of 2026-11-18 none of these tests have been passed **in this repository**. [Actual status](STATUS.md).

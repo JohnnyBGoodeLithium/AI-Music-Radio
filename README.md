@@ -2,30 +2,113 @@
 
 English | [简体中文](README.zh-CN.md)
 
-**Your Music. More to Discover.**
+**Your Music. More to Discover. — A story worth hearing behind the music you already love.**
 
-AI Music Radio uses **existing everyday music data**—playlists, favorites, play counts, original dates added, and optionally owned music—to create an evidence-backed **Personal Music Report** and personalized narrated programs. **No local audio files, home server, Lenovo DT or on-device model is mandatory.**
+AI Music Radio is a **personal music intelligence and narrated radio experience** built from the listener's everyday music data: saved songs, playlists, play counts, dates added, and optionally recordings they control. It learns the shape of an existing music world, explains verifiable relationships between artists, works and eras, then curates narrated programs that connect familiar songs to unfamiliar stories.
 
-**State: concept/docs only.** No personal import, Music Assistant integration or playable program has yet been implemented here. [Status](docs/STATUS.md).
+The premise is **not just “you like A, therefore play B.”** It is “you know A—here is a surprising, well-supported relationship to another musician, period or recording, and a story worth exploring through listening.”
 
-## Three checkpoints
+**Current state: product definition and reuse research.** No real library import, Music Assistant integration, finished episode or working UI has been validated in this repository. [Current status](docs/STATUS.md).
 
-1. **Collection:** import authorized music catalog and behavior data, with source/coverage.
-2. **Understanding:** distinguish lasting interests from recent listening spikes; connect familiar music to credible music history and explain why.
-3. **Radio:** offer a few curated ~15–20-minute story ideas or a user-selected theme. Build modular host segments plus lawfully playable song items. Let user feedback influence the next story or affected clips.
+## 1. What problem are we solving?
 
-Catalog metadata can support analysis and episode planning **without granting the rights to play or remix the original recording**.
+Streaming services are already excellent at recommending what to play next and offer daily mixes, single-track radio, mood stations and annual listening reports. However, they rarely turn the listener's accumulated music history into a coherent, inspectable, evolving story.
 
-## Reuse before reinventing
+- **Personal music data is underused.** Favorites, playlists, cumulative plays and collection dates document someone's listening life, but are mostly used to rank another track. Entertaining annual reports are often difficult to interrogate.
+- **Recommendations rarely explain why a musical relationship matters.** Someone may need more than a similar-sounding song: they may want to know who played together, how a style evolved, or what connects several artists already in their collection.
+- **Music knowledge is rarely personalized.** A skilled radio host can make an artist's story compelling but cannot know each listener's collection. A generic LLM may know music history but not where to begin for a particular person.
+- **Discovery is not the same as listening.** During a commute, drive or household task, the listener wants a well-produced journey, not another graph they must study or a playlist they must construct.
 
-[Music Assistant](https://www.music-assistant.io/) + its [AI Radio plugin](https://www.music-assistant.io/plugins/ai-radio/) already provide music catalog aggregation, player/queue, Hosts, Shows, spoken segments and TTS. These are **upstream capabilities**, not implemented by this repository. Review [server](https://github.com/music-assistant/server) and [frontend](https://github.com/music-assistant/frontend) before building duplicates.
+**Opportunity:** familiar music is the bridge to new knowledge. Let AI act as an editorial team that understands its listener, grounds its research, offers choices and continually produces engaging radio stories.
 
-**Hypothesized differences:** source-aware personal music statistics, an inspectable music report and relationship graph, sourced multi-artist storytelling, several episode choices, feedback memory and selective segment revisions. Local and cloud LLM/TTS are both supported *design options*, not validated implementations.
+## 2. One product, three checkpoints
 
-## Documents
+| Checkpoint | Value to the listener | Result |
+| --- | --- | --- |
+| **01 · Connect My Music** | Bring in an existing music world | Imported catalog, playlists, favorites and listening statistics, with source coverage |
+| **02 · Understand My Music** | Discover evidence-backed patterns and meaningful connections | **Personal Music Report**, musician/work relations, exploration paths |
+| **03 · Tell My Radio Stories** | Hear music and its context as a coherent, narrated program | Several episode proposals, modular 15–20-minute timelines, feedback and continuations |
 
-[Product](docs/01-product-overview.md) · [MVP](docs/02-mvp-and-requirements.md) · [Architecture / Music Assistant assessment](docs/04-conceptual-architecture.md) · [Functions](docs/PRODUCT_FUNCTIONS.md) · [Status](docs/STATUS.md) · [Open questions](docs/05-open-questions.md) · [Black/white wireframes](docs/06-lowfi-wireframes.md) · [Illustrative demo](docs/03-my-back-pages-demo.md) · [Index](docs/INDEX.md) · [Agent rules](AGENTS.md).
+**Checkpoint 01 — Connect.** Accept data from authorized sources such as Apple Music, Spotify, YouTube Music, NetEase Cloud Music, QQ Music, owned files or existing music libraries. An initial import may be an exported catalog, so raw audio uploads are **not a prerequisite**. Preserve track/artist/release identities, playlists, favorite status, **original Play Count and Date Added**, along with coverage and missingness. Different providers' metrics must not silently be treated as equivalent.
 
-**Scope firewall:** Home Assistant, generalized NAS/Agentic Storage, 24×7 DT and household service ecosystems are **separate long-term explorations**, not this music project. Smart Storage is an optional future integration. **UI first:** monochrome Notion-like low-fi line/block sketches with selective dashed borders; Qira styling deferred.
+**Checkpoint 02 — Understand.** The Personal Music Report should answer useful questions: Which artists and works form persistent centers of this collection? Which recently repeated songs are transient spikes rather than long-standing interests? What documented collaborations, cover relationships, genres and eras connect items the listener already knows? Which path leads naturally toward unknown music? Insights should be traceable to user data or musical evidence, with uncertainty and correction where needed—not personality astrology.
 
-No private listening data, credentials or uncleared recordings in this public repository. Commercial streaming subscriptions do not grant DRM capture/remix rights. Project license not yet selected; Music Assistant and providers retain their terms.
+**Checkpoint 03 — Tell stories.** The editor can prepare multiple ideas: continue an unfinished musical thread, explore recent listening, or follow an unexpected connection. The user may instead start from a track, artist, genre, mood or explicit question, or delegate the choice. An initial target is an adjustable **15–20-minute program**. Intro, narration chapters, transitions, song items and ending are separate modules. Feedback like “focus more on musician relationships” should re-plan relevant sections and rerender affected voice clips, not automatically reproduce the whole show. Finished programs may be saved; interesting unresolved threads can inspire future episodes.
+
+**Music metadata, music knowledge and music playback are different capabilities.** A catalog-only source can inform reports and show outlines. Commercial recordings are playable only through independently authorized sources; subscription access does not authorize capturing, cutting or remixing DRM-protected audio.
+
+## 3. An end-to-end listener journey
+
+1. **Connect once:** the listener authorizes an existing catalog or playlist export. The product displays imported tracks, observed play counts and dates added, missing fields and sources. A conversation about personally pivotal songs is optional, never required onboarding.
+2. **Discover a personal music world:** the home view shows a concise Music Report—long-term patterns, recent listening changes and grounded links. Facts and sources can be inspected.
+3. **Choose a story:** the AI prepares a few editorial choices. The listener can also create a station from a single recording, select a mood/genre, or ask for a historical introduction starting from known works.
+4. **Plan, then render:** the editor selects a narrative, evidence, track sequence, rights and duration before creating independent speech/TTS segments. Songs remain separate authorized playback items.
+5. **Listen and respond:** the player shows current music, story theme, next-track reason, play/skip/save and a simple editorial comment. Future shows may reuse unresolved threads without forcing serial listening.
+
+Three overlapping user jobs support this experience: **Music Owner (collection curator), Music Explorer (active discoverer), Radio Listener (lean-back audience)**. See [personas and journeys](docs/01-product-overview.md).
+
+## 4. Product modules and major responsibilities
+
+```mermaid
+flowchart TD
+    A["① Music Data Connectors<br/>Platforms / playlists / optional audio"] --> B["② Unified Music Library<br/>Identity / sources / playability"]
+    B --> C["③ Personal Music Intelligence<br/>Behavior / reliable music relationships"]
+    C --> D["④ Personal Music Report + Context Pack"]
+    D --> E["⑤ Editorial Planner<br/>Multiple concepts / shows / editorial memory"]
+    E --> F["⑥ Radio Production<br/>Segmented speech / BGM / music timeline"]
+    F --> G["⑦ Listening Experience<br/>Choose / play / comment / save"]
+    G -. "Feedback" .-> E
+    B --> F
+```
+
+| Module | Responsibility and output | Reuse/build direction |
+| --- | --- | --- |
+| **① Data Connectors** | Authorized source imports, original play counts, dates added and data coverage | **Build import/normalization glue**, evaluate existing exporters and connectors |
+| **② Unified Music Library** | Resolve works, recordings, releases, artists, catalog IDs and lawful playable sources | **Reuse Music Assistant** library and provider capabilities where verified |
+| **③ Music Intelligence** | Listening behavior, verified musical knowledge, explainable relations and optional acoustic analysis | **Core additional development**; reuse available metadata and acoustic services |
+| **④ Report & Context** | User-facing music insights; relevant evidence subsets for specific episodes | **Core additional development** |
+| **⑤ Editorial Planner** | Candidate shows, music/history research, duration, segments and continuity | **Core additional development**, connected to the upstream AI Radio engine |
+| **⑥ Radio Production** | Script, TTS, lawful BGM, authorized song playback, modular edits and timeline | **Reuse AI Radio, queues and model providers first**, extend only measured gaps |
+| **⑦ Experience / UI** | Collection, report, programs, playback and comments in a coherent journey | **Test independent low-fi product UI** and existing APIs before replacing frontend |
+
+These are **architectural intentions**, not shipped or verified capabilities. Details: [conceptual architecture](docs/04-conceptual-architecture.md).
+
+## 5. Reusing Music Assistant—what remains different?
+
+[Music Assistant](https://www.music-assistant.io/) is an open-source music aggregation/playback system. Its [AI Radio plugin](https://www.music-assistant.io/plugins/ai-radio/) already supplies hosts, shows, segmented voice narration and TTS. Basic AI DJ is **not** our distinctive invention.
+
+**What to reuse first:**
+
+- **Library and sources:** `controllers/music` and individual music `providers/*` for catalog, favorites, search and playlists where supported.
+- **Playback:** `controllers/player_queues` and `controllers/streams` for queue and stream behavior under lawful provider access.
+- **AI radio foundation:** `providers/ai_radio` (including `hosts.py`, `queue_dj.py`, `rendering.py`, `models.py`) for hosts, queue insertion and voice segments.
+- **Model/music features:** OpenAI-compatible LLM, TTS, Smart Playlist and optional Sonic Analysis/Similarity providers.
+- **Interface:** assess existing Web/PWA and API; create an independent UI only if it clearly improves the intended journey.
+
+**The incremental value to test is not “an AI talks between songs.”** It is (1) accurate use of original play counts, dates added and playlists; (2) evidence-backed personal music reports and multi-artist music-history storytelling; (3) several genuine program choices, continuity and comment-driven **partial revisions**. We must run and inspect upstream before assuming any of these is entirely absent.
+
+Provider support is not proof of full personal statistics, stable login, commercial redistribution rights or permission to remix tracks. Relevant sources: [Music Assistant server](https://github.com/music-assistant/server), [frontend](https://github.com/music-assistant/frontend), [AI Radio docs](https://www.music-assistant.io/plugins/ai-radio/). See the [detailed reuse audit](docs/04-conceptual-architecture.md#music-assistant-reuse-assessment).
+
+## 6. Technical principles
+
+**Where data and inference run is a configurable implementation choice.** Music data may be obtained from permitted online services or local files; text LLM and TTS can be explicitly configured locally or in the cloud. Tell the user which data leaves their device; never silently change providers or upload original recordings.
+
+**Credible facts precede exciting narration.** Same title does not imply the same recording. Artist credits, covers and historical collaborations need sources. Sonic similarity or LLM inference cannot masquerade as documented artistic influence. Make missing data and confidence visible.
+
+**Understanding is distinct from playback.** Something can be analyzed without being playable; playback access does not authorize extraction or processing of protected audio. Preserve original catalog and rights metadata.
+
+**Preproduction and partial editing matter.** Keep the show plan, individual host segments, music slots and generated assets separate. Prepare candidate stories where useful; regenerate only affected sections and adjacent transitions when practical.
+
+## 7. First proof of value
+
+**Authorized personal metadata import → source-backed Music Report → multiple personal episode plans → modular script/TTS → existing playback capability where permitted.**
+
+The first experiments must establish how complete the imported play count/date-added fields are, whether personal context improves program quality, exactly which Music Assistant functionality can be reused, and which sources can lawfully play music. Planned features remain planned until demonstrated. See [MVP acceptance](docs/02-mvp-and-requirements.md), [status](docs/STATUS.md) and [stable feature inventory](docs/PRODUCT_FUNCTIONS.md).
+
+## 8. Interface and further documents
+
+Initial UI work uses **monochrome, Notion-like low-fidelity layouts**: clean typography, mostly straight rules, blocks and restrained dashed annotations for AI drafts. [Wireframe guide](docs/06-lowfi-wireframes.md).
+
+**This README is the complete product introduction.** Consult [personas and journeys](docs/01-product-overview.md) for user scenarios; [architecture](docs/04-conceptual-architecture.md) for contracts and reuse; [MVP](docs/02-mvp-and-requirements.md) for acceptance; and the [illustrative music demo](docs/03-my-back-pages-demo.md) for one particular episode rather than general product requirements.
+
+The public repository never stores private listening histories, credentials or uncleared commercial audio. The project's own license is undecided; upstream open-source and service-provider terms apply.

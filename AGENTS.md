@@ -4,10 +4,10 @@
 
 ## 当前事实
 
-- 这是**日常音乐数据 → 有证据的个人洞察 → 故事电台**项目，尚仅概念/文档；本地音乐/模型/NAS/联想硬件均非必要条件，不能声称已有实际集成。
+- 本项目把用户已有音乐数据变成有证据的音乐洞察、Personal Music Report 与模块化故事电台；当前仍为文档/研究阶段，不能声称已完成相关代码集成。
 - 核心是获授权的收藏/歌单、原始播放次数与添加日期、可解释 Music Report 和音乐关系、多选题策展、模块化口播及合法播放；声学可选。
 - **具体歌曲、演出、发行和主持稿只出现在 Demo 专项文档**；不能写进 README、PRODUCT、ARCHITECTURE、MVP、STATUS、FUNCTIONS 或全局决策日志。
-- Music Assistant + AI Radio 为优先实测/复用候选，其 Host/Show/Segment 等上游功能不算本仓库已实现；Smart Storage 非依赖。
+- Music Assistant + AI Radio 为优先实测/复用候选；明确区分上游已有能力、项目拟议开发与实际测试通过的功能。
 - 本地和云端 TextLLM/TTS 均通过可配置 Provider 接口支持；无明确授权不得静默上云或上传私人音乐。
 
 ## 默认阅读顺序和上下文预算
@@ -31,14 +31,15 @@
 
 | 修改主题 | 唯一维护位置（更新双语） | 其他文档 |
 | --- | --- | --- |
-| 产品定位、Persona、核心旅程 | `docs/01-product-overview*.md` | README 只保留摘要和链接 |
+| 完整产品介绍（问题、价值、体验、大模块与复用概览） | `README*.md` | **README 必须独立可读**，不能压成链接摘要 |
+| Persona、深入使用场景、体验原则 | `docs/01-product-overview*.md` | README 保留完整主旅程，专项文档补充细节 |
 | MVP 需求、验收、非目标 | `docs/02-mvp-and-requirements*.md` | 不复制到功能库以外的文档 |
 | 具体歌曲、演出、时间轴和主持稿 | `docs/03-my-back-pages-demo*.md` | **不进入通用项目文档** |
-| 服务器责任、Smart Storage 评估、信息模型、分析与推荐、Provider 接口、隐私 | `docs/04-conceptual-architecture*.md` | 产品文档只简述边界 |
+| 具体模块、Music Assistant 复用、数据合同、Provider 与授权 | `docs/04-conceptual-architecture*.md` | README 用表格讲清模块责任；这里做技术深入 |
 | 跨模块未决问题与已明确约束 | `docs/05-open-questions*.md` | 不放案例详情 |
 | 当前完成度、测试边界、近期事项 | `docs/STATUS*.md` | 不把计划当成已实现 |
 | 功能清单、稳定 ID、成熟度、上线版本和 Git 证据 | `docs/PRODUCT_FUNCTIONS*.md` | **只从这里读产品具备哪些能力** |
-| 文档位置及职责 | `docs/INDEX.md` | README 只做入口 |
+| 文档位置及职责 | `docs/INDEX.md` | README 是完整介绍，不只是入口 |
 
 功能编号按四层命名（`模块.能力域.能力组.叶功能`），上线后不重排不复用。功能库“规划中”不能写成“已实现”；真实版本和 Git 证据只有在实际验证后回填。发布变化依靠 Git；不要重复写多份历史。
 
@@ -54,7 +55,7 @@
 
 - 一次完整的产品文档变更（含中英文和文档索引）应汇总为**一个原子 Commit**，禁止每文件一个 Commit；不擅自重写历史。
 - 黑白、Notion 式直线、块面及局部虚线的低保真草稿优先；不要 Axure 控件堆砌，Qira 后续再议。见 `docs/06-lowfi-wireframes*.md`。
-- Home Assistant、NAS/Agentic Storage、家庭服务及 24×7 DT 是单独长期讨论，**不得污染音乐项目的 MVP、产品功能库**。
+- 只写音乐应用确实需要的内容；与当前目标无关的背景不必专门列“排除事项”，更不能挤占产品介绍篇幅。
 
 ## 修改前、中、后
 

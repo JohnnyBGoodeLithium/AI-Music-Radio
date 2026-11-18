@@ -1,15 +1,11 @@
-# Current Status
+# Current Project Status
 
 English | [简体中文](STATUS.zh-CN.md)
 
-**2026-11-18 · Documentation/concept only.** This repository has NOT implemented or verified music imports, Personal Music Reports, Music Assistant integration, real TTS/playback or a UI. External Music Assistant features are upstream, not ours.
+**As of 2026-11-18: concept and documentation only.** This repository has not implemented a real personal music import, Music Report, editorial engine, finished TTS show, Music Assistant integration or UI. Upstream open-source capabilities are **not implemented features of this repository**.
 
-**Product:** authorized collection/playlists/play counts/original added dates → interpretable music insight → a few modular ~15–20-minute narrated programs. Local audio, local inference, hardware and Smart Storage optional.
+**Defined product journey:** connect existing personal music data → credible music understanding and report → personalized narrated radio. Original Apple Music Windows play counts and date-added fields are a priority for data validation. Music Assistant + AI Radio is a reuse-first candidate; public docs/source modules have been reviewed but the integration has **not been run or validated**.
 
-**Research completed:** source-level review of Music Assistant server/frontend and Alpha AI Radio modules; **no actual deployment/integration**. API statistic fields and playback rights unknown.
+**Next hands-on work:** (1) import and audit authorized library data; (2) produce a draft Music Report and episode options; (3) test stock Music Assistant + AI Radio; (4) use monochrome wireframes to validate report → topic → playback → feedback.
 
-**Next:** test authorized real library export and missingness; generate report; compare generic/personal story quality; test stock Music Assistant/AI Radio; sketch [monochrome UI](06-lowfi-wireframes.md). Qira deferred.
-
-**Out of scope:** Home Assistant, NAS/Agentic Storage, household services and 24×7 DT.
-
-All [functions](PRODUCT_FUNCTIONS.md) are Planned; named scripts only in [Demo](03-my-back-pages-demo.md).
+All [feature inventory](PRODUCT_FUNCTIONS.md) entries remain Planned. See the [complete README](../README.md) and [MVP acceptance](02-mvp-and-requirements.md).
