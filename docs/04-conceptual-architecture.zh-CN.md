@@ -4,28 +4,23 @@
 
 **状态：** 本文描述拟议接口和系统责任，尚无对应实现。**只有本文**维护服务器分工、模型选择、音乐信息分层与推荐逻辑。具体 Demo 歌曲不应出现在这里。
 
-## A. 音乐服务器由谁提供？
+## A. 产品与服务分离
 
-必须区分**文件存储**、**音乐目录服务**和**节目播放**，这不是同一个东西。
+先从**授权平台曲库元数据与行为数据**出发，不要求 NAS 或本地音乐文件。目录歌曲、录音身份、听歌统计与合法可播来源是不同对象。音乐知识、本地/云端 LLM/TTS 也应分别配置。
 
-| 层级 | 负责的事情 | 当前建议 |
-| --- | --- | --- |
-| 存储/家庭服务器 | 音频持久保存、备份、目录权限、文件共享 | **用户已有的** PC 目录、NAS 或存储软件 |
-| Lenovo Smart Storage | 可复用的联想存储、备份、共享基础平台 | **优先评估的候选适配器，不是已确认的 SDK 或必需依赖** |
-| 现成音乐服务器 | 选择性提供建库、音乐目录检索和播放流接口 | 满足权限/安全时优先复用；首个 Demo 不要求引入 |
-| AI Music Radio Library Adapter | 访问已授权文件/目录，统一录音身份与可播放能力 | **本项目开发**，首先支持本地目录 |
-| AI Music Radio Intelligence / Radio Engine | 理解元数据与声音，关联选歌、节目策划与主持 | **本项目核心差异化能力** |
-| Episode Player / Orchestrator | 分别调度合法歌曲、主持语音与 BGM | **本项目开发** |
-
-联想官方 Smart Storage 资料能证明其提供 PC 本地私有存储及音乐分类，但**不能据此认定已有第三方可调用的元数据 API、音频流接口或 SDK**。要先验证认证方式、文件列举/读取、格式、服务发现、权限及许可，再承诺适配。未满足时退回用户授权的本地目录或有正式接口的音乐服务器。
-
-参考：[Lenovo Smart Storage 官方说明](https://pcsupport.lenovo.com/us/en/solutions/HT518031)、[PC 客户端功能说明](https://pcsupport.lenovo.com/cm/en/solutions/ht518040-lenovo-smart-storage-client-app-features-on-pc)。
+| 职责 | 方向 |
+| --- | --- |
+| 音乐元数据/行为 | 导入授权平台数据、原始播放次数/添加日期，保留来源 |
+| 曲库/播放/基础 AI DJ | **优先验证 Music Assistant + AI Radio** |
+| 个人音乐理解 | 拟建 Personal Music Report、可信关系图谱与 Context Pack |
+| 节目编辑 | 拟增多个选题、故事线与评论后局部片段改写 |
+| Lenovo Smart Storage | 可选后续集成，无已确认音乐 API，不是依赖 |
 
 ## B. 音乐信息：身份、知识和声音
 
 ```mermaid
 flowchart TD
-  S[可播放的私人曲库] --> ID[1. 身份与元数据]
+  S[授权曲库与可选歌曲音频] --> ID[1. 身份与元数据]
   ID --> CTX[Music Context Pack]
   K[有证据的音乐知识来源] --> CTX
   S -->|有分析权限才读取音频| AF[2. 整曲声学分析]
@@ -58,20 +53,15 @@ flowchart TD
 
 这些属于**算法提取的特征**，不是音乐历史事实。“温暖”“忧郁”“吉他质感接近”只能作为听感假设，不允许推导出未经证实的创作影响关系。首版**不做歌曲内部结构定位与自动切片**。
 
-### B3. 个人音乐上下文
+### B3. 个人报告与行为字段
 
-在用户允许时利用本地真实可播放曲目、收藏、歌单、历史播放及歌曲入库日期。**发行日期 ≠ 收藏日期 ≠ 播放日期**。没有完整收听历史时，仍应能基于目录与音乐知识推荐。
+保存 `source_platform, provider_track_id, imported_at, original_date_added, play_count, count_semantics, coverage_start/end, playlist_ids, favorites, matching_confidence, playable_sources`，缺失时不能编造。**导入日期 ≠ 原始添加日期；累计播放次数 ≠ 逐次历史；不同平台次数不可直接相加。** 区分短期洗脑热点与长期收藏/音乐关系中心。
 
-## C. 如何从一首歌延伸成节目？
+**Personal Music Report** 是可解释、有证据的用户成果；**Context Pack** 只是为本期节目提取的相关证据，不是整库。两者均不要求原始音频。
 
-1. **候选召回：** 通过同一作品的不同录音、翻唱、共同演奏者、合作、年代/风格等有证据的关系，再以合法计算的声学相似性补充。**优先搜用户自己的曲库**。外部未拥有音乐只能标记为探索建议，不得伪装为本地可播放。
-2. **关联证据包：** 每个候选包含 `relation_type`、`evidence_refs`、`acoustic_observations`、`confidence`、`source_availability` 及简短的 `why_next`。
-3. **节目选曲：** 剔除不可播放或没有足够依据的候选，在关系强度、叙事对比、曲目多样性、用户熟悉程度、目标时长间做平衡。除非明确是“版本比较”主题，否则不能连续塞满同一作品的不同版本。
-4. **先策划再写稿：** 选出节目主题和歌曲顺序，定义开场、串场、完整歌曲和收尾，并根据真实歌曲时长调整。
-5. **主持词生成：** LLM 仅接收与选曲有关的可靠音乐事实、注明主观性的声学观察与当前节目方案，避免凭空编造作者意图或制作署名。
-6. **制作并播放：** 生成原创主持语音、原创/授权 BGM，通过各自合法的来源独立播放歌曲；不可假定 DRM 音频能够抽取、裁切和再混音。
+## C. 从数据到节目
 
-**关键：** 推荐结果不能只有 `track_id + score`，还要有可用于叙事的**音乐关系、证据与可播放状态**。讲述是对推荐的解释，而不是制造不存在的联系。
+从用户熟悉的音乐出发，依据真实音乐人/作品/音乐史关系准备几个选题（续讲、最近兴趣、意外关联），或接受单曲/主题。TTS 前先规划约 15–20 分钟节目；用户要音乐人关系时不能机械比较多个版本。元数据与合法播放权限分别验证。主持、音乐等按模块渲染；评论优先只调整受影响的片段/串场。记住未展开线索，但不强迫追剧。
 
 ## D. 本地/云端模型怎样支持？
 
@@ -117,10 +107,26 @@ flowchart TD
 
 分开维护源文件与原始标签、计算得到的声学特征、可信的音乐关系、选择后的节目方案、语音资产和播放视图。用户的曲库事实不应被 AI 生成内容反向覆写；AI 内容可重复生成、标记版本。
 
-## F. 路线与待验证接口
+## F. 验证顺序
 
-**首版：** 本地目录 → 文件标签与可核实的补充资料 → 少量真实可播放曲目 → 关系召回 → 节目策划/TTS/BGM → 播放器。**不是**可用于家庭部署的完整音乐服务器发行版。
+授权导入 Apple Music Windows 或其他数据 → 核对原始播放次数/添加日期 → Personal Music Report → 普通节目与个性化策展对照 → 实测**原版 Music Assistant + AI Radio** → 仅开发测出的缺口。不讨论家庭服务器。
 
-**之后：** 验证 Lenovo Smart Storage 与其他音乐服务器接口、后台索引、个人画像、安全多设备使用和本地模型性能。没有测试前不宣称已经支持任何服务器集成。
+## G. Music Assistant 复用分析（2026-11-18 源码研究）
 
-安全和费用：目录访问权限、不公开未认证的音频服务、不将私人文件及密钥提交 Git、不静默向外部上传，明确模型和数据授权，按版权边界解析真实播放来源。
+依据[服务端 dev](https://github.com/music-assistant/server/tree/dev/music_assistant)、[前端](https://github.com/music-assistant/frontend)、[AI Radio](https://www.music-assistant.io/plugins/ai-radio/)公开资料。服务端/前端 Apache-2.0，第三方音源条款和凭据/分发另审。**上游功能不等于本仓库已实现。**
+
+| 上游模块 | 已有职责 | 待验证 |
+| --- | --- | --- |
+| `controllers/music` | 曲库/数据库/收藏 | API 原始添加日期和播放次数 |
+| `controllers/player_queues`、`controllers/streams` | 音频/播放队列 | 合法播放及复用 |
+| `providers/apple_music`、`spotify`、`ytmusic`、`neteasecloudmusic`、`qqmusic` | 音源连接 | 个人数据、登录稳定性及授权 |
+| `providers/ai_radio/provider.py`、`hosts.py`、`storage.py` | Show/Host 状态 | 复用已有主持/节目基础 |
+| `providers/ai_radio/queue_dj.py`、`rendering.py`、`models.py` | 分段 DJ 音轨 | 局部修改及重生成 |
+| `providers/smart_playlist`、`sonic_analysis`、`sonic_similarity` | 歌单/声学 | 尽量复用，不当成独创 |
+| `providers/openai_compatible`、`openai_tts` | 模型/TTS | 本地/云端和授权 |
+| `frontend/src` | Vue/TypeScript UI | API 低保真独立界面 |
+
+AI Radio 仍为 **Alpha**，已经有 Host、Show、TTS、分段口播。未验证的增量：个人行为原始统计、Music Report、跨音乐人有证据的故事、多选题及评论/节目记忆，不能预先断言上游没有。
+
+[Apple Music](https://www.music-assistant.io/music-providers/apple-music/)在 Music Assistant 中的音频播放并非 Apple 官方支持；[网易云](https://www.music-assistant.io/music-providers/netease-cloud-music/)需非官方 API 服务；[QQ 音乐](https://www.music-assistant.io/music-providers/qqmusic/)也需另审授权。导入元数据不等于可抓取/混音 DRM 音频。
+

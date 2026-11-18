@@ -4,28 +4,23 @@ English | [简体中文](04-conceptual-architecture.zh-CN.md)
 
 **Status:** proposed contracts, not implemented. This document alone owns system-layer definitions, model-provider selection, music-information processing and recommendation logic. No named demo track belongs here.
 
-## A. Who provides the music server?
+## A. Product/service separation
 
-Distinguish **storage**, **music catalog access**, and **radio playback**. They are not the same component.
+Start from **authorized platform/library metadata and behavioral data**, not a mandatory NAS or local music file. Playlist/catalog entry, recording identity, user listening statistics and licensed playable source are distinct. Music knowledge and local/cloud LLM/TTS are separately configurable.
 
-| Layer | Responsibility | Proposal |
-| --- | --- | --- |
-| Storage / home server | Persist audio, backup, folder rights and sharing | **User-controlled** PC folder, NAS or existing storage platform |
-| Lenovo Smart Storage | Possible Lenovo-branded storage/backup/sharing substrate | **Candidate adapter, not a required dependency or confirmed SDK** |
-| Existing music-server software | Optional index/stream API on top of stored files | Reuse if it meets rights/security requirements; not required for the first demo |
-| AI Music Radio Library Adapter | Read authorized files/catalog entries; normalize identifiers, capabilities and URLs | **Our component**, starts with local folders |
-| AI Music Radio Intelligence & Radio Engine | Understand metadata/audio, select music, write and voice radio episodes | **Our differentiated component** |
-| Episode Player / Orchestrator | Schedule permitted music sources, speech and BGM | **Our component** |
-
-Official Lenovo Smart Storage documentation establishes PC-backed private storage and music categorization, but does not itself establish a supported third-party metadata API, stream endpoint, or SDK. Evaluate authenticated read/list access, file handles, format support, server discovery, permissions and terms **before** promising an adapter. If unavailable, use a user-authorized local folder or independently supported media server.
-
-References: [Lenovo Smart Storage overview](https://pcsupport.lenovo.com/us/en/solutions/HT518031) and [client app functions](https://pcsupport.lenovo.com/cm/en/solutions/ht518040-lenovo-smart-storage-client-app-features-on-pc).
+| Responsibility | Proposal |
+| --- | --- |
+| Music metadata/behavior | Import authorized platform data, original play counts/added dates, preserve source |
+| Catalog/player/AI DJ | **Music Assistant + AI Radio as first reuse candidate** |
+| Personal music intelligence | Proposed Personal Music Report, verifiable music relation graph/Context Pack |
+| Editorial producer | Proposed multiple show concepts, storytelling and feedback-driven segment edits |
+| Lenovo Smart Storage | Optional integration later; no confirmed music API, no dependency |
 
 ## B. Music information model: identity, knowledge, sound
 
 ```mermaid
 flowchart TD
-  S[Playable Local Music Library] --> ID[1. Identity & metadata]
+  S[Authorized catalog plus optional song audio] --> ID[1. Identity & metadata]
   ID --> CTX[Music Context Pack]
   K[Verified Music Sources] --> CTX
   S -->|Only when permitted| AF[2. Whole-track acoustic analysis]
@@ -58,20 +53,15 @@ For **lawfully analyzable local audio**, an optional analyzer may calculate whol
 
 These are **computed features**, not historical facts. Descriptive labels such as “warm,” “melancholic,” or “similar guitar texture” are hypotheses; don't convert them into undocumented influence claims. First version does **not** require identifying or cutting within-song segments.
 
-### B3. Personal context
+### B3. Personal Music Report and behavior fields
 
-With explicit permission: locally available playable recordings, favorites, playlist membership, recently/heavily played and collection timestamps. Collection-added date ≠ release date ≠ listening date. Missing listening history must not prevent catalog-driven recommendations.
+Store `source_platform, provider_track_id, imported_at, original_date_added, play_count, count_semantics, coverage_start/end, playlist_ids, favorites, matching_confidence, playable_sources` with unknown values marked. **Import date ≠ original added date; cumulative play count ≠ per-play history; counts from different sources are not automatically comparable.** Distinguish temporary listening spikes from durable collection centers.
 
-## C. From a seed to a narrated music journey
+A **Personal Music Report** is an inspectable, evidence-based output; a **Music Context Pack** is the relevant slice supplied to one episode, not an entire library. Neither requires original audio.
 
-1. **Candidate retrieval:** expand verified same-work recordings, covers, shared performers/collaborators, era/style links; supplement with acoustic similarity where permitted. Search **owned playable library first**. External items are separately flagged as discovery suggestions and cannot masquerade as locally playable.
-2. **Evidence bundle:** each candidate carries `relation_type`, `evidence_refs`, `acoustic_observations`, `confidence`, `source_availability` and a short `why_next` hypothesis.
-3. **Editorial selection:** reject unavailable or unsubstantiated candidates; balance relation strength, narrative contrast, diversity, personal familiarity and target duration. Avoid endless versions of the same composition unless it is the chosen editorial theme.
-4. **Show plan:** choose theme and sequence **before** scriptwriting; create introduction, host bridges, complete recording slots and ending. Adapt runtime to actual full-track lengths.
-5. **Grounded narration:** the LLM receives only relevant cited facts, identified listening observations and the selected sequence. It must not invent artistic intent or producer credits.
-6. **Audio production + playback:** render original host speech and licensed/original BGM separately; schedule lawful recordings using their real playable source capabilities. Never assume protected stream PCM can be captured, trimmed or remixed.
+## C. From data to episode
 
-**Crucial separation:** recommendation produces not merely `track_id + score`, but a *narratable relation* with evidence and availability. The narrative is an output of selection, not a license to fabricate links.
+Find familiar user music and credible artist/work/history connections. Offer several show directions (ongoing theme, recent interest, surprising links), or user-defined seed. Plan an adjustable ~15–20-minute narrative before TTS; prioritize musician relationships if requested, not mechanically alternate versions of a song. Metadata availability and playable rights must be checked separately. Render modular host/music items; a comment should selectively update affected segments and bridges. Remember unfinished routes without forcing sequential listening.
 
 ## D. Local and cloud model provider boundary
 
@@ -117,10 +107,26 @@ Use replaceable interfaces, not hardcoded model names:
 
 Separate raw source metadata, computed features, evidence graph, selected editorial plan, host assets and playback projection. The library remains canonical for what the user has; AI-produced descriptions are revisioned, replaceable derivatives.
 
-## F. MVP sequencing and unresolved integration
+## F. Validation sequence
 
-**First demo:** local directory → file tags and curated verified metadata → a small catalog of actual playable tracks → simple relation retrieval → plan/TTS/BGM → player. This is not a home-server product release.
+Authorized Apple Music Windows or equivalent export → audit original play count/date-added → Personal Music Report → compare generic vs personal episode planning → run **stock Music Assistant + AI Radio** → implement only measured gaps. No household-server scope.
 
-**Next:** validate Smart Storage and music-server interfaces, background indexing, user profile, secure multi-device playback, local-model performance. No production server integration is claimed until validated.
+## G. Music Assistant reuse assessment (source review 2026-11-18)
 
-Security and cost: path permissions, no public unauthenticated media endpoint, no secret/track uploads to Git, no silent external upload, explicit model/data permissions, rights-aware source resolution.
+Sources: [server/dev](https://github.com/music-assistant/server/tree/dev/music_assistant), [frontend](https://github.com/music-assistant/frontend), [AI Radio](https://www.music-assistant.io/plugins/ai-radio/). Server/frontend Apache-2.0; third-party service terms, credentials and distribution need separate review. **Upstream ≠ integrated in our repo.**
+
+| Code module | Existing responsibility | Test |
+| --- | --- | --- |
+| `controllers/music` | Library/database/favorites | API exposure of original added dates, play counts |
+| `controllers/player_queues`, `controllers/streams` | Audio and queue | Licensed playback and reuse |
+| `providers/apple_music`, `spotify`, `ytmusic`, `neteasecloudmusic`, `qqmusic` | Sources | Real account metadata, login stability and playback rights |
+| `providers/ai_radio/provider.py`, `hosts.py`, `storage.py` | Show/Host state | Reuse hosting/show foundation |
+| `providers/ai_radio/queue_dj.py`, `rendering.py`, `models.py` | DJ clips/segments | Partial editing/regeneration |
+| `providers/smart_playlist`, `sonic_analysis`, `sonic_similarity` | Playlists/acoustic insight | Reuse rather than claiming novelty |
+| `providers/openai_compatible`, `openai_tts` | LLM/TTS | Local/cloud with consent |
+| `frontend/src` | Vue/TypeScript UI | API-based independent low-fi interface |
+
+AI Radio is **Alpha** and already offers Hosts, Shows, segmented DJ narration and TTS. Unknown until real testing: personal statistics import, long-term reports, grounded multi-artist storytelling, candidate-program curation and listener feedback history.
+
+[Apple Music integration](https://www.music-assistant.io/music-providers/apple-music/) audio playback is not officially supported by Apple; [NetEase](https://www.music-assistant.io/music-providers/netease-cloud-music/) needs an unofficial API service; [QQ Music](https://www.music-assistant.io/music-providers/qqmusic/) likewise needs rights review. Data access is not DRM capture/remix authorization.
+

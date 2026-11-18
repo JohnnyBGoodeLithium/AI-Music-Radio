@@ -13,6 +13,7 @@ The repository separates **product contracts, actual implementation state, capab
 | Music/server/model architecture / 音乐与服务器架构 | [ARCHITECTURE](04-conceptual-architecture.md) | [架构](04-conceptual-architecture.zh-CN.md) |
 | **Stable function library / 稳定功能库** | [PRODUCT FUNCTIONS](PRODUCT_FUNCTIONS.md) | [产品功能库](PRODUCT_FUNCTIONS.zh-CN.md) |
 | Decisions, dependencies / 待决策问题 | [QUESTIONS](05-open-questions.md) | [待决策](05-open-questions.zh-CN.md) |
+| Low-fi UI / 黑白草稿 | [Wireframes](06-lowfi-wireframes.md) | [线框](06-lowfi-wireframes.zh-CN.md) |
 | **Illustrative episode only / 单独节目示例** | [Demo](03-my-back-pages-demo.md) | [Demo 中文](03-my-back-pages-demo.zh-CN.md) |
 
 [AGENTS.md](../AGENTS.md) defines editing, safety, evidence and dual-language update rules.

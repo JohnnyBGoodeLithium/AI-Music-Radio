@@ -25,7 +25,7 @@ English | [简体中文](PRODUCT_FUNCTIONS.zh-CN.md)
 
 | ID | Feature | Contract / boundary | First release | Last major enhancement | Key Git | Priority | Maturity |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1.1.1.1 | Local folder adapter | Index user-authorized complete audio files without building backup/NAS services. | — | — | — | P0 | Planned |
+| 1.1.1.1 | Local folder adapter | Optional audio files, not required for metadata import. | — | — | — | P1 | Planned |
 | 1.1.1.2 | Lenovo Smart Storage adapter | Integrate only after authenticated list/read/play interfaces and permissions are confirmed. | — | — | — | P1 | Planned |
 | 1.1.1.3 | External music-server adapter | Optional supported media-server catalog/stream adapters; not required for first demo. | — | — | — | P1 | Planned |
 | 1.2.1.1 | File tags & identity gate | Read tags; establish recording identity, or return a clear unknown-metadata error. | — | — | — | P0 | Planned |
@@ -33,9 +33,9 @@ English | [简体中文](PRODUCT_FUNCTIONS.zh-CN.md)
 | 1.2.1.3 | Source resolver | Resolve available authorized local playback and explicit unsupported-source states. | — | — | — | P0 | Planned |
 | 2.1.1.1 | Source-backed music knowledge | Enrich metadata/relationships with provenance and uncertainty, never guessed intent. | — | — | — | P0 | Planned |
 | 2.1.1.2 | Whole-track acoustic features | Optional lawful tempo/rhythm/timbre/harmonic summaries and embeddings, no passage detection. | — | — | — | P1 | Planned |
-| 2.1.1.3 | Personal music profile | Permissioned favorites, playlists and play history; distinguish collected/released/played dates. | — | — | — | P1 | Planned |
+| 2.1.1.3 | Personal music profile | Authorized favorites, playlists, play count, original date added and source coverage. | — | — | — | P0 | Planned |
 | 2.1.1.4 | Music Context Pack | Combine verified identities, research, acoustic evidence, personal context and playability. | — | — | — | P0 | Planned |
-| 3.1.1.1 | Library-first candidate retrieval | Find candidates inside owned playable library before external discovery suggestions. | — | — | — | P0 | Planned |
+| 3.1.1.1 | Familiar-music-first retrieval | Start with familiar songs and expand with source/rights checks. | — | — | — | P0 | Planned |
 | 3.1.1.2 | Narratable why-next relations | Each candidate carries typed relation, evidence, confidence and editorial explanation. | — | — | — | P0 | Planned |
 | 3.1.1.3 | Editorial episode planner | Select theme, track order, transitions and duration based on actual playable sources. | — | — | — | P0 | Planned |
 | 3.1.1.4 | Grounded narration scripts | Write intro, transitions and outro from cited facts; keep observations subjective. | — | — | — | P0 | Planned |
@@ -47,6 +47,14 @@ English | [简体中文](PRODUCT_FUNCTIONS.zh-CN.md)
 | 5.1.1.2 | Recommendation explanation | Show why each next recording belongs, with a link back to evidence where practical. | — | — | — | P0 | Planned |
 | 5.1.1.3 | Save & branch | Save program and start a new journey from a related recording. | — | — | — | P1 | Planned |
 | 5.2.1.1 | Honest errors and recovery | Distinguish metadata, missing source, rights and provider errors; no fabricated completion. | — | — | — | P0 | Planned |
+
+| 1.1.1.4 | Music catalog metadata import | Import authorized platforms/playlists without audio. | — | — | — | P0 | Planned |
+| 1.2.1.4 | Playback-stat provenance | Original play count, date added, coverage and platform identity. | — | — | — | P0 | Planned |
+| 2.1.1.5 | Personal Music Report | Evidence-based listening and music-relationship insights. | — | — | — | P0 | Planned |
+| 3.1.1.5 | Multiple story choices | Prepare distinct episode concepts and user-driven entry. | — | — | — | P1 | Planned |
+| 3.1.1.6 | Modular editing | Re-render changed segments and adjacent narration only. | — | — | — | P1 | Planned |
+| 3.1.1.7 | Editorial memory | Remember comments and unfinished story links. | — | — | — | P1 | Planned |
+| 5.1.1.4 | Monochrome low-fi UI | Notion-style wireframe; Qira deferred. | — | — | — | P1 | Planned |
 
 ## Updating the inventory
 

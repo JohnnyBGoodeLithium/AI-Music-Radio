@@ -10,7 +10,11 @@ English | [简体中文](03-my-back-pages-demo.zh-CN.md)
 
 **Status:** Proposed episode. The media assets, player and TTS have not been made yet.
 
-## Editorial idea
+## Revised editorial preference (2026-11-18)
+
+The version-comparison plan below is an **alternative**, not the user's preferred storyline. A more relevant episode would follow **relationships among the performers and their other tracks already familiar to the listener**, then branch into future stories. A comment requesting artist relationships instead of versions should update affected program blocks and neighboring transitions, not force the entire show to regenerate. Library metadata can inform planning without local audio; licensed playback is separate.
+
+## Editorial idea (alternative: version comparison)
 
 An anniversary concert brings six different voices to the same composition. Why does a song written in 1964 still speak through musicians from multiple generations in 1992? Track the musical transformation in reverse chronology: an ensemble collaboration → Dylan's solitary original → The Byrds' folk-rock interpretation.
 

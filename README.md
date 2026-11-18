@@ -2,63 +2,30 @@
 
 English | [简体中文](README.zh-CN.md)
 
-**Own Your Music. Discover Its Stories.**
+**Your Music. More to Discover.**
 
-AI Music Radio is a **local-first, AI-powered music radio experience** built around the music a user already owns. A music server or storage backend keeps recordings accessible; a separate intelligence layer understands the collection and produces coherent, narrated programs with explainable music transitions.
+AI Music Radio uses **existing everyday music data**—playlists, favorites, play counts, original dates added, and optionally owned music—to create an evidence-backed **Personal Music Report** and personalized narrated programs. **No local audio files, home server, Lenovo DT or on-device model is mandatory.**
 
-**Status: concept / documentation only.** No server integration, analysis engine, audio generator, or player has been built or verified. See [Status](docs/STATUS.md).
+**State: concept/docs only.** No personal import, Music Assistant integration or playable program has yet been implemented here. [Status](docs/STATUS.md).
 
-## What problem does it solve?
+## Three checkpoints
 
-- **Ownership:** keep a durable library of lawfully acquired files without depending on recurring streaming subscriptions or shifting catalogs.
-- **Discovery:** turn existing collections into paths through related and unfamiliar music, with understandable reasons.
-- **Listening:** enjoy a lean-back, editorially paced radio experience instead of managing every track or searching for background information.
+1. **Collection:** import authorized music catalog and behavior data, with source/coverage.
+2. **Understanding:** distinguish lasting interests from recent listening spikes; connect familiar music to credible music history and explain why.
+3. **Radio:** offer a few curated ~15–20-minute story ideas or a user-selected theme. Build modular host segments plus lawfully playable song items. Let user feedback influence the next story or affected clips.
 
-These are distinct user jobs, not three music genres. See [Product & personas](docs/01-product-overview.md).
+Catalog metadata can support analysis and episode planning **without granting the rights to play or remix the original recording**.
 
-## One-click experience
+## Reuse before reinventing
 
-**Choose an identified complete recording → Understand its context → Find playable connections in the user's library → Plan the show → Generate host speech + BGM → Play a radio timeline.**
+[Music Assistant](https://www.music-assistant.io/) + its [AI Radio plugin](https://www.music-assistant.io/plugins/ai-radio/) already provide music catalog aggregation, player/queue, Hosts, Shows, spoken segments and TTS. These are **upstream capabilities**, not implemented by this repository. Review [server](https://github.com/music-assistant/server) and [frontend](https://github.com/music-assistant/frontend) before building duplicates.
 
-The engine analyzes two complementary information layers:
+**Hypothesized differences:** source-aware personal music statistics, an inspectable music report and relationship graph, sourced multi-artist storytelling, several episode choices, feedback memory and selective segment revisions. Local and cloud LLM/TTS are both supported *design options*, not validated implementations.
 
-- **Music metadata and knowledge:** artist, work, recording, release, version, credits, time and sourced relationships.
-- **Audio features (when permitted):** whole-track tempo, rhythm, timbre, energy, texture, harmonic descriptors and embeddings. These are estimates, not documented artist intentions.
+## Documents
 
-It then retrieves candidates from the **user's own library first**, explains why each follows the previous track, and assembles an episode. Optional external discovery can be added where authorized.
+[Product](docs/01-product-overview.md) · [MVP](docs/02-mvp-and-requirements.md) · [Architecture / Music Assistant assessment](docs/04-conceptual-architecture.md) · [Functions](docs/PRODUCT_FUNCTIONS.md) · [Status](docs/STATUS.md) · [Open questions](docs/05-open-questions.md) · [Black/white wireframes](docs/06-lowfi-wireframes.md) · [Illustrative demo](docs/03-my-back-pages-demo.md) · [Index](docs/INDEX.md) · [Agent rules](AGENTS.md).
 
-## System boundaries
+**Scope firewall:** Home Assistant, generalized NAS/Agentic Storage, 24×7 DT and household service ecosystems are **separate long-term explorations**, not this music project. Smart Storage is an optional future integration. **UI first:** monochrome Notion-like low-fi line/block sketches with selective dashed borders; Qira styling deferred.
 
-| Responsibility | Proposed owner |
-| --- | --- |
-| File storage, backup, sharing, access rights | Existing user infrastructure: local folders, NAS or a storage platform; **Lenovo Smart Storage is a preferred integration candidate, not a confirmed dependency** |
-| Music-specific index, identity, enriched context, search | **AI Music Radio** library/intelligence layer |
-| Editorial planning and narration | **AI Music Radio**, using configurable text-LLM and TTS providers |
-| AI inference runtime | **Local or cloud**, explicitly selected/configured; no silent transfer of private files |
-| Audio playback and episode timeline | **AI Music Radio player/orchestrator** atop permitted local/server/streaming sources |
-
-Lenovo's public Smart Storage documentation establishes local PC-backed file storage and music categorization, **not yet a verified third-party music streaming/metadata API**. Implementation depends on capability and interface validation; local-folder integration is the MVP fallback.
-
-Read the [architecture and provider boundaries](docs/04-conceptual-architecture.md).
-
-## Project documentation
-
-The [Documentation Index](docs/INDEX.md) identifies one canonical responsibility per document. English/Chinese pairs are updated together.
-
-- [Product & personas](docs/01-product-overview.md) — who, why, and product boundaries.
-- [MVP requirements](docs/02-mvp-and-requirements.md) — scope and acceptance criteria.
-- [Architecture](docs/04-conceptual-architecture.md) — server adapters, metadata + audio understanding, recommendation and model providers.
-- [Product function inventory](docs/PRODUCT_FUNCTIONS.md) — stable capability IDs, priorities, maturity and validation evidence.
-- [Current status](docs/STATUS.md) — what is actually implemented.
-- [Decisions and unknowns](docs/05-open-questions.md) — unresolved dependencies.
-- [Illustrative radio demo](docs/03-my-back-pages-demo.md) — **a case study only**, not the product definition.
-
-[Repository rules](AGENTS.md) govern editing and evidence.
-
-## Product boundaries
-
-The initial input is **one identified complete recording/file**. Missing essential music identity can produce a visible error. Within-track passage detection, mandatory fingerprint recovery and blanket genre coverage are out of scope. Music playback remains separately authorized from generated TTS/BGM; access to DRM streams is not assumed. Owning files avoids streaming subscription requirements for those files but does not eliminate hardware, maintenance or AI-service costs.
-
-## License
-
-No open-source license has been selected. No privately owned recordings, user histories or unlicensed music assets belong in this public repository.
+No private listening data, credentials or uncleared recordings in this public repository. Commercial streaming subscriptions do not grant DRM capture/remix rights. Project license not yet selected; Music Assistant and providers retain their terms.

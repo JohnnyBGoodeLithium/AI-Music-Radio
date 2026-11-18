@@ -2,63 +2,30 @@
 
 [English](README.md) | 简体中文
 
-**Own Your Music. Discover Its Stories.**
+**Your Music. More to Discover.**
 
-AI Music Radio 是一个以用户已有音乐收藏为中心、**本地优先的 AI 音乐电台体验**。已有的音乐服务器或存储平台保证音乐可访问；独立的音乐理解与节目制作层负责解读曲库、寻找有依据的关联，并生成有主持人、有叙事、有音乐衔接的节目。
+AI Music Radio 利用已有的**日常音乐数据**——收藏、歌单、播放次数、原始添加日期及可选的自有音频——生成有依据的 **Personal Music Report** 和个人故事电台。**不要求本地音乐文件、家庭服务器、联想台式机或本地大模型。**
 
-**当前状态：仅完成概念及文档**。尚未构建或验证音乐服务器集成、音乐分析引擎、音频生成和播放器。详见[项目状态](docs/STATUS.zh-CN.md)。
+**当前仅有概念和文档。** 本仓库尚未完成真实导入、Music Assistant 集成或可播放节目。[状态](docs/STATUS.zh-CN.md)。
 
-## 要解决什么问题？
+## 三个 Checkpoint
 
-- **拥有音乐：** 合法取得的本地文件长期保存，不受持续流媒体订阅与曲库版权变动的直接限制。
-- **探索音乐：** 将既有收藏组织成通向相关作品和陌生音乐的路径，说明推荐原因。
-- **聆听节目：** 获得自然、连续、有编辑质量的电台节目，不必逐首选歌或边听边搜索背景资料。
+1. **连接：** 导入获授权的曲库、歌单、行为统计，记录来源和覆盖范围。
+2. **理解：** 区分长期审美与近期洗脑循环，从熟悉的音乐延伸到可靠音乐史，并解释为什么。
+3. **节目：** AI 准备几个约 15–20 分钟的策展主题，也可以指定歌曲。主持稿/TTS 与合法歌曲模块化编排；评论影响后续节目或相关段落。
 
-这是三种不同的用户任务，不是按流派划分。详见[产品定义与 Persona](docs/01-product-overview.zh-CN.md)。
+**曲库元数据可以用于报告和策划，但不等于有播放或重混原始录音的许可。**
 
-## 一键生成电台
+## 优先复用
 
-**选择一首身份明确的完整录音 → 理解上下文 → 从个人曲库寻找可播放的关联 → 策划节目 → 生成 TTS/BGM → 按时间轴播放。**
+[Music Assistant](https://www.music-assistant.io/) + [AI Radio](https://www.music-assistant.io/plugins/ai-radio/) 已有多来源曲库、播放队列、Host/Show、分段口播及 TTS。这些是**上游能力，不是本仓库成果**。先看[服务端](https://github.com/music-assistant/server)、[前端](https://github.com/music-assistant/frontend)，不要重造基础播放器。
 
-音乐理解结合两类信息：
+**待验证的区别：** 用户原始行为数据、可解释音乐报告和关系图谱、跨音乐人的可信故事、多候选选题、编辑反馈与局部修改。LLM/TTS 可以选本地或云端，必须有明确数据授权。
 
-- **元数据与音乐知识：** 音乐人、作品、录音、发行、版本、参与者、年代和有来源的关系。
-- **音频特征（具备权限时）：** 整曲节奏、速度、音色、能量、声音织体、和声描述与 Embedding。它们是算法估计，不等于已证实的创作者意图。
+## 文档
 
-引擎**优先从用户自己的曲库中找歌**，解释前后两首为何衔接，再编排节目；具备授权时可扩展到外部发现。
+[产品](docs/01-product-overview.zh-CN.md) · [MVP](docs/02-mvp-and-requirements.zh-CN.md) · [架构/Music Assistant 评估](docs/04-conceptual-architecture.zh-CN.md) · [功能库](docs/PRODUCT_FUNCTIONS.zh-CN.md) · [状态](docs/STATUS.zh-CN.md) · [待决策](docs/05-open-questions.zh-CN.md) · [黑白线框](docs/06-lowfi-wireframes.zh-CN.md) · [独立 Demo](docs/03-my-back-pages-demo.zh-CN.md) · [导航](docs/INDEX.md) · [Agent 规则](AGENTS.md)。
 
-## 谁提供什么？
+**范围防火墙：** Home Assistant、通用 NAS/Agentic Storage、24×7 DT、家庭服务属于**独立长期讨论**，不写进音乐项目。Smart Storage 仅是可选未来适配。**UI 先做**黑白、Notion 式直线/块面与局部虚线草稿，Qira 风格往后再说。
 
-| 职责 | 初步责任边界 |
-| --- | --- |
-| 音频文件存储、备份、共享、权限 | 用户已有本地目录、NAS 或存储平台；**Lenovo Smart Storage 是优先评估的集成候选，不是既定依赖** |
-| 音乐专项索引、身份关联、元数据丰富、搜索 | **AI Music Radio** 的曲库/理解层 |
-| 节目策划、主持脚本及音频制作 | **AI Music Radio**，调用可配置 LLM 和 TTS |
-| AI 推理环境 | **本地或云端**，由用户明确配置；不得静默上传私人曲库文件 |
-| 音乐播放和节目时间轴 | **AI Music Radio** 的播放器/编排层，利用具有真实播放权限的来源 |
-
-联想公开的 Smart Storage 文档可以确认其基于 PC 的本地存储和音乐分类能力，**但不能证明已经有可供第三方使用的音乐播放/元数据接口**。因此应先做接口验证；MVP 使用本地目录接入作为备用路径。
-
-详情见[架构与 Provider 边界](docs/04-conceptual-architecture.zh-CN.md)。
-
-## 文档入口
-
-以[文档导航](docs/INDEX.md)为准，每个主题有唯一的权威位置，中文与英文同期更新。
-
-- [产品定位与 Persona](docs/01-product-overview.zh-CN.md)：为谁服务、解决什么问题。
-- [MVP 需求](docs/02-mvp-and-requirements.zh-CN.md)：首版范围、验收条件。
-- [系统架构](docs/04-conceptual-architecture.zh-CN.md)：音乐服务器、元数据+声学信息、推荐、LLM/TTS。
-- [产品功能库](docs/PRODUCT_FUNCTIONS.zh-CN.md)：稳定编号、优先级、成熟度与验证证据。
-- [当前状态](docs/STATUS.zh-CN.md)：哪些真正实现了。
-- [待决策问题](docs/05-open-questions.zh-CN.md)：尚未确认的技术与产品依赖。
-- [电台示例](docs/03-my-back-pages-demo.zh-CN.md)：**仅是示范方案**，不属于项目定义。
-
-[AGENTS.md](AGENTS.md) 规定仓库贡献和证据纪律。
-
-## 明确边界
-
-首版输入为**一首身份明确的完整录音文件**；缺少必要身份信息允许报错。不强制指纹识别、整曲内部段落切分或覆盖所有音乐类别。歌曲与原创 TTS/BGM 分别管理，不假定获得 DRM 音乐的抓取与再混音许可。拥有本地音乐不等于零硬件、维护或模型费用。
-
-## 许可证
-
-尚未选定开源许可。公开仓库不保存私人音乐文件、个人收听历史或未授权的商业音频素材。
+公开仓库不存私人听歌记录、凭据或无授权音频。订阅不意味着可以抓取/混音 DRM 音轨。项目许可证未定，上游及 Provider 各自遵守其条款。
