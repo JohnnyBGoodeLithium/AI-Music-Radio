@@ -1,5 +1,5 @@
-# Demo 001 — Superseded / 已替换
+# Superseded Demo Path / 历史示例路径
 
-English: The original Radiohead seed has been superseded by the **1992 Bob Dylan 30th Anniversary Concert performance of *My Back Pages***. This path is retained to avoid breaking earlier links. The current canonical brief is [Six Voices, One Song](03-my-back-pages-demo.md).
+English: This is a compatibility pointer retained for old inbound links. It is **not** a second active specification and has no independent editorial or project requirements. See the [current illustrative demo](03-my-back-pages-demo.md) and [documentation index](INDEX.md).
 
-中文：之前的 Radiohead 种子方案已更换为 **1992 年 Bob Dylan 录音生涯 30 周年纪念演唱会《My Back Pages》现场合唱版**。为避免旧链接失效，保留本页作为迁移说明。现行权威设计见[《一首歌，六种声音》](03-my-back-pages-demo.zh-CN.md)。
+中文：为兼容旧链接而保留此页。它**不是**第二份有效项目规格，也不独立维护节目内容或产品需求。请阅读[当前演示方案](03-my-back-pages-demo.zh-CN.md)及[文档导航](INDEX.md)。
