@@ -4,74 +4,61 @@ English | [简体中文](README.zh-CN.md)
 
 **Own Your Music. Discover Its Stories.**
 
-> A local-first personal music server paired with an AI radio producer that tells the stories behind the recordings you choose.
+AI Music Radio is a **local-first, AI-powered music radio experience** built around the music a user already owns. A music server or storage backend keeps recordings accessible; a separate intelligence layer understands the collection and produces coherent, narrated programs with explainable music transitions.
 
-**Maturity:** Concept and documentation only as of 2026-11-18. No working music server, player or audio generation has been built in this repository. See [Current Status](docs/STATUS.md).
+**Status: concept / documentation only.** No server integration, analysis engine, audio generator, or player has been built or verified. See [Status](docs/STATUS.md).
 
-## Why
+## What problem does it solve?
 
-Cloud streaming offers convenience but brings recurring subscriptions, shifting catalogs and fragmented personal collections. Listeners who own legally acquired music deserve a stable private library that remains useful without renting access indefinitely.
+- **Ownership:** keep a durable library of lawfully acquired files without depending on recurring streaming subscriptions or shifting catalogs.
+- **Discovery:** turn existing collections into paths through related and unfamiliar music, with understandable reasons.
+- **Listening:** enjoy a lean-back, editorially paced radio experience instead of managing every track or searching for background information.
 
-Traditional personal music servers preserve files and enable playback. **AI Music Radio adds intelligent, evidence-grounded music exploration**: select one identified complete recording, research it, choose meaningful musical connections, and generate a narrated episode with natural TTS, original/licensed BGM and authorized music playback.
-
-Local-first does not mean every AI feature is free or offline. Hardware, maintenance and optional model services can still cost money.
-
-## Three personas
-
-- **Music Owner:** owns a long-lived local collection and wants durable, cross-device access independent of ongoing streaming subscriptions.
-- **Music Explorer:** wants music recommendations with *explainable connections*, spanning their existing library and new discoveries.
-- **Deep Listener:** enjoys musical history, performance context, arrangements and a listening experience with thoughtful commentary.
-
-[Product positioning and three personas](docs/01-product-overview.md)
+These are distinct user jobs, not three music genres. See [Product & personas](docs/01-product-overview.md).
 
 ## One-click experience
 
-**Pick a recording → Validate metadata → Research its story → Curate related recordings → Generate narration → Listen and discover.**
+**Choose an identified complete recording → Understand its context → Find playable connections in the user's library → Plan the show → Generate host speech + BGM → Play a radio timeline.**
 
-One full track/file is the input unit, even when it is part of a larger composition. Unknown essential metadata may return a clear error in v0; no automatic fingerprint recovery or sub-track passage analysis is required.
+The engine analyzes two complementary information layers:
 
-## Showcase: Six Voices, One Song
+- **Music metadata and knowledge:** artist, work, recording, release, version, credits, time and sourced relationships.
+- **Audio features (when permitted):** whole-track tempo, rhythm, timbre, energy, texture, harmonic descriptors and embeddings. These are estimates, not documented artist intentions.
 
-**Seed:** the six-artist performance of **Bob Dylan's “My Back Pages”** at the *30th Anniversary Concert Celebration* on **October 16, 1992**, Madison Square Garden. It marked Dylan's 30 years as a recording artist, **not his 20th anniversary**.
+It then retrieves candidates from the **user's own library first**, explains why each follows the previous track, and assembles an episode. Optional external discovery can be added where authorized.
 
-The proposed ~15-minute program moves from the **1992 concert recording** back to Dylan's **1964 original** (*Another Side of Bob Dylan*) and The Byrds' **1967 interpretation** (*Younger Than Yesterday*). From there, the music relation graph can branch into Roger McGuinn/The Byrds, Tom Petty, Neil Young, Eric Clapton, George Harrison and Dylan's broader work.
+## System boundaries
 
-This illustrates **one composition, multiple recordings, many musical histories**, without needing to detect passages inside a track.
+| Responsibility | Proposed owner |
+| --- | --- |
+| File storage, backup, sharing, access rights | Existing user infrastructure: local folders, NAS or a storage platform; **Lenovo Smart Storage is a preferred integration candidate, not a confirmed dependency** |
+| Music-specific index, identity, enriched context, search | **AI Music Radio** library/intelligence layer |
+| Editorial planning and narration | **AI Music Radio**, using configurable text-LLM and TTS providers |
+| AI inference runtime | **Local or cloud**, explicitly selected/configured; no silent transfer of private files |
+| Audio playback and episode timeline | **AI Music Radio player/orchestrator** atop permitted local/server/streaming sources |
 
-[Read the episode brief](docs/03-my-back-pages-demo.md).
+Lenovo's public Smart Storage documentation establishes local PC-backed file storage and music categorization, **not yet a verified third-party music streaming/metadata API**. Implementation depends on capability and interface validation; local-folder integration is the MVP fallback.
 
-## Documentation
+Read the [architecture and provider boundaries](docs/04-conceptual-architecture.md).
 
-See the [bilingual documentation index](docs/INDEX.md) and [agent contribution rules](AGENTS.md).
+## Project documentation
 
-| Document | English | 简体中文 |
-| --- | --- | --- |
-| Product and personas | [Product](docs/01-product-overview.md) | [产品说明](docs/01-product-overview.zh-CN.md) |
-| Requirements | [MVP](docs/02-mvp-and-requirements.md) | [MVP 需求](docs/02-mvp-and-requirements.zh-CN.md) |
-| Episode demo | [My Back Pages](docs/03-my-back-pages-demo.md) | [节目演示](docs/03-my-back-pages-demo.zh-CN.md) |
-| Architecture | [Architecture](docs/04-conceptual-architecture.md) | [架构说明](docs/04-conceptual-architecture.zh-CN.md) |
-| Decisions / risks | [Questions](docs/05-open-questions.md) | [待决策事项](docs/05-open-questions.zh-CN.md) |
-| Current status | [Status](docs/STATUS.md) | [项目状态](docs/STATUS.zh-CN.md) |
+The [Documentation Index](docs/INDEX.md) identifies one canonical responsibility per document. English/Chinese pairs are updated together.
 
-Bilingual pairs must be updated together. Each topic has one canonical document responsibility; implementation truth belongs to code and tests.
+- [Product & personas](docs/01-product-overview.md) — who, why, and product boundaries.
+- [MVP requirements](docs/02-mvp-and-requirements.md) — scope and acceptance criteria.
+- [Architecture](docs/04-conceptual-architecture.md) — server adapters, metadata + audio understanding, recommendation and model providers.
+- [Product function inventory](docs/PRODUCT_FUNCTIONS.md) — stable capability IDs, priorities, maturity and validation evidence.
+- [Current status](docs/STATUS.md) — what is actually implemented.
+- [Decisions and unknowns](docs/05-open-questions.md) — unresolved dependencies.
+- [Illustrative radio demo](docs/03-my-back-pages-demo.md) — **a case study only**, not the product definition.
+
+[Repository rules](AGENTS.md) govern editing and evidence.
 
 ## Product boundaries
 
-- Local music files and the personal server remain useful without AI radio generation or a streaming subscription.
-- Streaming sources are optional and only integrated where actual APIs and rights allow playback.
-- The episode planner distinguishes **work**, **recording**, **release** and **playable source**; it does not conflate an original with a cover or a live collaboration.
-- Historical facts require evidence; subjective musical observations must not be presented as verified artist intent.
-- The radio timeline orchestrates host audio and lawful recordings as separate items; no presumption of DRM capture, extraction, clipping or remixing rights.
-- Public demos never commit private libraries, listening history, credentials or uncleared music.
-
-## Sources for the new seed
-
-- [Bob Dylan official album notes](https://www.bobdylan.com/albums/30th-anniversary-concert-celebration-deluxe-edition/)
-- [Legacy Recordings concert track credits](https://www.legacyrecordings.com/releases/30th-anniversary-concert-celebration-deluxe-edition-2-cd/)
-- [Bob Dylan — Another Side of Bob Dylan (1964)](https://www.bobdylan.com/albums/another-side-of-bob-dylan/)
-- [MusicBrainz — 1992 concert live recording](https://musicbrainz.org/release/94fb18c0-610e-41e2-853f-32a442427a90)
-- [MusicBrainz — The Byrds, Younger Than Yesterday](https://musicbrainz.org/release/85311619-b29f-4157-ae45-718cee659681)
+The initial input is **one identified complete recording/file**. Missing essential music identity can produce a visible error. Within-track passage detection, mandatory fingerprint recovery and blanket genre coverage are out of scope. Music playback remains separately authorized from generated TTS/BGM; access to DRM streams is not assumed. Owning files avoids streaming subscription requirements for those files but does not eliminate hardware, maintenance or AI-service costs.
 
 ## License
 
-No open-source license selected. Do not assume permission to redistribute code, music or BGM.
+No open-source license has been selected. No privately owned recordings, user histories or unlicensed music assets belong in this public repository.
