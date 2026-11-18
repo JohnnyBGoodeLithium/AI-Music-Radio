@@ -1,59 +1,77 @@
 # AI Music Radio
 
+English | [简体中文](README.zh-CN.md)
+
 **Own Your Music. Discover Its Stories.**
 
-> A personal music server and AI-curated radio experience, starting from a track you own.
+> A local-first personal music server paired with an AI radio producer that tells the stories behind the recordings you choose.
 
-**Status:** concept / documentation-first, 2026-11-18. No player or AI service has been implemented yet.
+**Maturity:** Concept and documentation only as of 2026-11-18. No working music server, player or audio generation has been built in this repository. See [Current Status](docs/STATUS.md).
 
-## Vision
+## Why
 
-Streaming makes music easy to access, but long-term listeners can face recurring subscriptions, disappearing catalog entries, service lock-in, and fragmented collections. AI Music Radio puts a **personal music library** at the center and makes it explorable with narrated, evidence-grounded radio episodes.
+Cloud streaming offers convenience but brings recurring subscriptions, shifting catalogs and fragmented personal collections. Listeners who own legally acquired music deserve a stable private library that remains useful without renting access indefinitely.
 
-The system can ultimately use music stored on a desktop, home server or NAS, alongside supported, authorized streaming integrations. Locally owned audio stays playable independently of a streaming subscription. AI features may still need compute or paid services; local-first does **not** mean zero cost or unconditional offline operation.
+Traditional personal music servers preserve files and enable playback. **AI Music Radio adds intelligent, evidence-grounded music exploration**: select one identified complete recording, research it, choose meaningful musical connections, and generate a narrated episode with natural TTS, original/licensed BGM and authorized music playback.
 
-## One-line experience
+Local-first does not mean every AI feature is free or offline. Hardware, maintenance and optional model services can still cost money.
 
-**Pick a track → Understand its context → Curate related music → Produce a narrated radio show → Listen and discover.**
+## Three personas
 
-## Who it serves
+- **Music Owner:** owns a long-lived local collection and wants durable, cross-device access independent of ongoing streaming subscriptions.
+- **Music Explorer:** wants music recommendations with *explainable connections*, spanning their existing library and new discoveries.
+- **Deep Listener:** enjoys musical history, performance context, arrangements and a listening experience with thoughtful commentary.
 
-- **Music Owner** — controls a durable local music collection and wants cross-device access without depending on a recurring streaming subscription.
-- **Music Explorer** — wants understandable connections between familiar music and new discoveries, not opaque similarity scores.
-- **Deep Listener** — wants informed commentary, music history and interpretive listening integrated into playback.
+[Product positioning and three personas](docs/01-product-overview.md)
 
-See [Product positioning and personas](docs/01-product-overview.md).
+## One-click experience
 
-## First demo
+**Pick a recording → Validate metadata → Research its story → Curate related recordings → Generate narration → Listen and discover.**
 
-Select **Radiohead — Weird Fishes / Arpeggi** (from *In Rainbows*, 2007) and create an approximately **15-minute** narrated program: opening, seed track, musical explanation, related track(s), contextual transitions, new discovery and outro. Host narration is created with TTS and mixed with licensed or original background music. Music playback remains separately orchestrated to respect source rights.
+One full track/file is the input unit, even when it is part of a larger composition. Unknown essential metadata may return a clear error in v0; no automatic fingerprint recovery or sub-track passage analysis is required.
 
-See [Demo brief](docs/03-radiohead-demo.md).
+## Showcase: Six Voices, One Song
 
-## Current product boundaries
+**Seed:** the six-artist performance of **Bob Dylan's “My Back Pages”** at the *30th Anniversary Concert Celebration* on **October 16, 1992**, Madison Square Garden. It marked Dylan's 30 years as a recording artist, **not his 20th anniversary**.
 
-1. **Track or complete audio file** as the starting unit. A file may be one part of a larger work; no within-file segment detection is required.
-2. Reliable **track identity and minimum metadata** are prerequisites. Unidentifiable audio returns an explicit error in v0; no automatic fingerprint-based rescue.
-3. Prioritize music with meaningful, verifiable interpretation material, not universal genre coverage.
-4. Local music server is foundational. Cloud streaming is optional and subject to actual integration rights.
-5. Episode structures remain editable timelines rather than one immutable, mixed commercial-song audio export.
+The proposed ~15-minute program moves from the **1992 concert recording** back to Dylan's **1964 original** (*Another Side of Bob Dylan*) and The Byrds' **1967 interpretation** (*Younger Than Yesterday*). From there, the music relation graph can branch into Roger McGuinn/The Byrds, Tom Petty, Neil Young, Eric Clapton, George Harrison and Dylan's broader work.
+
+This illustrates **one composition, multiple recordings, many musical histories**, without needing to detect passages inside a track.
+
+[Read the episode brief](docs/03-my-back-pages-demo.md).
 
 ## Documentation
 
-- [Product overview](docs/01-product-overview.md) — positioning, problems, three personas, value proposition.
-- [MVP requirements](docs/02-mvp-and-requirements.md) — scope, priorities, acceptance criteria, non-goals.
-- [Radiohead demo](docs/03-radiohead-demo.md) — 15-minute episode outline, music pathway, audio design, UI story.
-- [Conceptual architecture](docs/04-conceptual-architecture.md) — services, inputs, metadata validation, episode schema, playback rights.
-- [Open questions](docs/05-open-questions.md) — unresolved product and engineering questions.
+See the [bilingual documentation index](docs/INDEX.md) and [agent contribution rules](AGENTS.md).
 
-## Development approach
+| Document | English | 简体中文 |
+| --- | --- | --- |
+| Product and personas | [Product](docs/01-product-overview.md) | [产品说明](docs/01-product-overview.zh-CN.md) |
+| Requirements | [MVP](docs/02-mvp-and-requirements.md) | [MVP 需求](docs/02-mvp-and-requirements.zh-CN.md) |
+| Episode demo | [My Back Pages](docs/03-my-back-pages-demo.md) | [节目演示](docs/03-my-back-pages-demo.zh-CN.md) |
+| Architecture | [Architecture](docs/04-conceptual-architecture.md) | [架构说明](docs/04-conceptual-architecture.zh-CN.md) |
+| Decisions / risks | [Questions](docs/05-open-questions.md) | [待决策事项](docs/05-open-questions.zh-CN.md) |
+| Current status | [Status](docs/STATUS.md) | [项目状态](docs/STATUS.zh-CN.md) |
 
-Documentation first → curated, legally playable local test library → verifiable recommendation graph and episode planner → TTS/BGM and timeline player → personal profile and music-server integration → optional authorized streaming sources.
+Bilingual pairs must be updated together. Each topic has one canonical document responsibility; implementation truth belongs to code and tests.
 
-## Rights and provenance
+## Product boundaries
 
-Music files must be owned or lawfully accessible. Streaming authorization does not automatically grant rights to download, analyze PCM, clip, capture, remix or export audio. Editorial claims should retain sources and uncertainty; interpretations are not presented as documented artist intent.
+- Local music files and the personal server remain useful without AI radio generation or a streaming subscription.
+- Streaming sources are optional and only integrated where actual APIs and rights allow playback.
+- The episode planner distinguishes **work**, **recording**, **release** and **playable source**; it does not conflate an original with a cover or a live collaboration.
+- Historical facts require evidence; subjective musical observations must not be presented as verified artist intent.
+- The radio timeline orchestrates host audio and lawful recordings as separate items; no presumption of DRM capture, extraction, clipping or remixing rights.
+- Public demos never commit private libraries, listening history, credentials or uncleared music.
+
+## Sources for the new seed
+
+- [Bob Dylan official album notes](https://www.bobdylan.com/albums/30th-anniversary-concert-celebration-deluxe-edition/)
+- [Legacy Recordings concert track credits](https://www.legacyrecordings.com/releases/30th-anniversary-concert-celebration-deluxe-edition-2-cd/)
+- [Bob Dylan — Another Side of Bob Dylan (1964)](https://www.bobdylan.com/albums/another-side-of-bob-dylan/)
+- [MusicBrainz — 1992 concert live recording](https://musicbrainz.org/release/94fb18c0-610e-41e2-853f-32a442427a90)
+- [MusicBrainz — The Byrds, Younger Than Yesterday](https://musicbrainz.org/release/85311619-b29f-4157-ae45-718cee659681)
 
 ## License
 
-Not yet selected. Do not assume permission to redistribute code or example audio.
+No open-source license selected. Do not assume permission to redistribute code, music or BGM.
