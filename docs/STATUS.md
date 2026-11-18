@@ -2,22 +2,30 @@
 
 English | [简体中文](STATUS.zh-CN.md)
 
-**As of 2026-11-18: Documentation/concept only.**
+**2026-11-18 · Concept / documentation only**
 
-- No player, personal music-server integration, recommendation engine, TTS pipeline or test harness has been implemented or validated in this repository.
-- User-approved scope: one identified full recording/file as input; sufficient metadata required; no sub-track analysis or fingerprint rescue in v0.
-- Foundational value: personal local music library independent of recurring streaming subscriptions for playback of owned files.
-- Differentiation: source-grounded music research, editorial planning, narrated radio programs and explainable recommendations.
-- Current demo seed: *My Back Pages* performed by Bob Dylan and guests at the **1992 30th Anniversary Concert Celebration**, not a 20th anniversary.
-- Proposed first episode: *Six Voices, One Song* / 《一首歌，六种声音》, approximately 15 minutes, featuring the 1992 live recording, Dylan's 1964 recording and The Byrds' 1967 interpretation (subject to lawful playback access).
+No music server integration, indexed library, music understanding engine, recommendation engine, LLM provider, TTS generation or working radio player has yet been implemented or validated in this repository.
+
+## Product baseline
+
+- **Core utility:** user-owned recordings remain accessible via existing personal storage/music-server infrastructure.
+- **Differentiator:** AI research, explainable library-first music relationships and naturally voiced radio episodes.
+- **Input:** one identifiable complete recording/file; missing essential identity can fail clearly; no in-file passage detection.
+- **Music intelligence:** metadata/verified relations first; whole-track audio features optional and must respect rights.
+- **Infrastructure responsibility:** Lenovo Smart Storage is a **candidate**, not an integrated or guaranteed music-server API; local folders are the initial test source.
+- **Model boundary:** replaceable local/cloud TextLLM and TTS providers, with explicit configuration and no silent remote transfer.
+- **Current artifact:** bilingual product docs, architecture, demo case study and a stable [Function Inventory](PRODUCT_FUNCTIONS.md). **All inventory entries are planned.**
 
 ## Next priorities
 
-1. Keep all core project documentation in paired English and Simplified Chinese editions.
-2. Validate actual, legally playable recordings and metadata for the revised showcase.
-3. Build a minimum personal-library index and inspectable Music Context Pack.
-4. Prototype an editorial plan, narration, original/licensed BGM and a real timeline player.
+1. Validate a local-folder music index and one lawful playable library.
+2. Implement and test the minimum recording identity/context pack.
+3. Demonstrate library-first evidence-backed candidate paths and an editorial plan.
+4. Connect configurable LLM/TTS, original/licensed BGM and the actual radio timeline.
+5. Investigate Lenovo Smart Storage/file access and third-party server adapter feasibility after core path is tested.
 
-**Not tested:** media availability/rights, track durations on target files, AI quality, TTS naturalness, multi-device streaming, local model requirements, performance and cost.
+## Not yet verified
 
-Source of implementation truth: code/tests/Git. No release or production claim.
+No actual audio playback, right-cleared test media, metadata accuracy, local/cloud model behavior, user-profile quality, audio features, TTS quality, server integrations, remote access, latency or cost has been tested.
+
+Feature-level roadmap and maturity: [PRODUCT_FUNCTIONS](PRODUCT_FUNCTIONS.md). Individual songs and host scripts belong to the [Demo](03-my-back-pages-demo.md), **not** this status page.
