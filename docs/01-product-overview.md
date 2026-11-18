@@ -2,68 +2,48 @@
 
 English | [简体中文](01-product-overview.zh-CN.md)
 
-**Concept baseline · 2026-11-18**
+**Purpose:** product positioning, customer needs and user journeys only. Architecture belongs to [Architecture](04-conceptual-architecture.md); individual demo recordings belong only to [Demo](03-my-back-pages-demo.md).
 
-## Product definition
+## Product promise
 
-**AI Music Radio — Own Your Music. Discover Its Stories.**
+Turn a **personally controlled music library** into a place for rediscovery and listening. A dedicated AI radio layer chooses an identified complete recording, researches credible context, finds narratable connections to available music, and produces an editorially coherent, naturally voiced program.
 
-A **personal music server** is the durable foundation; an **AI radio producer** transforms a selected recording into a personalized, explainable, narrated journey through connected music.
+The personal music server and the radio layer are separable: the library and lawful playback must remain useful without AI generation.
 
-Users choose an identified **complete track or audio file**, not a time range. A track may be part of a larger composition; the system may discuss that context without analyzing internal audio segments.
+## Three clearly distinct user jobs
 
-## The unmet need
+| Persona | Main job | Behavior | What success looks like |
+| --- | --- | --- | --- |
+| **1. Music Owner — Collector / Curator** | **Keep & control** a durable personal collection | Maintains local files and server; wants reliability and cost predictability | Own files accessible, organized, and rediscovered without streaming subscription dependence |
+| **2. Music Explorer — Active Discoverer** | **Find & choose** what to listen to next | Lean-forward: starts from a seed, explores connections, evaluates recommendations and saves discoveries | Finds previously unknown, relevant recordings with credible *why-next* reasons |
+| **3. Radio Listener — Lean-back Audience** | **Listen without managing the queue** | Lean-back: wants a compelling host, strong pacing and continuous context while working, resting or commuting | Finishes programs, enjoys natural voice/transitions and needs few manual skips |
 
-Cloud streaming makes access convenient but exposes users to ongoing subscription costs, platform lock-in and music becoming unavailable. A local library provides persistence for legally acquired recordings; a music server makes it accessible across devices. Traditional servers, however, rarely explain recording history or help owners revisit and connect their collections.
+These roles can overlap within one person, but their **jobs and interactions are different**. A deep historical/compositional listening theme is a **program mode**, not an additional, nearly identical discovery persona.
 
-AI Radio adds informed editorial curation rather than merely a track similarity score.
+## Core journeys
 
-## Three personas
+### The Owner
 
-### 1. The Music Owner — personal control and longevity
+Connect a local collection → inspect/repair known metadata → play across supported devices → allow the radio engine to rediscover an overlooked recording. Ownership and basic playback work even if AI is unavailable.
 
-**Audience:** Someone with purchased downloads, CD rips or other lawful FLAC/ALAC/MP3 files on desktop/NAS.
+### The Explorer
 
-**Pain:** Recurring subscriptions, catalog instability, fragmented files and simplistic local players.
+Choose a familiar recording → review a theme and explainable relationship path → follow related music from the personal collection → optionally branch to new music where lawful playback/discovery exists → save what was found.
 
-**Scenario:** Revisit a concert recording stored at home; generate an episode that connects it to other versions and related artists in the private library.
+### The Listener
 
-**Value:** Ownership + organization + intelligent rediscovery.
+Choose a track, theme or saved episode → press **Create Radio / Play** → enjoy original host narration, BGM and full recordings as one continuous queue → skip or save without navigating a complex relation graph.
 
-### 2. The Music Explorer — recommendations with a story
+## What makes it different?
 
-**Audience:** A motivated listener who enjoys investigating different artists, decades and genres.
+1. **Local music is a first-class asset**, not a cache of leased tracks.
+2. **Music understanding blends metadata/knowledge and acoustic evidence**; personal collection availability constrains the actual program.
+3. **The episode is curated**, with a defensible reason for each transition.
+4. **Provider-neutral models** permit local or explicitly configured cloud generation.
+5. **Full-track input** and rights-aware playback keep the first version tractable.
 
-**Pain:** Opaque algorithmic suggestions rarely tell a convincing story about the music's relationship to the seed.
+## Positioning boundaries
 
-**Scenario:** Choose the **1992 “My Back Pages” all-star performance**. The AI explores its 1964 origin, The Byrds' 1967 folk-rock interpretation, then suggests branches through participating musicians and their historical collaborations.
+Not an alternative commercial subscription catalog; not a generic AI audio transcription/segmentation tool; not a guarantee of fully offline or zero-cost inference. The first version favors recordings with reliable identity and interpretable musical context, and can reject insufficient metadata.
 
-**Value:** Explainable discovery grounded in recordings and credible facts.
-
-### 3. The Deep Listener — informed listening
-
-**Audience:** Someone interested in composition, lyric themes, arrangement, the history of a recording and changes in interpretation.
-
-**Pain:** Scholarly context lives away from the listening moment.
-
-**Scenario:** Compare the same song as a 1964 solo recording, a 1967 band recording and a 1992 cross-generational live collaboration. Narrative points out differences without inventing the performers' intentions.
-
-**Value:** Listening with understanding.
-
-## Core experience
-
-1. Choose a track from the personal library.
-2. Validate music identity and minimum metadata.
-3. Build a provenance-aware Music Context Pack: composition, recording, release, musicians, documented history, observations, personal history when permitted.
-4. Select an **editorial theme** and related available recordings.
-5. Produce original host narration with natural TTS and original/licensed BGM.
-6. Play an editable, logically scheduled radio timeline with why-next reasoning.
-7. Save the episode or branch from another recording.
-
-## Positioning and boundaries
-
-**Personal Music Server = essential utility. AI Music Radio = differentiated content experience.**
-
-Prioritize music that supports meaningful, verifiable interpretation; not universal audio recognition or viral-clip analysis. Unknown essential metadata can fail clearly. Cloud streaming remains an optional source, subject to licensing and API capabilities. Local playback of owned files does not depend on subscriptions, though AI and hardware can entail other costs.
-
-Initial primary audiences: Music Owner and Music Explorer; Deep Listener validates the depth of interpretation.
+Primary launch priority: **Owner + Listener** for a tangible utility and a compelling radio demo; Explorer provides the sustained discovery loop. This is a proposal to validate rather than a finalized business segmentation.
