@@ -121,6 +121,6 @@ Music Assistant 现有 AI Radio 是否已经能满足其中某些能力，需要
 
 当前界面先采用**黑白、接近 Notion 的内容优先低保真草稿**：平直线条、清楚的内容块、适当虚线标注可修改的 AI 建议，而不是复杂控件堆砌。[线框设计](docs/06-lowfi-wireframes.zh-CN.md)。
 
-文档的阅读顺序：**先读这份 README，就应能理解整个产品**；想理解使用者和完整场景看[产品体验](docs/01-product-overview.zh-CN.md)，想实现或评估复用看[架构](docs/04-conceptual-architecture.zh-CN.md)，想确定首版交付看[MVP](docs/02-mvp-and-requirements.zh-CN.md)。[独立节目 Demo](docs/03-my-back-pages-demo.zh-CN.md)仅用于说明一个具体故事，不定义通用产品功能。
+文档的阅读顺序：**先读这份 README，就应能理解整个产品**；想理解使用者和完整场景看[产品体验](docs/01-product-overview.zh-CN.md)，想实现或评估复用看[架构](docs/04-conceptual-architecture.zh-CN.md)，想确定首版交付看[MVP](docs/02-mvp-and-requirements.zh-CN.md)。**用户流程与验收请看[正式 PRD](docs/PRD.zh-CN.md)，可直接体验[基于真实 2025 榜单的 H5 原型](prototype/index.html)。**[独立节目 Demo](docs/03-my-back-pages-demo.zh-CN.md)仅用于说明一个具体故事，不定义通用产品功能。
 
-仓库内不保存个人真实曲库、收听历史、凭据或未经授权的商业音频。项目自身许可证尚未选定；使用上游开源项目和第三方服务须各自遵守许可证与服务条款。
+仓库的演示数据仅包含用户明确提供并要求用于公开原型的 **2025 榜单前 98 条曲目与播放次数**；不保存完整账户历史、原始截图、账号凭据或未经授权的商业音频。项目自身许可证尚未选定；使用上游开源项目和第三方服务须各自遵守许可证与服务条款。

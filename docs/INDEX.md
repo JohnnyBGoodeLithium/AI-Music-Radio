@@ -9,6 +9,8 @@
 | **完整产品介绍 / Complete overview** | [README](../README.md) | [README](../README.zh-CN.md) |
 | Persona、真实使用场景 / Listener journeys | [Product experience](01-product-overview.md) | [用户体验](01-product-overview.zh-CN.md) |
 | 模块、接口、Music Assistant 源码复用 / System & reuse | [Architecture](04-conceptual-architecture.md) | [架构与复用](04-conceptual-architecture.zh-CN.md) |
+| **页面行为与产品验收 / PRD** | [PRD](PRD.md) | [PRD（中文）](PRD.zh-CN.md) |
+| **真实榜单交互原型 / H5 prototype** | [Prototype](../prototype/index.html) | [2025 用户榜单演示](../prototype/index.html) |
 | 首个验证范围与验收 / MVP acceptance | [MVP](02-mvp-and-requirements.md) | [MVP](02-mvp-and-requirements.zh-CN.md) |
 | 真实进度 / Actual status | [STATUS](STATUS.md) | [STATUS](STATUS.zh-CN.md) |
 | 细分功能 ID 与成熟度 / Stable functions | [FUNCTIONS](PRODUCT_FUNCTIONS.md) | [功能库](PRODUCT_FUNCTIONS.zh-CN.md) |

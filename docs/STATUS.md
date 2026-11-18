@@ -2,10 +2,12 @@
 
 English | [简体中文](STATUS.zh-CN.md)
 
-**As of 2026-11-18: concept and documentation only.** This repository has not implemented a real personal music import, Music Report, editorial engine, finished TTS show, Music Assistant integration or UI. Upstream open-source capabilities are **not implemented features of this repository**.
+**As of 2026-11-19: a tested low-fidelity interactive prototype exists, but the product is not integrated with real music platforms or AI audio.**
 
-**Defined product journey:** connect existing personal music data → credible music understanding and report → personalized narrated radio. Original Apple Music Windows play counts and date-added fields are a priority for data validation. Music Assistant + AI Radio is a reuse-first candidate; public docs/source modules have been reviewed but the integration has **not been run or validated**.
+**Delivered:** User-supplied Apple Music 2025 favorites screenshots were transcribed into ranks 1–98 (visible displayed plays sum to 1,733). The same dataset powers Home, My Music, Music Report, Music Graph, and Show / Player, including linked track details and a demo of selective host-segment edits. Desktop, mobile and JavaScript-disabled static fallback were checked.
 
-**Next hands-on work:** (1) import and audit authorized library data; (2) produce a draft Music Report and episode options; (3) test stock Music Assistant + AI Radio; (4) use monochrome wireframes to validate report → topic → playback → feedback.
+**Data limits:** Screenshot transcription is not a live Apple Music API import. These are screenshot-visible 2025 annual plays, not lifetime history. Date Added, event timestamps, verified full album/version IDs and track durations are unavailable. Graph edges include only observed same-artist, recognizable-series and editorial-reference relationships.
 
-All [feature inventory](PRODUCT_FUNCTIONS.md) entries remain Planned. See the [complete README](../README.md) and [MVP acceptance](02-mvp-and-requirements.md).
+**Not yet implemented:** Live library sync, playback rights/actual audio, Music Assistant or AI Radio integration, sourced historical music-relationship research, real LLM/TTS, duration-accurate program production.
+
+[PRD v0.3](PRD.md) · [Interactive prototype](../prototype/index.html) · [Data JSON](../prototype/data/2025-top-songs.json) · [MVP](02-mvp-and-requirements.md).
