@@ -11,3 +11,10 @@ Start by opening `index.html` in a browser. On restrictive iPhone file previews,
 **Graph semantics:** `same_primary_artist` and `curated_series` are observed/grouped metadata; `editorial_uses` is a proposed programming connection. No historical artist-collaboration edges are invented.
 
 This is a UX/PRD validation artifact. Upstream Music Assistant reuse remains to be tested separately.
+
+
+## v0.5 · 真实跨音乐人知识网络
+
+默认 Music Graph 现在同时展示四条有外部资料支持的关系：Queen—David Bowie—Lou Reed、Bob Dylan—Johnny Cash、Red Velvet—aespa、Sting—The Police。每条关系边可查看证据，未入榜的专辑/合作曲目明确标注外部知识；图谱可跳至相应的**模拟**节目策划。
+
+原有按音乐人展开歌曲的星形图保留为辅助“榜单聚合”，不是知识图谱的默认视图。iPhone 纵向 SVG 与禁用 JavaScript 的静态图均可阅读。外部出处随数据保存在 `data/2025-top-songs.json` 的 `knowledgeGraph` 中。

@@ -1,6 +1,6 @@
 # AI Music Radio — Product Requirements Document
 
-**Version:** v0.3 · 2026-11-19  
+**Version:** v0.4 · 2026-11-19  
 **Status:** product discussion and interactive prototype, not a working music integration  
 **Prototype:** [2025 personal-listening data H5](../prototype/index.html) · **Dataset:** [98 ranked tracks](../prototype/data/2025-top-songs.json)  
 [中文版完整 PRD](PRD.zh-CN.md)
@@ -58,3 +58,16 @@ None of these Music Assistant integrations has been run or verified in this repo
 ## Definition of done for this prototype
 
 Verify 98 consecutive unique ranks, aggregate count 1,733, report/group totals, shared ID navigation across screens, segment-level comment changes, desktop/mobile responsive layout, static no-JS fallback and no commercially playable audio. These tests verify a **prototype**, not a finished product. Subsequent milestones include real Apple Music metadata ingestion, sourced artist relationship research, Music Assistant integration, actual TTS, licensed playback and true duration scheduling.
+
+
+## v0.4 — Cross-artist knowledge network (FR-04 correction)
+
+The earlier one-artist star (MusicGroup → Tracks) is merely a **collection grouping**, not a sufficient Music Graph. The default graph must visualize multiple real-world people and works connected by sourced, typed relationships, while keeping ranked songs and externally researched entities distinct.
+
+Four grounded example paths: (1) Queen → **Under Pressure** (#64) → David Bowie → **Transformer** → **Perfect Day** (#20) → Lou Reed; (2) Bob Dylan (#85) → **Girl from the North Country** → Johnny Cash (#82); (3) Red Velvet (#3) → **Beautiful Christmas** → aespa (#2); (4) Sting (#90) → The Police (#63).
+
+Each node has a stable ID, entity type, and `inRanking` or external indicator. Each edge has a type, written claim, provenance and optional external `sourceUrl`. Screenshot-based attribution is distinct from published history; **never force unsupported links or imply external tracks were in the user's library**.
+
+On click: ranked songs open the existing track drawer, external music entities show their identity and edges, and edges open evidence and the source link. Each grounded path leads to a distinct editorial show plan. Default network view shows all cross-artist paths; the older song-collection star view remains secondary. On iPhone display vertical SVG paths; without JS show equivalent static SVG and source links.
+
+Acceptance: four verifiable cross-artist paths visible and interactive, consistent track IDs, and evidence for every nontrivial history edge. Neither actual AI inference nor playback is claimed.

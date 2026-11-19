@@ -11,3 +11,6 @@
 **仍待开发和验证：** 自动/持续曲库导入、真实音源播放、Music Assistant 和 AI Radio 实际集成、音乐史关系证据检索、LLM/TTS 制作、节目真实时长与音轨授权。
 
 [PRD v0.3](PRD.zh-CN.md) · [交互式 2025 原型](../prototype/index.html) · [榜单 JSON](../prototype/data/2025-top-songs.json) · [MVP](02-mvp-and-requirements.zh-CN.md)。
+
+
+**2026-11-19 原型修订：** Music Graph 已由单音乐人的星形聚合调整为四条有外部资料证明的跨音乐人关系路径。关联类型、来源 URL、榜单内外实体分开保存，移动端和禁用 JS 静态 SVG 可见；新增关系主题仅为**模拟节目策划**，非实际音频或 Music Assistant 集成。

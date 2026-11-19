@@ -1561,6 +1561,18 @@
       "observedPlays": 34,
       "evidence": "2025年度最爱歌曲截图，按音乐人名称/可辨认作品系列汇聚",
       "certainty": "来自截图的分类；非历史合作关系"
+    },
+    {
+      "label": "Sting / The Police",
+      "kind": "verified_artist_relation",
+      "id": "sting-police",
+      "trackIds": [
+        "t090",
+        "t063"
+      ],
+      "observedPlays": 23,
+      "evidence": "2025 榜单 + 英国国家肖像馆 Sting 生平介绍",
+      "certainty": "有外部证据的音乐人生涯关系"
     }
   ],
   "shows": [
@@ -1708,6 +1720,564 @@
           "text": "如果你更想听摇滚、唱作或华语流行，下一期可以沿对应的歌手与作品继续深入。"
         }
       ]
+    },
+    {
+      "id": "show-bowie",
+      "title": "Bowie 是怎样连接 Queen 与 Lou Reed 的？",
+      "tag": "SOURCE-BACKED STORY / SIMULATED",
+      "subtitle": "由用户榜单与公开出处组合的真实关系策展；尚无真实歌曲播放或 TTS。",
+      "groupId": "queen",
+      "trackIds": [
+        "t064",
+        "t020"
+      ],
+      "sections": [
+        {
+          "id": "show-bowie-intro",
+          "type": "intro",
+          "title": "从你的榜单出发",
+          "text": "你榜单里 Queen 的《Under Pressure》和 Lou Reed 的《Perfect Day》，竟然可以借 David Bowie 连接。"
+        },
+        {
+          "id": "show-bowie-music1",
+          "type": "music",
+          "trackId": "t064",
+          "title": "你的歌曲：Under Pressure (feat. David Bowie)"
+        },
+        {
+          "id": "show-bowie-narration",
+          "type": "narration",
+          "title": "可查证的音乐关系",
+          "text": "Queen 官方确认 Bowie 参与《Under Pressure》；摇滚名人堂博物馆也指出 Bowie 参与制作收录《Perfect Day》的《Transformer》。"
+        },
+        {
+          "id": "show-bowie-music2",
+          "type": "music",
+          "trackId": "t020",
+          "title": "你的歌曲：Perfect Day"
+        },
+        {
+          "id": "show-bowie-outro",
+          "type": "outro",
+          "title": "留下下一条线索",
+          "text": "这条线索可以从演唱合作继续讲到专辑制作；节目并不需要假定 Bowie 的歌曲也在你的曲库。"
+        }
+      ]
+    },
+    {
+      "id": "show-dylan-cash",
+      "title": "Bob Dylan 与 Johnny Cash 的交会",
+      "tag": "SOURCE-BACKED STORY / SIMULATED",
+      "subtitle": "由用户榜单与公开出处组合的真实关系策展；尚无真实歌曲播放或 TTS。",
+      "groupId": "johnny-cash",
+      "trackIds": [
+        "t085",
+        "t082"
+      ],
+      "sections": [
+        {
+          "id": "show-dylan-cash-intro",
+          "type": "intro",
+          "title": "从你的榜单出发",
+          "text": "2025 榜单有 Dylan 的《A Hard Rain's A-Gonna Fall》，也有 Johnny Cash 的《Hurt》。"
+        },
+        {
+          "id": "show-dylan-cash-music1",
+          "type": "music",
+          "trackId": "t085",
+          "title": "你的歌曲：A Hard Rain's A-Gonna Fall"
+        },
+        {
+          "id": "show-dylan-cash-narration",
+          "type": "narration",
+          "title": "可查证的音乐关系",
+          "text": "Bob Dylan 官方记载，两人在 1969 年合作录制了《Girl from the North Country》；这是连接两位音乐人的可靠史实。"
+        },
+        {
+          "id": "show-dylan-cash-music2",
+          "type": "music",
+          "trackId": "t082",
+          "title": "你的歌曲：Hurt"
+        },
+        {
+          "id": "show-dylan-cash-outro",
+          "type": "outro",
+          "title": "留下下一条线索",
+          "text": "从两位音乐人各自的创作与演唱方式，可以展开另一段故事。"
+        }
+      ]
+    },
+    {
+      "id": "show-rv-aespa",
+      "title": "Red Velvet 与 aespa：榜单背后的交会",
+      "tag": "SOURCE-BACKED STORY / SIMULATED",
+      "subtitle": "由用户榜单与公开出处组合的真实关系策展；尚无真实歌曲播放或 TTS。",
+      "groupId": "red-velvet",
+      "trackIds": [
+        "t003",
+        "t002"
+      ],
+      "sections": [
+        {
+          "id": "show-rv-aespa-intro",
+          "type": "intro",
+          "title": "从你的榜单出发",
+          "text": "Red Velvet 与 aespa 都在你的前十歌单内。"
+        },
+        {
+          "id": "show-rv-aespa-music1",
+          "type": "music",
+          "trackId": "t003",
+          "title": "你的歌曲：Feel My Rhythm"
+        },
+        {
+          "id": "show-rv-aespa-narration",
+          "type": "narration",
+          "title": "可查证的音乐关系",
+          "text": "Apple Music 资料显示，这两组艺人共同录制过《Beautiful Christmas》。它不是你的 2025 榜单条目，而是一条适合讲述的新发现。"
+        },
+        {
+          "id": "show-rv-aespa-music2",
+          "type": "music",
+          "trackId": "t002",
+          "title": "你的歌曲：Whiplash"
+        },
+        {
+          "id": "show-rv-aespa-outro",
+          "type": "outro",
+          "title": "留下下一条线索",
+          "text": "后续可以顺着这段合作，再探索两组合各自的作品。"
+        }
+      ]
+    },
+    {
+      "id": "show-sting-police",
+      "title": "从 Sting 到 The Police",
+      "tag": "SOURCE-BACKED STORY / SIMULATED",
+      "subtitle": "由用户榜单与公开出处组合的真实关系策展；尚无真实歌曲播放或 TTS。",
+      "groupId": "sting-police",
+      "trackIds": [
+        "t090",
+        "t063"
+      ],
+      "sections": [
+        {
+          "id": "show-sting-police-intro",
+          "type": "intro",
+          "title": "从你的榜单出发",
+          "text": "Sting 的个人歌曲和 The Police 的经典作品都出现在你的榜单里。"
+        },
+        {
+          "id": "show-sting-police-music1",
+          "type": "music",
+          "trackId": "t090",
+          "title": "你的歌曲：Shape of My Heart"
+        },
+        {
+          "id": "show-sting-police-narration",
+          "type": "narration",
+          "title": "可查证的音乐关系",
+          "text": "英国国家肖像馆的传记确认，Sting 是 The Police 的主唱、贝斯手及主要创作者。"
+        },
+        {
+          "id": "show-sting-police-music2",
+          "type": "music",
+          "trackId": "t063",
+          "title": "你的歌曲：Every Breath You Take"
+        },
+        {
+          "id": "show-sting-police-outro",
+          "type": "outro",
+          "title": "留下下一条线索",
+          "text": "再听同一位音乐人个人与乐队时期的作品，可能会有新的发现。"
+        }
+      ]
     }
-  ]
+  ],
+  "knowledgeGraph": {
+    "version": "airadio.demo.source-linked.v2",
+    "explanation": "截图曲目、外部核查的音乐史连接分开存储；未出现在榜单的音乐人/作品明确标注外部知识。不同关系分量可互不相连，不能人为添加边。",
+    "nodes": [
+      {
+        "id": "a-queen",
+        "label": "Queen",
+        "kind": "artist",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "t064",
+        "label": "Under Pressure (feat. David Bowie)",
+        "kind": "ranked_track",
+        "trackId": "t064",
+        "inRanking": true
+      },
+      {
+        "id": "a-bowie",
+        "label": "David Bowie",
+        "kind": "external_artist",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "album-transformer",
+        "label": "《Transformer》",
+        "kind": "external_album",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "t020",
+        "label": "Perfect Day",
+        "kind": "ranked_track",
+        "trackId": "t020",
+        "inRanking": true
+      },
+      {
+        "id": "a-lou",
+        "label": "Lou Reed",
+        "kind": "artist",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "t085",
+        "label": "A Hard Rain's A-Gonna Fall",
+        "kind": "ranked_track",
+        "trackId": "t085",
+        "inRanking": true
+      },
+      {
+        "id": "a-dylan",
+        "label": "Bob Dylan",
+        "kind": "artist",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "x-girl",
+        "label": "Girl from the North Country",
+        "kind": "external_track",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "a-cash",
+        "label": "Johnny Cash",
+        "kind": "artist",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "t082",
+        "label": "Hurt",
+        "kind": "ranked_track",
+        "trackId": "t082",
+        "inRanking": true
+      },
+      {
+        "id": "t003",
+        "label": "Feel My Rhythm",
+        "kind": "ranked_track",
+        "trackId": "t003",
+        "inRanking": true
+      },
+      {
+        "id": "a-rv",
+        "label": "Red Velvet",
+        "kind": "artist",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "x-christmas",
+        "label": "Beautiful Christmas",
+        "kind": "external_track",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "a-aespa",
+        "label": "aespa",
+        "kind": "artist",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "t002",
+        "label": "Whiplash",
+        "kind": "ranked_track",
+        "trackId": "t002",
+        "inRanking": true
+      },
+      {
+        "id": "t090",
+        "label": "Shape of My Heart",
+        "kind": "ranked_track",
+        "trackId": "t090",
+        "inRanking": true
+      },
+      {
+        "id": "a-sting",
+        "label": "Sting",
+        "kind": "artist",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "a-police",
+        "label": "The Police",
+        "kind": "artist",
+        "trackId": null,
+        "inRanking": false
+      },
+      {
+        "id": "t063",
+        "label": "Every Breath You Take",
+        "kind": "ranked_track",
+        "trackId": "t063",
+        "inRanking": true
+      }
+    ],
+    "edges": [
+      {
+        "id": "b1",
+        "from": "a-queen",
+        "to": "t064",
+        "type": "入榜署名",
+        "description": "你的榜单 #64 显示 Queen 的《Under Pressure (feat. David Bowie)》。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 Apple Music 2025 年度榜单截图（可见条目）",
+        "sourceUrl": null
+      },
+      {
+        "id": "b2",
+        "from": "t064",
+        "to": "a-bowie",
+        "type": "参与演唱",
+        "description": "Queen 官方确认 David Bowie 参与《Under Pressure》演唱。",
+        "provenance": "published",
+        "sourceTitle": "Queen 官方音乐资料",
+        "sourceUrl": "https://www.queenonline.com/news/watch-queen-the-greatest-live-under-pressure-episode-16"
+      },
+      {
+        "id": "b3",
+        "from": "a-bowie",
+        "to": "album-transformer",
+        "type": "制作专辑",
+        "description": "摇滚名人堂博物馆资料写明 David Bowie 制作 Lou Reed 的《Transformer》。",
+        "provenance": "published",
+        "sourceTitle": "Rock & Roll Hall of Fame Museum",
+        "sourceUrl": "https://shop.rockhall.com/products/vinly-lp-transformer?variant=41209760874665"
+      },
+      {
+        "id": "b4",
+        "from": "album-transformer",
+        "to": "t020",
+        "type": "收录歌曲",
+        "description": "《Perfect Day》收录在《Transformer》；这是外部专辑知识，原截图未提供专辑字段。",
+        "provenance": "published",
+        "sourceTitle": "Rock & Roll Hall of Fame Museum",
+        "sourceUrl": "https://shop.rockhall.com/products/vinly-lp-transformer?variant=41209760874665"
+      },
+      {
+        "id": "b5",
+        "from": "t020",
+        "to": "a-lou",
+        "type": "入榜署名",
+        "description": "你的榜单 #20：《Perfect Day》，Lou Reed。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 Apple Music 2025 年度榜单截图（可见条目）",
+        "sourceUrl": null
+      },
+      {
+        "id": "d1",
+        "from": "t085",
+        "to": "a-dylan",
+        "type": "入榜署名",
+        "description": "你的榜单 #85：《A Hard Rain's A-Gonna Fall》，Bob Dylan。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 Apple Music 2025 年度榜单截图（可见条目）",
+        "sourceUrl": null
+      },
+      {
+        "id": "d2",
+        "from": "a-dylan",
+        "to": "x-girl",
+        "type": "合作演唱",
+        "description": "Bob Dylan 官方介绍了与 Johnny Cash 在 1969 年录音并合作演唱《Girl from the North Country》的事实。",
+        "provenance": "published",
+        "sourceTitle": "Bob Dylan 官方网站",
+        "sourceUrl": "https://www.bobdylan.com/news/bob-dylan-featuring-johnny-cash-travelin-thru-1967-1969-the-bootleg-series-vol-15-released-nov-1/"
+      },
+      {
+        "id": "d3",
+        "from": "x-girl",
+        "to": "a-cash",
+        "type": "合作演唱",
+        "description": "这首合作版本有 Johnny Cash 参与；这首歌不在截图前 98 名中。",
+        "provenance": "published",
+        "sourceTitle": "Bob Dylan 官方网站",
+        "sourceUrl": "https://www.bobdylan.com/news/bob-dylan-featuring-johnny-cash-travelin-thru-1967-1969-the-bootleg-series-vol-15-released-nov-1/"
+      },
+      {
+        "id": "d4",
+        "from": "a-cash",
+        "to": "t082",
+        "type": "入榜署名",
+        "description": "你的榜单 #82：《Hurt》，Johnny Cash。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 Apple Music 2025 年度榜单截图（可见条目）",
+        "sourceUrl": null
+      },
+      {
+        "id": "r1",
+        "from": "t003",
+        "to": "a-rv",
+        "type": "入榜署名",
+        "description": "你的榜单 #3：《Feel My Rhythm》，Red Velvet。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 Apple Music 2025 年度榜单截图（可见条目）",
+        "sourceUrl": null
+      },
+      {
+        "id": "r2",
+        "from": "a-rv",
+        "to": "x-christmas",
+        "type": "共同录制",
+        "description": "Apple Music 曲目页同时署名 Red Velvet 和 aespa，作品为《Beautiful Christmas》。",
+        "provenance": "published",
+        "sourceTitle": "Apple Music 曲目页",
+        "sourceUrl": "https://music.apple.com/us/album/beautiful-christmas/1659173767?i=1659173768"
+      },
+      {
+        "id": "r3",
+        "from": "x-christmas",
+        "to": "a-aespa",
+        "type": "共同录制",
+        "description": "同一作品标有 aespa；该作品并非截图中的用户收藏条目。",
+        "provenance": "published",
+        "sourceTitle": "Apple Music 曲目页",
+        "sourceUrl": "https://music.apple.com/us/album/beautiful-christmas/1659173767?i=1659173768"
+      },
+      {
+        "id": "r4",
+        "from": "a-aespa",
+        "to": "t002",
+        "type": "入榜署名",
+        "description": "你的榜单 #2：《Whiplash》，aespa。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 Apple Music 2025 年度榜单截图（可见条目）",
+        "sourceUrl": null
+      },
+      {
+        "id": "p1",
+        "from": "t090",
+        "to": "a-sting",
+        "type": "入榜署名",
+        "description": "你的榜单 #90：《Shape of My Heart》，Sting。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 Apple Music 2025 年度榜单截图（可见条目）",
+        "sourceUrl": null
+      },
+      {
+        "id": "p2",
+        "from": "a-sting",
+        "to": "a-police",
+        "type": "成员关系",
+        "description": "英国国家肖像馆确认 Sting 是 The Police 的主唱、贝斯手及主要创作者。",
+        "provenance": "published",
+        "sourceTitle": "英国 National Portrait Gallery",
+        "sourceUrl": "https://www.npg.org.uk/collections/search/person/mp06556/sting-gordon-matthew-sumner"
+      },
+      {
+        "id": "p3",
+        "from": "a-police",
+        "to": "t063",
+        "type": "入榜署名",
+        "description": "你的榜单 #63：《Every Breath You Take》，The Police。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 Apple Music 2025 年度榜单截图（可见条目）",
+        "sourceUrl": null
+      }
+    ],
+    "journeys": [
+      {
+        "id": "bowie",
+        "title": "Queen → Bowie → Lou Reed",
+        "subtitle": "你的两首歌曲，沿一位制作人和一张专辑连接起来。",
+        "nodeIds": [
+          "a-queen",
+          "t064",
+          "a-bowie",
+          "album-transformer",
+          "t020",
+          "a-lou"
+        ],
+        "edgeIds": [
+          "b1",
+          "b2",
+          "b3",
+          "b4",
+          "b5"
+        ],
+        "showId": "show-bowie"
+      },
+      {
+        "id": "dylan-cash",
+        "title": "Bob Dylan ↔ Johnny Cash",
+        "subtitle": "两位均出现在你的年度榜单，1969 年的合唱将他们连接。",
+        "nodeIds": [
+          "t085",
+          "a-dylan",
+          "x-girl",
+          "a-cash",
+          "t082"
+        ],
+        "edgeIds": [
+          "d1",
+          "d2",
+          "d3",
+          "d4"
+        ],
+        "showId": "show-dylan-cash"
+      },
+      {
+        "id": "rv-aespa",
+        "title": "Red Velvet ↔ aespa",
+        "subtitle": "同在你的榜单，两组合唱的作品提供了一条真实合作关系。",
+        "nodeIds": [
+          "t003",
+          "a-rv",
+          "x-christmas",
+          "a-aespa",
+          "t002"
+        ],
+        "edgeIds": [
+          "r1",
+          "r2",
+          "r3",
+          "r4"
+        ],
+        "showId": "show-rv-aespa"
+      },
+      {
+        "id": "sting-police",
+        "title": "Sting ↔ The Police",
+        "subtitle": "从独唱作品走到曾所属乐队，是一条有来源的职业关系。",
+        "nodeIds": [
+          "t090",
+          "a-sting",
+          "a-police",
+          "t063"
+        ],
+        "edgeIds": [
+          "p1",
+          "p2",
+          "p3"
+        ],
+        "showId": "show-sting-police"
+      }
+    ]
+  }
 }

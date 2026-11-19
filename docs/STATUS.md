@@ -11,3 +11,6 @@ English | [简体中文](STATUS.zh-CN.md)
 **Not yet implemented:** Live library sync, playback rights/actual audio, Music Assistant or AI Radio integration, sourced historical music-relationship research, real LLM/TTS, duration-accurate program production.
 
 [PRD v0.3](PRD.md) · [Interactive prototype](../prototype/index.html) · [Data JSON](../prototype/data/2025-top-songs.json) · [MVP](02-mvp-and-requirements.md).
+
+
+**2026-11-19 prototype revision:** Music Graph now presents four source-backed cross-artist relationship paths, with separate ranked/external entities, clickable evidence and static/mobile SVG. Associated show plans are simulated, not working audio or Music Assistant integration.
