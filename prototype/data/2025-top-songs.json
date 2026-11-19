@@ -1895,8 +1895,8 @@
     }
   ],
   "knowledgeGraph": {
-    "version": "airadio.demo.source-linked.v2",
-    "explanation": "截图曲目、外部核查的音乐史连接分开存储；未出现在榜单的音乐人/作品明确标注外部知识。不同关系分量可互不相连，不能人为添加边。",
+    "version": "airadio.demo.full-network.v3",
+    "explanation": "98 条真实榜单歌曲全部纳入同一个全局图谱；按来源署名连接，另有音乐剧系列归类及有公开出处的外部音乐史关系。无法核实联系的分支仍保留，绝不为了联通而虚构边。",
     "nodes": [
       {
         "id": "a-queen",
@@ -2037,6 +2037,1119 @@
         "kind": "ranked_track",
         "trackId": "t063",
         "inRanking": true
+      },
+      {
+        "id": "credit-001",
+        "label": "颜榕蓉",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-004",
+        "label": "Daveed Diggs, Leslie Odom Jr. 等",
+        "kind": "source_credit",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-005",
+        "label": "黑豹乐队",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-006",
+        "label": "郭静",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-007",
+        "label": "Tophouse",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-008",
+        "label": "陈淑桦",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-009",
+        "label": "王心凌",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-010",
+        "label": "TWICE",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-011",
+        "label": "Ayano Tsuji",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-012",
+        "label": "宇多田光",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-013",
+        "label": "Leslie Odom Jr., Daveed Diggs 等",
+        "kind": "source_credit",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-014",
+        "label": "蛙池",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-015",
+        "label": "梁静茹",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-017",
+        "label": "Original Broadway Cast",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-018",
+        "label": "褐眼女孩",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-019",
+        "label": "白水寒",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-020",
+        "label": "张雨生",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-021",
+        "label": "面孔乐队",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-022",
+        "label": "RAYE",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-023",
+        "label": "Phillipa Soo 等",
+        "kind": "source_credit",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-024",
+        "label": "爱丽丝·纱良·奥特",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-025",
+        "label": "Rod Stewart",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-026",
+        "label": "邓丽君",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-027",
+        "label": "JENNIE",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-028",
+        "label": "Christopher Jackson 等",
+        "kind": "source_credit",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-029",
+        "label": "陶喆",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-030",
+        "label": "张学友",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-031",
+        "label": "告五人",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-032",
+        "label": "Macklemore & Ryan Lewis",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-033",
+        "label": "林俊杰",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-034",
+        "label": "Ariana Grande",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-035",
+        "label": "Beyond",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-036",
+        "label": "Avicii",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-037",
+        "label": "孙燕姿",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-038",
+        "label": "方大同",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-039",
+        "label": "万能青年旅店",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-040",
+        "label": "Phillipa Soo, Anthony Ramos 等",
+        "kind": "source_credit",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-041",
+        "label": "飞儿乐团",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-042",
+        "label": "张楚",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-043",
+        "label": "林忆莲",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-044",
+        "label": "RAYE & 070 Shake",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-045",
+        "label": "Lana Del Rey",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-046",
+        "label": "皇家爱乐管弦乐队",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-048",
+        "label": "郎朗",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-049",
+        "label": "José González",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-050",
+        "label": "王力宏",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-051",
+        "label": "陈绮贞",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-053",
+        "label": "Adele",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-054",
+        "label": "The Cranberries",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-056",
+        "label": "Ray Conniff",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-057",
+        "label": "小泽征尔、马友友等",
+        "kind": "source_credit",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-058",
+        "label": "休·杰克曼等",
+        "kind": "source_credit",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-059",
+        "label": "王若琳",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-060",
+        "label": "王菲",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-061",
+        "label": "苏运莹",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-062",
+        "label": "Don McLean",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-063",
+        "label": "单依纯",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-064",
+        "label": "Leslie Odom Jr., Lin-Manuel Miranda 等",
+        "kind": "source_credit",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-065",
+        "label": "AC/DC",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-066",
+        "label": "Badfinger",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-067",
+        "label": "ILLIT",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-069",
+        "label": "郝云",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-070",
+        "label": "Billy Joel",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-071",
+        "label": "Neil Young",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-072",
+        "label": "刘若英",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-074",
+        "label": "Willie Nelson",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-075",
+        "label": "盘尼西林",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "credit-076",
+        "label": "Eagles",
+        "kind": "artist",
+        "inRanking": false,
+        "fromUserScreenshot": true
+      },
+      {
+        "id": "t001",
+        "label": "爱要坦荡荡",
+        "kind": "ranked_track",
+        "trackId": "t001",
+        "inRanking": true
+      },
+      {
+        "id": "t004",
+        "label": "피카부 Peek-A-Boo",
+        "kind": "ranked_track",
+        "trackId": "t004",
+        "inRanking": true
+      },
+      {
+        "id": "t005",
+        "label": "What'd I Miss",
+        "kind": "ranked_track",
+        "trackId": "t005",
+        "inRanking": true
+      },
+      {
+        "id": "t006",
+        "label": "无地自容",
+        "kind": "ranked_track",
+        "trackId": "t006",
+        "inRanking": true
+      },
+      {
+        "id": "t007",
+        "label": "又是艳阳天",
+        "kind": "ranked_track",
+        "trackId": "t007",
+        "inRanking": true
+      },
+      {
+        "id": "t008",
+        "label": "The Mountain Song",
+        "kind": "ranked_track",
+        "trackId": "t008",
+        "inRanking": true
+      },
+      {
+        "id": "t009",
+        "label": "说你爱我",
+        "kind": "ranked_track",
+        "trackId": "t009",
+        "inRanking": true
+      },
+      {
+        "id": "t010",
+        "label": "爱情讯息",
+        "kind": "ranked_track",
+        "trackId": "t010",
+        "inRanking": true
+      },
+      {
+        "id": "t011",
+        "label": "Honey",
+        "kind": "ranked_track",
+        "trackId": "t011",
+        "inRanking": true
+      },
+      {
+        "id": "t012",
+        "label": "THIS IS FOR",
+        "kind": "ranked_track",
+        "trackId": "t012",
+        "inRanking": true
+      },
+      {
+        "id": "t013",
+        "label": "Kaze Ni Naru",
+        "kind": "ranked_track",
+        "trackId": "t013",
+        "inRanking": true
+      },
+      {
+        "id": "t014",
+        "label": "Automatic (2024 Mix)",
+        "kind": "ranked_track",
+        "trackId": "t014",
+        "inRanking": true
+      },
+      {
+        "id": "t015",
+        "label": "红色味道",
+        "kind": "ranked_track",
+        "trackId": "t015",
+        "inRanking": true
+      },
+      {
+        "id": "t016",
+        "label": "Psycho",
+        "kind": "ranked_track",
+        "trackId": "t016",
+        "inRanking": true
+      },
+      {
+        "id": "t017",
+        "label": "Guns and Ships",
+        "kind": "ranked_track",
+        "trackId": "t017",
+        "inRanking": true
+      },
+      {
+        "id": "t018",
+        "label": "郊游",
+        "kind": "ranked_track",
+        "trackId": "t018",
+        "inRanking": true
+      },
+      {
+        "id": "t019",
+        "label": "暖暖",
+        "kind": "ranked_track",
+        "trackId": "t019",
+        "inRanking": true
+      },
+      {
+        "id": "t021",
+        "label": "Yorktown (The World Turned Upside Down)",
+        "kind": "ranked_track",
+        "trackId": "t021",
+        "inRanking": true
+      },
+      {
+        "id": "t022",
+        "label": "Abracadabra",
+        "kind": "ranked_track",
+        "trackId": "t022",
+        "inRanking": true
+      },
+      {
+        "id": "t023",
+        "label": "天真的橡皮 (DJ林泽)",
+        "kind": "ranked_track",
+        "trackId": "t023",
+        "inRanking": true
+      },
+      {
+        "id": "t024",
+        "label": "我期待",
+        "kind": "ranked_track",
+        "trackId": "t024",
+        "inRanking": true
+      },
+      {
+        "id": "t025",
+        "label": "幻觉",
+        "kind": "ranked_track",
+        "trackId": "t025",
+        "inRanking": true
+      },
+      {
+        "id": "t026",
+        "label": "Worth It.",
+        "kind": "ranked_track",
+        "trackId": "t026",
+        "inRanking": true
+      },
+      {
+        "id": "t027",
+        "label": "Helpless",
+        "kind": "ranked_track",
+        "trackId": "t027",
+        "inRanking": true
+      },
+      {
+        "id": "t028",
+        "label": "Suite bergamasque, L. 75: N…",
+        "kind": "ranked_track",
+        "trackId": "t028",
+        "inRanking": true
+      },
+      {
+        "id": "t029",
+        "label": "Sailing",
+        "kind": "ranked_track",
+        "trackId": "t029",
+        "inRanking": true
+      },
+      {
+        "id": "t030",
+        "label": "偿还",
+        "kind": "ranked_track",
+        "trackId": "t030",
+        "inRanking": true
+      },
+      {
+        "id": "t031",
+        "label": "Mantra",
+        "kind": "ranked_track",
+        "trackId": "t031",
+        "inRanking": true
+      },
+      {
+        "id": "t032",
+        "label": "History Has Its Eyes On You",
+        "kind": "ranked_track",
+        "trackId": "t032",
+        "inRanking": true
+      },
+      {
+        "id": "t033",
+        "label": "爱我还是他",
+        "kind": "ranked_track",
+        "trackId": "t033",
+        "inRanking": true
+      },
+      {
+        "id": "t034",
+        "label": "情书",
+        "kind": "ranked_track",
+        "trackId": "t034",
+        "inRanking": true
+      },
+      {
+        "id": "t035",
+        "label": "我想要占据你",
+        "kind": "ranked_track",
+        "trackId": "t035",
+        "inRanking": true
+      },
+      {
+        "id": "t036",
+        "label": "Can't Hold Us (feat. Ray Dalton)",
+        "kind": "ranked_track",
+        "trackId": "t036",
+        "inRanking": true
+      },
+      {
+        "id": "t037",
+        "label": "러시안 룰렛 Russian Roulette",
+        "kind": "ranked_track",
+        "trackId": "t037",
+        "inRanking": true
+      },
+      {
+        "id": "t038",
+        "label": "裹着心的光",
+        "kind": "ranked_track",
+        "trackId": "t038",
+        "inRanking": true
+      },
+      {
+        "id": "t039",
+        "label": "34+35",
+        "kind": "ranked_track",
+        "trackId": "t039",
+        "inRanking": true
+      },
+      {
+        "id": "t040",
+        "label": "Right Hand Man",
+        "kind": "ranked_track",
+        "trackId": "t040",
+        "inRanking": true
+      },
+      {
+        "id": "t041",
+        "label": "不再犹豫",
+        "kind": "ranked_track",
+        "trackId": "t041",
+        "inRanking": true
+      },
+      {
+        "id": "t042",
+        "label": "Waiting For Love",
+        "kind": "ranked_track",
+        "trackId": "t042",
+        "inRanking": true
+      },
+      {
+        "id": "t043",
+        "label": "不同",
+        "kind": "ranked_track",
+        "trackId": "t043",
+        "inRanking": true
+      },
+      {
+        "id": "t044",
+        "label": "为妳写的歌",
+        "kind": "ranked_track",
+        "trackId": "t044",
+        "inRanking": true
+      },
+      {
+        "id": "t045",
+        "label": "大石碎胸口",
+        "kind": "ranked_track",
+        "trackId": "t045",
+        "inRanking": true
+      },
+      {
+        "id": "t046",
+        "label": "Take a Break",
+        "kind": "ranked_track",
+        "trackId": "t046",
+        "inRanking": true
+      },
+      {
+        "id": "t047",
+        "label": "你的微笑",
+        "kind": "ranked_track",
+        "trackId": "t047",
+        "inRanking": true
+      },
+      {
+        "id": "t048",
+        "label": "蚂蚁蚂蚁",
+        "kind": "ranked_track",
+        "trackId": "t048",
+        "inRanking": true
+      },
+      {
+        "id": "t049",
+        "label": "纤维",
+        "kind": "ranked_track",
+        "trackId": "t049",
+        "inRanking": true
+      },
+      {
+        "id": "t050",
+        "label": "坏天气",
+        "kind": "ranked_track",
+        "trackId": "t050",
+        "inRanking": true
+      },
+      {
+        "id": "t051",
+        "label": "Escapism.",
+        "kind": "ranked_track",
+        "trackId": "t051",
+        "inRanking": true
+      },
+      {
+        "id": "t052",
+        "label": "Salvatore",
+        "kind": "ranked_track",
+        "trackId": "t052",
+        "inRanking": true
+      },
+      {
+        "id": "t053",
+        "label": "Bittersweet Symphony",
+        "kind": "ranked_track",
+        "trackId": "t053",
+        "inRanking": true
+      },
+      {
+        "id": "t054",
+        "label": "Rosy (Live)",
+        "kind": "ranked_track",
+        "trackId": "t054",
+        "inRanking": true
+      },
+      {
+        "id": "t055",
+        "label": "Bohemian Rhapsody",
+        "kind": "ranked_track",
+        "trackId": "t055",
+        "inRanking": true
+      },
+      {
+        "id": "t056",
+        "label": "Piano Sonata No. 16 in C Major…",
+        "kind": "ranked_track",
+        "trackId": "t056",
+        "inRanking": true
+      },
+      {
+        "id": "t057",
+        "label": "至少还有你",
+        "kind": "ranked_track",
+        "trackId": "t057",
+        "inRanking": true
+      },
+      {
+        "id": "t058",
+        "label": "Stay Alive",
+        "kind": "ranked_track",
+        "trackId": "t058",
+        "inRanking": true
+      },
+      {
+        "id": "t059",
+        "label": "Next Level",
+        "kind": "ranked_track",
+        "trackId": "t059",
+        "inRanking": true
+      },
+      {
+        "id": "t060",
+        "label": "每个人都会 (Song for Cartier…)",
+        "kind": "ranked_track",
+        "trackId": "t060",
+        "inRanking": true
+      },
+      {
+        "id": "t061",
+        "label": "爱错",
+        "kind": "ranked_track",
+        "trackId": "t061",
+        "inRanking": true
+      },
+      {
+        "id": "t062",
+        "label": "还是会寂寞",
+        "kind": "ranked_track",
+        "trackId": "t062",
+        "inRanking": true
+      },
+      {
+        "id": "t065",
+        "label": "Easy On Me",
+        "kind": "ranked_track",
+        "trackId": "t065",
+        "inRanking": true
+      },
+      {
+        "id": "t066",
+        "label": "克卜勒",
+        "kind": "ranked_track",
+        "trackId": "t066",
+        "inRanking": true
+      },
+      {
+        "id": "t067",
+        "label": "Animal Instinct",
+        "kind": "ranked_track",
+        "trackId": "t067",
+        "inRanking": true
+      },
+      {
+        "id": "t068",
+        "label": "Wayfaring Stranger",
+        "kind": "ranked_track",
+        "trackId": "t068",
+        "inRanking": true
+      },
+      {
+        "id": "t069",
+        "label": "The Windmills of Your Mind",
+        "kind": "ranked_track",
+        "trackId": "t069",
+        "inRanking": true
+      },
+      {
+        "id": "t070",
+        "label": "Humoresque No. 7 in G-flat…",
+        "kind": "ranked_track",
+        "trackId": "t070",
+        "inRanking": true
+      },
+      {
+        "id": "t071",
+        "label": "From Now On",
+        "kind": "ranked_track",
+        "trackId": "t071",
+        "inRanking": true
+      },
+      {
+        "id": "t072",
+        "label": "I Love You",
+        "kind": "ranked_track",
+        "trackId": "t072",
+        "inRanking": true
+      },
+      {
+        "id": "t073",
+        "label": "矜持",
+        "kind": "ranked_track",
+        "trackId": "t073",
+        "inRanking": true
+      },
+      {
+        "id": "t074",
+        "label": "生活倒影",
+        "kind": "ranked_track",
+        "trackId": "t074",
+        "inRanking": true
+      },
+      {
+        "id": "t075",
+        "label": "我怀念的",
+        "kind": "ranked_track",
+        "trackId": "t075",
+        "inRanking": true
+      },
+      {
+        "id": "t076",
+        "label": "And I Love You So",
+        "kind": "ranked_track",
+        "trackId": "t076",
+        "inRanking": true
+      },
+      {
+        "id": "t077",
+        "label": "珠玉",
+        "kind": "ranked_track",
+        "trackId": "t077",
+        "inRanking": true
+      },
+      {
+        "id": "t078",
+        "label": "Bad Boy",
+        "kind": "ranked_track",
+        "trackId": "t078",
+        "inRanking": true
+      },
+      {
+        "id": "t079",
+        "label": "Non-Stop",
+        "kind": "ranked_track",
+        "trackId": "t079",
+        "inRanking": true
+      },
+      {
+        "id": "t080",
+        "label": "我不难过",
+        "kind": "ranked_track",
+        "trackId": "t080",
+        "inRanking": true
+      },
+      {
+        "id": "t081",
+        "label": "Shoot to Thrill",
+        "kind": "ranked_track",
+        "trackId": "t081",
+        "inRanking": true
+      },
+      {
+        "id": "t083",
+        "label": "Walk Out in the Rain (2010 …)",
+        "kind": "ranked_track",
+        "trackId": "t083",
+        "inRanking": true
+      },
+      {
+        "id": "t084",
+        "label": "Magnetic",
+        "kind": "ranked_track",
+        "trackId": "t084",
+        "inRanking": true
+      },
+      {
+        "id": "t086",
+        "label": "活着 (Live)",
+        "kind": "ranked_track",
+        "trackId": "t086",
+        "inRanking": true
+      },
+      {
+        "id": "t087",
+        "label": "Piano Man",
+        "kind": "ranked_track",
+        "trackId": "t087",
+        "inRanking": true
+      },
+      {
+        "id": "t088",
+        "label": "Love and War",
+        "kind": "ranked_track",
+        "trackId": "t088",
+        "inRanking": true
+      },
+      {
+        "id": "t089",
+        "label": "为爱痴狂",
+        "kind": "ranked_track",
+        "trackId": "t089",
+        "inRanking": true
+      },
+      {
+        "id": "t091",
+        "label": "情歌",
+        "kind": "ranked_track",
+        "trackId": "t091",
+        "inRanking": true
+      },
+      {
+        "id": "t092",
+        "label": "Spread Your Wings",
+        "kind": "ranked_track",
+        "trackId": "t092",
+        "inRanking": true
+      },
+      {
+        "id": "t093",
+        "label": "棋子 (Live)",
+        "kind": "ranked_track",
+        "trackId": "t093",
+        "inRanking": true
+      },
+      {
+        "id": "t094",
+        "label": "Seven Spanish Angels (with…)",
+        "kind": "ranked_track",
+        "trackId": "t094",
+        "inRanking": true
+      },
+      {
+        "id": "t095",
+        "label": "Love of My Life",
+        "kind": "ranked_track",
+        "trackId": "t095",
+        "inRanking": true
+      },
+      {
+        "id": "t096",
+        "label": "小城故事（电影《小城故事》…）",
+        "kind": "ranked_track",
+        "trackId": "t096",
+        "inRanking": true
+      },
+      {
+        "id": "t097",
+        "label": "再谈记忆",
+        "kind": "ranked_track",
+        "trackId": "t097",
+        "inRanking": true
+      },
+      {
+        "id": "t098",
+        "label": "Hotel California (Remastered)",
+        "kind": "ranked_track",
+        "trackId": "t098",
+        "inRanking": true
+      },
+      {
+        "id": "series-hamilton",
+        "label": "《Hamilton》音乐剧",
+        "kind": "series",
+        "fromUserScreenshot": true,
+        "inRanking": false
       }
     ],
     "edges": [
@@ -2199,6 +3312,986 @@
         "provenance": "user_screenshot",
         "sourceTitle": "用户提供的 Apple Music 2025 年度榜单截图（可见条目）",
         "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t001",
+        "from": "credit-001",
+        "to": "t001",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #1 显示《爱要坦荡荡》的署名为「颜榕蓉」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t004",
+        "from": "a-rv",
+        "to": "t004",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #4 显示《피카부 Peek-A-Boo》的署名为「Red Velvet」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t005",
+        "from": "credit-004",
+        "to": "t005",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #5 显示《What'd I Miss》的署名为「Daveed Diggs, Leslie Odom Jr. 等」。原始署名部分截断，不能据此确定所有参与者。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t006",
+        "from": "credit-005",
+        "to": "t006",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #6 显示《无地自容》的署名为「黑豹乐队」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t007",
+        "from": "credit-006",
+        "to": "t007",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #7 显示《又是艳阳天》的署名为「郭静」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t008",
+        "from": "credit-007",
+        "to": "t008",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #8 显示《The Mountain Song》的署名为「Tophouse」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t009",
+        "from": "credit-008",
+        "to": "t009",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #9 显示《说你爱我》的署名为「陈淑桦」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t010",
+        "from": "credit-006",
+        "to": "t010",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #10 显示《爱情讯息》的署名为「郭静」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t011",
+        "from": "credit-009",
+        "to": "t011",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #11 显示《Honey》的署名为「王心凌」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t012",
+        "from": "credit-010",
+        "to": "t012",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #12 显示《THIS IS FOR》的署名为「TWICE」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t013",
+        "from": "credit-011",
+        "to": "t013",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #13 显示《Kaze Ni Naru》的署名为「Ayano Tsuji」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t014",
+        "from": "credit-012",
+        "to": "t014",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #14 显示《Automatic (2024 Mix)》的署名为「宇多田光」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t015",
+        "from": "a-rv",
+        "to": "t015",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #15 显示《红色味道》的署名为「Red Velvet」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t016",
+        "from": "a-rv",
+        "to": "t016",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #16 显示《Psycho》的署名为「Red Velvet」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t017",
+        "from": "credit-013",
+        "to": "t017",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #17 显示《Guns and Ships》的署名为「Leslie Odom Jr., Daveed Diggs 等」。原始署名部分截断，不能据此确定所有参与者。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t018",
+        "from": "credit-014",
+        "to": "t018",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #18 显示《郊游》的署名为「蛙池」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t019",
+        "from": "credit-015",
+        "to": "t019",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #19 显示《暖暖》的署名为「梁静茹」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t021",
+        "from": "credit-017",
+        "to": "t021",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #21 显示《Yorktown (The World Turned Upside Down)》的署名为「Original Broadway Cast」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t022",
+        "from": "credit-018",
+        "to": "t022",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #22 显示《Abracadabra》的署名为「褐眼女孩」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t023",
+        "from": "credit-019",
+        "to": "t023",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #23 显示《天真的橡皮 (DJ林泽)》的署名为「白水寒」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t024",
+        "from": "credit-020",
+        "to": "t024",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #24 显示《我期待》的署名为「张雨生」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t025",
+        "from": "credit-021",
+        "to": "t025",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #25 显示《幻觉》的署名为「面孔乐队」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t026",
+        "from": "credit-022",
+        "to": "t026",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #26 显示《Worth It.》的署名为「RAYE」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t027",
+        "from": "credit-023",
+        "to": "t027",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #27 显示《Helpless》的署名为「Phillipa Soo 等」。原始署名部分截断，不能据此确定所有参与者。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t028",
+        "from": "credit-024",
+        "to": "t028",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #28 显示《Suite bergamasque, L. 75: N…》的署名为「爱丽丝·纱良·奥特」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t029",
+        "from": "credit-025",
+        "to": "t029",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #29 显示《Sailing》的署名为「Rod Stewart」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t030",
+        "from": "credit-026",
+        "to": "t030",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #30 显示《偿还》的署名为「邓丽君」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t031",
+        "from": "credit-027",
+        "to": "t031",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #31 显示《Mantra》的署名为「JENNIE」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t032",
+        "from": "credit-028",
+        "to": "t032",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #32 显示《History Has Its Eyes On You》的署名为「Christopher Jackson 等」。原始署名部分截断，不能据此确定所有参与者。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t033",
+        "from": "credit-029",
+        "to": "t033",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #33 显示《爱我还是他》的署名为「陶喆」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t034",
+        "from": "credit-030",
+        "to": "t034",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #34 显示《情书》的署名为「张学友」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t035",
+        "from": "credit-031",
+        "to": "t035",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #35 显示《我想要占据你》的署名为「告五人」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t036",
+        "from": "credit-032",
+        "to": "t036",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #36 显示《Can't Hold Us (feat. Ray Dalton)》的署名为「Macklemore & Ryan Lewis」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t037",
+        "from": "a-rv",
+        "to": "t037",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #37 显示《러시안 룰렛 Russian Roulette》的署名为「Red Velvet」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t038",
+        "from": "credit-033",
+        "to": "t038",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #38 显示《裹着心的光》的署名为「林俊杰」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t039",
+        "from": "credit-034",
+        "to": "t039",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #39 显示《34+35》的署名为「Ariana Grande」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t040",
+        "from": "credit-028",
+        "to": "t040",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #40 显示《Right Hand Man》的署名为「Christopher Jackson 等」。原始署名部分截断，不能据此确定所有参与者。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t041",
+        "from": "credit-035",
+        "to": "t041",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #41 显示《不再犹豫》的署名为「Beyond」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t042",
+        "from": "credit-036",
+        "to": "t042",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #42 显示《Waiting For Love》的署名为「Avicii」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t043",
+        "from": "credit-037",
+        "to": "t043",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #43 显示《不同》的署名为「孙燕姿」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t044",
+        "from": "credit-038",
+        "to": "t044",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #44 显示《为妳写的歌》的署名为「方大同」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t045",
+        "from": "credit-039",
+        "to": "t045",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #45 显示《大石碎胸口》的署名为「万能青年旅店」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t046",
+        "from": "credit-040",
+        "to": "t046",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #46 显示《Take a Break》的署名为「Phillipa Soo, Anthony Ramos 等」。原始署名部分截断，不能据此确定所有参与者。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t047",
+        "from": "credit-041",
+        "to": "t047",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #47 显示《你的微笑》的署名为「飞儿乐团」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t048",
+        "from": "credit-042",
+        "to": "t048",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #48 显示《蚂蚁蚂蚁》的署名为「张楚」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t049",
+        "from": "credit-043",
+        "to": "t049",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #49 显示《纤维》的署名为「林忆莲」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t050",
+        "from": "credit-037",
+        "to": "t050",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #50 显示《坏天气》的署名为「孙燕姿」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t051",
+        "from": "credit-044",
+        "to": "t051",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #51 显示《Escapism.》的署名为「RAYE & 070 Shake」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t052",
+        "from": "credit-045",
+        "to": "t052",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #52 显示《Salvatore》的署名为「Lana Del Rey」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t053",
+        "from": "credit-046",
+        "to": "t053",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #53 显示《Bittersweet Symphony》的署名为「皇家爱乐管弦乐队」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t054",
+        "from": "credit-038",
+        "to": "t054",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #54 显示《Rosy (Live)》的署名为「方大同」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t055",
+        "from": "a-queen",
+        "to": "t055",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #55 显示《Bohemian Rhapsody》的署名为「Queen」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t056",
+        "from": "credit-048",
+        "to": "t056",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #56 显示《Piano Sonata No. 16 in C Major…》的署名为「郎朗」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t057",
+        "from": "credit-043",
+        "to": "t057",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #57 显示《至少还有你》的署名为「林忆莲」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t058",
+        "from": "credit-049",
+        "to": "t058",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #58 显示《Stay Alive》的署名为「José González」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t059",
+        "from": "a-aespa",
+        "to": "t059",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #59 显示《Next Level》的署名为「aespa」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t060",
+        "from": "credit-038",
+        "to": "t060",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #60 显示《每个人都会 (Song for Cartier…)》的署名为「方大同」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t061",
+        "from": "credit-050",
+        "to": "t061",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #61 显示《爱错》的署名为「王力宏」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t062",
+        "from": "credit-051",
+        "to": "t062",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #62 显示《还是会寂寞》的署名为「陈绮贞」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t065",
+        "from": "credit-053",
+        "to": "t065",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #65 显示《Easy On Me》的署名为「Adele」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t066",
+        "from": "credit-037",
+        "to": "t066",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #66 显示《克卜勒》的署名为「孙燕姿」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t067",
+        "from": "credit-054",
+        "to": "t067",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #67 显示《Animal Instinct》的署名为「The Cranberries」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t068",
+        "from": "a-cash",
+        "to": "t068",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #68 显示《Wayfaring Stranger》的署名为「Johnny Cash」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t069",
+        "from": "credit-056",
+        "to": "t069",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #69 显示《The Windmills of Your Mind》的署名为「Ray Conniff」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t070",
+        "from": "credit-057",
+        "to": "t070",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #70 显示《Humoresque No. 7 in G-flat…》的署名为「小泽征尔、马友友等」。原始署名部分截断，不能据此确定所有参与者。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t071",
+        "from": "credit-058",
+        "to": "t071",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #71 显示《From Now On》的署名为「休·杰克曼等」。原始署名部分截断，不能据此确定所有参与者。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t072",
+        "from": "credit-059",
+        "to": "t072",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #72 显示《I Love You》的署名为「王若琳」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t073",
+        "from": "credit-060",
+        "to": "t073",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #73 显示《矜持》的署名为「王菲」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t074",
+        "from": "credit-061",
+        "to": "t074",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #74 显示《生活倒影》的署名为「苏运莹」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t075",
+        "from": "credit-037",
+        "to": "t075",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #75 显示《我怀念的》的署名为「孙燕姿」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t076",
+        "from": "credit-062",
+        "to": "t076",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #76 显示《And I Love You So》的署名为「Don McLean」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t077",
+        "from": "credit-063",
+        "to": "t077",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #77 显示《珠玉》的署名为「单依纯」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t078",
+        "from": "a-rv",
+        "to": "t078",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #78 显示《Bad Boy》的署名为「Red Velvet」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t079",
+        "from": "credit-064",
+        "to": "t079",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #79 显示《Non-Stop》的署名为「Leslie Odom Jr., Lin-Manuel Miranda 等」。原始署名部分截断，不能据此确定所有参与者。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t080",
+        "from": "credit-037",
+        "to": "t080",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #80 显示《我不难过》的署名为「孙燕姿」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t081",
+        "from": "credit-065",
+        "to": "t081",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #81 显示《Shoot to Thrill》的署名为「AC/DC」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t083",
+        "from": "credit-066",
+        "to": "t083",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #83 显示《Walk Out in the Rain (2010 …)》的署名为「Badfinger」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t084",
+        "from": "credit-067",
+        "to": "t084",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #84 显示《Magnetic》的署名为「ILLIT」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t086",
+        "from": "credit-069",
+        "to": "t086",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #86 显示《活着 (Live)》的署名为「郝云」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t087",
+        "from": "credit-070",
+        "to": "t087",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #87 显示《Piano Man》的署名为「Billy Joel」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t088",
+        "from": "credit-071",
+        "to": "t088",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #88 显示《Love and War》的署名为「Neil Young」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t089",
+        "from": "credit-072",
+        "to": "t089",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #89 显示《为爱痴狂》的署名为「刘若英」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t091",
+        "from": "credit-015",
+        "to": "t091",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #91 显示《情歌》的署名为「梁静茹」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t092",
+        "from": "a-queen",
+        "to": "t092",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #92 显示《Spread Your Wings》的署名为「Queen」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t093",
+        "from": "credit-060",
+        "to": "t093",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #93 显示《棋子 (Live)》的署名为「王菲」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t094",
+        "from": "credit-074",
+        "to": "t094",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #94 显示《Seven Spanish Angels (with…)》的署名为「Willie Nelson」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t095",
+        "from": "a-queen",
+        "to": "t095",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #95 显示《Love of My Life》的署名为「Queen」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t096",
+        "from": "credit-026",
+        "to": "t096",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #96 显示《小城故事（电影《小城故事》…）》的署名为「邓丽君」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t097",
+        "from": "credit-075",
+        "to": "t097",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #97 显示《再谈记忆》的署名为「盘尼西林」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-credit-t098",
+        "from": "credit-076",
+        "to": "t098",
+        "type": "榜单署名",
+        "description": "你的 2025 年 Apple Music 榜单 #98 显示《Hotel California (Remastered)》的署名为「Eagles」。",
+        "provenance": "user_screenshot",
+        "sourceTitle": "用户提供的 2025 年年度最爱歌曲截图",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-series-t005",
+        "from": "series-hamilton",
+        "to": "t005",
+        "type": "系列归类",
+        "description": "根据用户榜单条目的标题及封面，将该曲目归入《Hamilton》音乐剧系列；具体录音和版本细节尚待专辑元数据核实。",
+        "provenance": "curated_from_screenshot",
+        "sourceTitle": "用户 2025 年度榜单的音乐剧系列归类",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-series-t017",
+        "from": "series-hamilton",
+        "to": "t017",
+        "type": "系列归类",
+        "description": "根据用户榜单条目的标题及封面，将该曲目归入《Hamilton》音乐剧系列；具体录音和版本细节尚待专辑元数据核实。",
+        "provenance": "curated_from_screenshot",
+        "sourceTitle": "用户 2025 年度榜单的音乐剧系列归类",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-series-t021",
+        "from": "series-hamilton",
+        "to": "t021",
+        "type": "系列归类",
+        "description": "根据用户榜单条目的标题及封面，将该曲目归入《Hamilton》音乐剧系列；具体录音和版本细节尚待专辑元数据核实。",
+        "provenance": "curated_from_screenshot",
+        "sourceTitle": "用户 2025 年度榜单的音乐剧系列归类",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-series-t027",
+        "from": "series-hamilton",
+        "to": "t027",
+        "type": "系列归类",
+        "description": "根据用户榜单条目的标题及封面，将该曲目归入《Hamilton》音乐剧系列；具体录音和版本细节尚待专辑元数据核实。",
+        "provenance": "curated_from_screenshot",
+        "sourceTitle": "用户 2025 年度榜单的音乐剧系列归类",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-series-t032",
+        "from": "series-hamilton",
+        "to": "t032",
+        "type": "系列归类",
+        "description": "根据用户榜单条目的标题及封面，将该曲目归入《Hamilton》音乐剧系列；具体录音和版本细节尚待专辑元数据核实。",
+        "provenance": "curated_from_screenshot",
+        "sourceTitle": "用户 2025 年度榜单的音乐剧系列归类",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-series-t040",
+        "from": "series-hamilton",
+        "to": "t040",
+        "type": "系列归类",
+        "description": "根据用户榜单条目的标题及封面，将该曲目归入《Hamilton》音乐剧系列；具体录音和版本细节尚待专辑元数据核实。",
+        "provenance": "curated_from_screenshot",
+        "sourceTitle": "用户 2025 年度榜单的音乐剧系列归类",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-series-t046",
+        "from": "series-hamilton",
+        "to": "t046",
+        "type": "系列归类",
+        "description": "根据用户榜单条目的标题及封面，将该曲目归入《Hamilton》音乐剧系列；具体录音和版本细节尚待专辑元数据核实。",
+        "provenance": "curated_from_screenshot",
+        "sourceTitle": "用户 2025 年度榜单的音乐剧系列归类",
+        "sourceUrl": null
+      },
+      {
+        "id": "src-series-t079",
+        "from": "series-hamilton",
+        "to": "t079",
+        "type": "系列归类",
+        "description": "根据用户榜单条目的标题及封面，将该曲目归入《Hamilton》音乐剧系列；具体录音和版本细节尚待专辑元数据核实。",
+        "provenance": "curated_from_screenshot",
+        "sourceTitle": "用户 2025 年度榜单的音乐剧系列归类",
+        "sourceUrl": null
       }
     ],
     "journeys": [
@@ -2278,6 +4371,1513 @@
         ],
         "showId": "show-sting-police"
       }
-    ]
+    ],
+    "layout": {
+      "width": 2460,
+      "height": 2284,
+      "positions": {
+        "series-hamilton": {
+          "x": 297,
+          "y": 216
+        },
+        "credit-028": {
+          "x": 297,
+          "y": 129
+        },
+        "t005": {
+          "x": 365,
+          "y": 162
+        },
+        "t017": {
+          "x": 382,
+          "y": 235
+        },
+        "t021": {
+          "x": 335,
+          "y": 294
+        },
+        "t027": {
+          "x": 259,
+          "y": 294
+        },
+        "t032": {
+          "x": 212,
+          "y": 235
+        },
+        "t040": {
+          "x": 229,
+          "y": 162
+        },
+        "t046": {
+          "x": 328,
+          "y": 62
+        },
+        "t079": {
+          "x": 428,
+          "y": 129
+        },
+        "credit-004": {
+          "x": 451,
+          "y": 247
+        },
+        "credit-013": {
+          "x": 384,
+          "y": 347
+        },
+        "credit-017": {
+          "x": 266,
+          "y": 370
+        },
+        "credit-023": {
+          "x": 166,
+          "y": 303
+        },
+        "credit-040": {
+          "x": 143,
+          "y": 185
+        },
+        "credit-064": {
+          "x": 210,
+          "y": 85
+        },
+        "a-rv": {
+          "x": 817,
+          "y": 201
+        },
+        "a-aespa": {
+          "x": 817,
+          "y": 121
+        },
+        "x-christmas": {
+          "x": 879,
+          "y": 151
+        },
+        "t002": {
+          "x": 895,
+          "y": 219
+        },
+        "t003": {
+          "x": 852,
+          "y": 273
+        },
+        "t004": {
+          "x": 782,
+          "y": 273
+        },
+        "t015": {
+          "x": 739,
+          "y": 219
+        },
+        "t016": {
+          "x": 755,
+          "y": 151
+        },
+        "t037": {
+          "x": 846,
+          "y": 60
+        },
+        "t059": {
+          "x": 925,
+          "y": 296
+        },
+        "t078": {
+          "x": 681,
+          "y": 247
+        },
+        "a-queen": {
+          "x": 1254.5,
+          "y": 186
+        },
+        "a-bowie": {
+          "x": 1255,
+          "y": 75
+        },
+        "album-transformer": {
+          "x": 1333,
+          "y": 108
+        },
+        "t020": {
+          "x": 1365,
+          "y": 186
+        },
+        "t064": {
+          "x": 1333,
+          "y": 264
+        },
+        "a-lou": {
+          "x": 1255,
+          "y": 297
+        },
+        "t055": {
+          "x": 1176,
+          "y": 264
+        },
+        "t092": {
+          "x": 1144,
+          "y": 186
+        },
+        "t095": {
+          "x": 1176,
+          "y": 108
+        },
+        "credit-037": {
+          "x": 1649.5,
+          "y": 186
+        },
+        "t043": {
+          "x": 1650,
+          "y": 67
+        },
+        "t050": {
+          "x": 1762,
+          "y": 149
+        },
+        "t066": {
+          "x": 1719,
+          "y": 282
+        },
+        "t075": {
+          "x": 1580,
+          "y": 282
+        },
+        "t080": {
+          "x": 1537,
+          "y": 149
+        },
+        "a-cash": {
+          "x": 2044.5,
+          "y": 186
+        },
+        "a-dylan": {
+          "x": 2045,
+          "y": 67
+        },
+        "x-girl": {
+          "x": 2157,
+          "y": 149
+        },
+        "t068": {
+          "x": 2114,
+          "y": 282
+        },
+        "t082": {
+          "x": 1975,
+          "y": 282
+        },
+        "t085": {
+          "x": 1932,
+          "y": 149
+        },
+        "credit-038": {
+          "x": 179.5,
+          "y": 552.5
+        },
+        "t044": {
+          "x": 180,
+          "y": 452
+        },
+        "t054": {
+          "x": 267,
+          "y": 603
+        },
+        "t060": {
+          "x": 92,
+          "y": 603
+        },
+        "a-police": {
+          "x": 504.5,
+          "y": 552.5
+        },
+        "a-sting": {
+          "x": 505,
+          "y": 452
+        },
+        "t063": {
+          "x": 592,
+          "y": 603
+        },
+        "t090": {
+          "x": 417,
+          "y": 603
+        },
+        "credit-006": {
+          "x": 802,
+          "y": 522.5
+        },
+        "t007": {
+          "x": 802,
+          "y": 445
+        },
+        "t010": {
+          "x": 802,
+          "y": 600
+        },
+        "credit-015": {
+          "x": 1072,
+          "y": 522.5
+        },
+        "t019": {
+          "x": 1072,
+          "y": 445
+        },
+        "t091": {
+          "x": 1072,
+          "y": 600
+        },
+        "credit-026": {
+          "x": 1342,
+          "y": 522.5
+        },
+        "t030": {
+          "x": 1342,
+          "y": 445
+        },
+        "t096": {
+          "x": 1342,
+          "y": 600
+        },
+        "credit-043": {
+          "x": 1612,
+          "y": 522.5
+        },
+        "t049": {
+          "x": 1612,
+          "y": 445
+        },
+        "t057": {
+          "x": 1612,
+          "y": 600
+        },
+        "credit-060": {
+          "x": 1882,
+          "y": 522.5
+        },
+        "t073": {
+          "x": 1882,
+          "y": 445
+        },
+        "t093": {
+          "x": 1882,
+          "y": 600
+        },
+        "credit-001": {
+          "x": 2094.4,
+          "y": 522.5
+        },
+        "t001": {
+          "x": 2209.6,
+          "y": 522.5
+        },
+        "credit-005": {
+          "x": 94.4,
+          "y": 806.5
+        },
+        "t006": {
+          "x": 209.6,
+          "y": 806.5
+        },
+        "credit-007": {
+          "x": 364.4,
+          "y": 806.5
+        },
+        "t008": {
+          "x": 479.6,
+          "y": 806.5
+        },
+        "credit-008": {
+          "x": 634.4,
+          "y": 806.5
+        },
+        "t009": {
+          "x": 749.6,
+          "y": 806.5
+        },
+        "credit-009": {
+          "x": 904.4,
+          "y": 806.5
+        },
+        "t011": {
+          "x": 1019.6,
+          "y": 806.5
+        },
+        "credit-010": {
+          "x": 1174.4,
+          "y": 806.5
+        },
+        "t012": {
+          "x": 1289.6,
+          "y": 806.5
+        },
+        "credit-011": {
+          "x": 1444.4,
+          "y": 806.5
+        },
+        "t013": {
+          "x": 1559.6,
+          "y": 806.5
+        },
+        "credit-012": {
+          "x": 1714.4,
+          "y": 806.5
+        },
+        "t014": {
+          "x": 1829.6,
+          "y": 806.5
+        },
+        "credit-014": {
+          "x": 1984.4,
+          "y": 806.5
+        },
+        "t018": {
+          "x": 2099.6,
+          "y": 806.5
+        },
+        "credit-018": {
+          "x": 94.4,
+          "y": 1030.5
+        },
+        "t022": {
+          "x": 209.6,
+          "y": 1030.5
+        },
+        "credit-019": {
+          "x": 364.4,
+          "y": 1030.5
+        },
+        "t023": {
+          "x": 479.6,
+          "y": 1030.5
+        },
+        "credit-020": {
+          "x": 634.4,
+          "y": 1030.5
+        },
+        "t024": {
+          "x": 749.6,
+          "y": 1030.5
+        },
+        "credit-021": {
+          "x": 904.4,
+          "y": 1030.5
+        },
+        "t025": {
+          "x": 1019.6,
+          "y": 1030.5
+        },
+        "credit-022": {
+          "x": 1174.4,
+          "y": 1030.5
+        },
+        "t026": {
+          "x": 1289.6,
+          "y": 1030.5
+        },
+        "credit-024": {
+          "x": 1444.4,
+          "y": 1030.5
+        },
+        "t028": {
+          "x": 1559.6,
+          "y": 1030.5
+        },
+        "credit-025": {
+          "x": 1714.4,
+          "y": 1030.5
+        },
+        "t029": {
+          "x": 1829.6,
+          "y": 1030.5
+        },
+        "credit-027": {
+          "x": 1984.4,
+          "y": 1030.5
+        },
+        "t031": {
+          "x": 2099.6,
+          "y": 1030.5
+        },
+        "credit-029": {
+          "x": 94.4,
+          "y": 1254.5
+        },
+        "t033": {
+          "x": 209.6,
+          "y": 1254.5
+        },
+        "credit-030": {
+          "x": 364.4,
+          "y": 1254.5
+        },
+        "t034": {
+          "x": 479.6,
+          "y": 1254.5
+        },
+        "credit-031": {
+          "x": 634.4,
+          "y": 1254.5
+        },
+        "t035": {
+          "x": 749.6,
+          "y": 1254.5
+        },
+        "credit-032": {
+          "x": 904.4,
+          "y": 1254.5
+        },
+        "t036": {
+          "x": 1019.6,
+          "y": 1254.5
+        },
+        "credit-033": {
+          "x": 1174.4,
+          "y": 1254.5
+        },
+        "t038": {
+          "x": 1289.6,
+          "y": 1254.5
+        },
+        "credit-034": {
+          "x": 1444.4,
+          "y": 1254.5
+        },
+        "t039": {
+          "x": 1559.6,
+          "y": 1254.5
+        },
+        "credit-035": {
+          "x": 1714.4,
+          "y": 1254.5
+        },
+        "t041": {
+          "x": 1829.6,
+          "y": 1254.5
+        },
+        "credit-036": {
+          "x": 1984.4,
+          "y": 1254.5
+        },
+        "t042": {
+          "x": 2099.6,
+          "y": 1254.5
+        },
+        "credit-039": {
+          "x": 94.4,
+          "y": 1478.5
+        },
+        "t045": {
+          "x": 209.6,
+          "y": 1478.5
+        },
+        "credit-041": {
+          "x": 364.4,
+          "y": 1478.5
+        },
+        "t047": {
+          "x": 479.6,
+          "y": 1478.5
+        },
+        "credit-042": {
+          "x": 634.4,
+          "y": 1478.5
+        },
+        "t048": {
+          "x": 749.6,
+          "y": 1478.5
+        },
+        "credit-044": {
+          "x": 904.4,
+          "y": 1478.5
+        },
+        "t051": {
+          "x": 1019.6,
+          "y": 1478.5
+        },
+        "credit-045": {
+          "x": 1174.4,
+          "y": 1478.5
+        },
+        "t052": {
+          "x": 1289.6,
+          "y": 1478.5
+        },
+        "credit-046": {
+          "x": 1444.4,
+          "y": 1478.5
+        },
+        "t053": {
+          "x": 1559.6,
+          "y": 1478.5
+        },
+        "credit-048": {
+          "x": 1714.4,
+          "y": 1478.5
+        },
+        "t056": {
+          "x": 1829.6,
+          "y": 1478.5
+        },
+        "credit-049": {
+          "x": 1984.4,
+          "y": 1478.5
+        },
+        "t058": {
+          "x": 2099.6,
+          "y": 1478.5
+        },
+        "credit-050": {
+          "x": 94.4,
+          "y": 1702.5
+        },
+        "t061": {
+          "x": 209.6,
+          "y": 1702.5
+        },
+        "credit-051": {
+          "x": 364.4,
+          "y": 1702.5
+        },
+        "t062": {
+          "x": 479.6,
+          "y": 1702.5
+        },
+        "credit-053": {
+          "x": 634.4,
+          "y": 1702.5
+        },
+        "t065": {
+          "x": 749.6,
+          "y": 1702.5
+        },
+        "credit-054": {
+          "x": 904.4,
+          "y": 1702.5
+        },
+        "t067": {
+          "x": 1019.6,
+          "y": 1702.5
+        },
+        "credit-056": {
+          "x": 1174.4,
+          "y": 1702.5
+        },
+        "t069": {
+          "x": 1289.6,
+          "y": 1702.5
+        },
+        "credit-057": {
+          "x": 1444.4,
+          "y": 1702.5
+        },
+        "t070": {
+          "x": 1559.6,
+          "y": 1702.5
+        },
+        "credit-058": {
+          "x": 1714.4,
+          "y": 1702.5
+        },
+        "t071": {
+          "x": 1829.6,
+          "y": 1702.5
+        },
+        "credit-059": {
+          "x": 1984.4,
+          "y": 1702.5
+        },
+        "t072": {
+          "x": 2099.6,
+          "y": 1702.5
+        },
+        "credit-061": {
+          "x": 94.4,
+          "y": 1926.5
+        },
+        "t074": {
+          "x": 209.6,
+          "y": 1926.5
+        },
+        "credit-062": {
+          "x": 364.4,
+          "y": 1926.5
+        },
+        "t076": {
+          "x": 479.6,
+          "y": 1926.5
+        },
+        "credit-063": {
+          "x": 634.4,
+          "y": 1926.5
+        },
+        "t077": {
+          "x": 749.6,
+          "y": 1926.5
+        },
+        "credit-065": {
+          "x": 904.4,
+          "y": 1926.5
+        },
+        "t081": {
+          "x": 1019.6,
+          "y": 1926.5
+        },
+        "credit-066": {
+          "x": 1174.4,
+          "y": 1926.5
+        },
+        "t083": {
+          "x": 1289.6,
+          "y": 1926.5
+        },
+        "credit-067": {
+          "x": 1444.4,
+          "y": 1926.5
+        },
+        "t084": {
+          "x": 1559.6,
+          "y": 1926.5
+        },
+        "credit-069": {
+          "x": 1714.4,
+          "y": 1926.5
+        },
+        "t086": {
+          "x": 1829.6,
+          "y": 1926.5
+        },
+        "credit-070": {
+          "x": 1984.4,
+          "y": 1926.5
+        },
+        "t087": {
+          "x": 2099.6,
+          "y": 1926.5
+        },
+        "credit-071": {
+          "x": 94.4,
+          "y": 2150.5
+        },
+        "t088": {
+          "x": 209.6,
+          "y": 2150.5
+        },
+        "credit-072": {
+          "x": 364.4,
+          "y": 2150.5
+        },
+        "t089": {
+          "x": 479.6,
+          "y": 2150.5
+        },
+        "credit-074": {
+          "x": 634.4,
+          "y": 2150.5
+        },
+        "t094": {
+          "x": 749.6,
+          "y": 2150.5
+        },
+        "credit-075": {
+          "x": 904.4,
+          "y": 2150.5
+        },
+        "t097": {
+          "x": 1019.6,
+          "y": 2150.5
+        },
+        "credit-076": {
+          "x": 1174.4,
+          "y": 2150.5
+        },
+        "t098": {
+          "x": 1289.6,
+          "y": 2150.5
+        }
+      },
+      "components": [
+        {
+          "x": 32,
+          "y": 36,
+          "w": 530,
+          "h": 360,
+          "n": 16,
+          "ids": [
+            "credit-004",
+            "credit-013",
+            "credit-017",
+            "credit-023",
+            "credit-028",
+            "credit-040",
+            "credit-064",
+            "t005",
+            "t017",
+            "t021",
+            "t027",
+            "t032",
+            "t040",
+            "t046",
+            "t079",
+            "series-hamilton"
+          ]
+        },
+        {
+          "x": 592,
+          "y": 36,
+          "w": 450,
+          "h": 330,
+          "n": 11,
+          "ids": [
+            "t003",
+            "a-rv",
+            "x-christmas",
+            "a-aespa",
+            "t002",
+            "t004",
+            "t015",
+            "t016",
+            "t037",
+            "t059",
+            "t078"
+          ]
+        },
+        {
+          "x": 1072,
+          "y": 36,
+          "w": 365,
+          "h": 300,
+          "n": 9,
+          "ids": [
+            "a-queen",
+            "t064",
+            "a-bowie",
+            "album-transformer",
+            "t020",
+            "a-lou",
+            "t055",
+            "t092",
+            "t095"
+          ]
+        },
+        {
+          "x": 1467,
+          "y": 36,
+          "w": 365,
+          "h": 300,
+          "n": 6,
+          "ids": [
+            "credit-037",
+            "t043",
+            "t050",
+            "t066",
+            "t075",
+            "t080"
+          ]
+        },
+        {
+          "x": 1862,
+          "y": 36,
+          "w": 365,
+          "h": 300,
+          "n": 6,
+          "ids": [
+            "t085",
+            "a-dylan",
+            "x-girl",
+            "a-cash",
+            "t082",
+            "t068"
+          ]
+        },
+        {
+          "x": 32,
+          "y": 425,
+          "w": 295,
+          "h": 255,
+          "n": 4,
+          "ids": [
+            "credit-038",
+            "t044",
+            "t054",
+            "t060"
+          ]
+        },
+        {
+          "x": 357,
+          "y": 425,
+          "w": 295,
+          "h": 255,
+          "n": 4,
+          "ids": [
+            "t090",
+            "a-sting",
+            "a-police",
+            "t063"
+          ]
+        },
+        {
+          "x": 682,
+          "y": 425,
+          "w": 240,
+          "h": 195,
+          "n": 3,
+          "ids": [
+            "credit-006",
+            "t007",
+            "t010"
+          ]
+        },
+        {
+          "x": 952,
+          "y": 425,
+          "w": 240,
+          "h": 195,
+          "n": 3,
+          "ids": [
+            "credit-015",
+            "t019",
+            "t091"
+          ]
+        },
+        {
+          "x": 1222,
+          "y": 425,
+          "w": 240,
+          "h": 195,
+          "n": 3,
+          "ids": [
+            "credit-026",
+            "t030",
+            "t096"
+          ]
+        },
+        {
+          "x": 1492,
+          "y": 425,
+          "w": 240,
+          "h": 195,
+          "n": 3,
+          "ids": [
+            "credit-043",
+            "t049",
+            "t057"
+          ]
+        },
+        {
+          "x": 1762,
+          "y": 425,
+          "w": 240,
+          "h": 195,
+          "n": 3,
+          "ids": [
+            "credit-060",
+            "t073",
+            "t093"
+          ]
+        },
+        {
+          "x": 2032,
+          "y": 425,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-001",
+            "t001"
+          ]
+        },
+        {
+          "x": 32,
+          "y": 709,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-005",
+            "t006"
+          ]
+        },
+        {
+          "x": 302,
+          "y": 709,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-007",
+            "t008"
+          ]
+        },
+        {
+          "x": 572,
+          "y": 709,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-008",
+            "t009"
+          ]
+        },
+        {
+          "x": 842,
+          "y": 709,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-009",
+            "t011"
+          ]
+        },
+        {
+          "x": 1112,
+          "y": 709,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-010",
+            "t012"
+          ]
+        },
+        {
+          "x": 1382,
+          "y": 709,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-011",
+            "t013"
+          ]
+        },
+        {
+          "x": 1652,
+          "y": 709,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-012",
+            "t014"
+          ]
+        },
+        {
+          "x": 1922,
+          "y": 709,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-014",
+            "t018"
+          ]
+        },
+        {
+          "x": 32,
+          "y": 933,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-018",
+            "t022"
+          ]
+        },
+        {
+          "x": 302,
+          "y": 933,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-019",
+            "t023"
+          ]
+        },
+        {
+          "x": 572,
+          "y": 933,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-020",
+            "t024"
+          ]
+        },
+        {
+          "x": 842,
+          "y": 933,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-021",
+            "t025"
+          ]
+        },
+        {
+          "x": 1112,
+          "y": 933,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-022",
+            "t026"
+          ]
+        },
+        {
+          "x": 1382,
+          "y": 933,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-024",
+            "t028"
+          ]
+        },
+        {
+          "x": 1652,
+          "y": 933,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-025",
+            "t029"
+          ]
+        },
+        {
+          "x": 1922,
+          "y": 933,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-027",
+            "t031"
+          ]
+        },
+        {
+          "x": 32,
+          "y": 1157,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-029",
+            "t033"
+          ]
+        },
+        {
+          "x": 302,
+          "y": 1157,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-030",
+            "t034"
+          ]
+        },
+        {
+          "x": 572,
+          "y": 1157,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-031",
+            "t035"
+          ]
+        },
+        {
+          "x": 842,
+          "y": 1157,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-032",
+            "t036"
+          ]
+        },
+        {
+          "x": 1112,
+          "y": 1157,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-033",
+            "t038"
+          ]
+        },
+        {
+          "x": 1382,
+          "y": 1157,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-034",
+            "t039"
+          ]
+        },
+        {
+          "x": 1652,
+          "y": 1157,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-035",
+            "t041"
+          ]
+        },
+        {
+          "x": 1922,
+          "y": 1157,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-036",
+            "t042"
+          ]
+        },
+        {
+          "x": 32,
+          "y": 1381,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-039",
+            "t045"
+          ]
+        },
+        {
+          "x": 302,
+          "y": 1381,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-041",
+            "t047"
+          ]
+        },
+        {
+          "x": 572,
+          "y": 1381,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-042",
+            "t048"
+          ]
+        },
+        {
+          "x": 842,
+          "y": 1381,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-044",
+            "t051"
+          ]
+        },
+        {
+          "x": 1112,
+          "y": 1381,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-045",
+            "t052"
+          ]
+        },
+        {
+          "x": 1382,
+          "y": 1381,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-046",
+            "t053"
+          ]
+        },
+        {
+          "x": 1652,
+          "y": 1381,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-048",
+            "t056"
+          ]
+        },
+        {
+          "x": 1922,
+          "y": 1381,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-049",
+            "t058"
+          ]
+        },
+        {
+          "x": 32,
+          "y": 1605,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-050",
+            "t061"
+          ]
+        },
+        {
+          "x": 302,
+          "y": 1605,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-051",
+            "t062"
+          ]
+        },
+        {
+          "x": 572,
+          "y": 1605,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-053",
+            "t065"
+          ]
+        },
+        {
+          "x": 842,
+          "y": 1605,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-054",
+            "t067"
+          ]
+        },
+        {
+          "x": 1112,
+          "y": 1605,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-056",
+            "t069"
+          ]
+        },
+        {
+          "x": 1382,
+          "y": 1605,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-057",
+            "t070"
+          ]
+        },
+        {
+          "x": 1652,
+          "y": 1605,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-058",
+            "t071"
+          ]
+        },
+        {
+          "x": 1922,
+          "y": 1605,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-059",
+            "t072"
+          ]
+        },
+        {
+          "x": 32,
+          "y": 1829,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-061",
+            "t074"
+          ]
+        },
+        {
+          "x": 302,
+          "y": 1829,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-062",
+            "t076"
+          ]
+        },
+        {
+          "x": 572,
+          "y": 1829,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-063",
+            "t077"
+          ]
+        },
+        {
+          "x": 842,
+          "y": 1829,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-065",
+            "t081"
+          ]
+        },
+        {
+          "x": 1112,
+          "y": 1829,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-066",
+            "t083"
+          ]
+        },
+        {
+          "x": 1382,
+          "y": 1829,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-067",
+            "t084"
+          ]
+        },
+        {
+          "x": 1652,
+          "y": 1829,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-069",
+            "t086"
+          ]
+        },
+        {
+          "x": 1922,
+          "y": 1829,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-070",
+            "t087"
+          ]
+        },
+        {
+          "x": 32,
+          "y": 2053,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-071",
+            "t088"
+          ]
+        },
+        {
+          "x": 302,
+          "y": 2053,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-072",
+            "t089"
+          ]
+        },
+        {
+          "x": 572,
+          "y": 2053,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-074",
+            "t094"
+          ]
+        },
+        {
+          "x": 842,
+          "y": 2053,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-075",
+            "t097"
+          ]
+        },
+        {
+          "x": 1112,
+          "y": 2053,
+          "w": 240,
+          "h": 195,
+          "n": 2,
+          "ids": [
+            "credit-076",
+            "t098"
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "rankedTracks": 98,
+      "sourceCredits": 76,
+      "externalNodes": 4,
+      "seriesNodes": 1,
+      "nodeCount": 179,
+      "edgeCount": 114,
+      "connectedComponents": 66,
+      "allRankedTracksRepresented": true
+    }
   }
 }

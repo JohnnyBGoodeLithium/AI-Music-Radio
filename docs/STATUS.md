@@ -14,3 +14,5 @@ English | [简体中文](STATUS.zh-CN.md)
 
 
 **2026-11-19 prototype revision:** Music Graph now presents four source-backed cross-artist relationship paths, with separate ranked/external entities, clickable evidence and static/mobile SVG. Associated show plans are simulated, not working audio or Music Assistant integration.
+
+**2026-11-19 full graph update:** all 98 tracks now appear in one SVG network linked to original credit entities, identifiable series and evidenced external nodes. Search/zoom/pan, source evidence and full static fallback are supported in the prototype; no real player or AI integration is claimed.

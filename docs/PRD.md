@@ -1,6 +1,6 @@
 # AI Music Radio — Product Requirements Document
 
-**Version:** v0.4 · 2026-11-19  
+**Version:** v0.5 · 2026-11-19  
 **Status:** product discussion and interactive prototype, not a working music integration  
 **Prototype:** [2025 personal-listening data H5](../prototype/index.html) · **Dataset:** [98 ranked tracks](../prototype/data/2025-top-songs.json)  
 [中文版完整 PRD](PRD.zh-CN.md)
@@ -71,3 +71,12 @@ Each node has a stable ID, entity type, and `inRanking` or external indicator. E
 On click: ranked songs open the existing track drawer, external music entities show their identity and edges, and edges open evidence and the source link. Each grounded path leads to a distinct editorial show plan. Default network view shows all cross-artist paths; the older song-collection star view remains secondary. On iPhone display vertical SVG paths; without JS show equivalent static SVG and source links.
 
 Acceptance: four verifiable cross-artist paths visible and interactive, consistent track IDs, and evidence for every nontrivial history edge. Neither actual AI inference nor playback is claimed.
+
+
+## v0.5 — Full-library knowledge network (correction to FR-04)
+
+**The default Graph must contain every one of the 98 ranked songs as a node in ONE global network**, not a handful of cherry-picked cross-artist paths or one artist's star. Source-credit entities are created from the exact observed attribution strings (including truncated labels), linked to each ranked Track. Recognizable Hamilton series items are explicitly labeled curated grouping with unverified version detail. Existing fact-checked external artists/works/albums and typed music-history relations belong in the same graph but are clearly distinct from the listener's collection.
+
+Disconnected components are expected when evidence is sparse. Do not fabricate relationships to force connectivity. The network is scalable and pannable, searchable by song and source credit, supports zoom/fit and evidence on edge click. Preset artist-history paths change the viewport only—no other track disappears from the DOM. A visible 98-song index is a navigation aid, not a replacement for in-graph nodes. The legacy artist-star visualization is secondary.
+
+**Acceptance:** 98 unique ranked Track nodes; each appears in the global SVG and has at least one attributable edge; original ranks/counts unchanged; verified external facts and source links retained. iPhone/JavaScript-disabled static fallback renders the SAME complete graph, not a small sample. This is a prototype; real playback and history imports remain unimplemented.
